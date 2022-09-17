@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Formula1";
+  src: url("./fonts/Formula1-Regular.otf") format("opentype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Formula1";
+  src: url("./fonts/Formula1-Bold.otf") format("opentype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Formula1";
+  src: url("./fonts/Formula1-Wide.otf") format("opentype");
+  font-weight: 600;
+}
+
+body {
+  font-family: "Formula1", -apple-system, sans-serif;
+}
