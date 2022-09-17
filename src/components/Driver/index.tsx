@@ -15,7 +15,7 @@ export const Driver = ({ name, lastname, team }: IDriver) => {
         <h1 className="text-[40px] font-medium text-brand-white-100">
           {name} {lastname}
         </h1>
-        <p className="text-base font-medium uppercase text-brand-blue-100">
+        <p className="text-base font-medium uppercase text-brand-blue-100 opacity-70">
           {team}
         </p>
       </div>
@@ -34,7 +34,7 @@ export const Driver = ({ name, lastname, team }: IDriver) => {
             className="flex-none rounded-[35px]"
           />
         </div>
-        <div className="absolute top-0 left-0 h-full w-full bg-gradient-to-b from-[#2E0000] via-teams-ferrari to-[#2E0000]" />
+        <div className="absolute top-0 left-0 h-full w-full bg-gradient-to-b from-[#3D0108] via-teams-ferrari to-[#3D0108]" />
       </div>
     </div>
   );
