@@ -34,8 +34,8 @@ export const RaceCard = ({ raceNumber, circuit, year, date }: IRaceCard) => {
   const imagePath = `/races/${clean.raceNumber}-${clean.circuit}.jpeg`;
 
   return (
-    <div className="relative flex w-64 flex-none flex-col items-center justify-center gap-2 overflow-hidden rounded-2xl p-5 text-center text-brand-white-100">
-      <div className="z-20">
+    <div className="relative flex h-36 w-64 flex-none flex-col items-center justify-center gap-2 overflow-hidden rounded-2xl p-5 text-center text-brand-white-100 hover:cursor-pointer">
+      <div className="z-20 drop-shadow-card-text-md">
         <h1 className="text-[22px] font-medium uppercase">{circuit}</h1>
         <h2 className="text-base font-medium">{year}</h2>
       </div>
