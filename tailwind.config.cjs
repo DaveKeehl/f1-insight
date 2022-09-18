@@ -45,6 +45,7 @@ module.exports = {
         mercedes: "0 0 95px 24px rgb(108 211 190 / 0.15)",
         redbull: "0 0 95px 24px rgb(54 113 198 / 0.15)",
         williams: "0 0 95px 24px rgb(54 190 220 / 0.15)",
+        "info-dialog": "0 8px 28px rgb(0 0 0 / 0.3)",
       },
       dropShadow: {
         "card-text-md": "0 2px 4px rgb(6 6 9 / 0.65)",

@@ -33,7 +33,9 @@ const InfoDialog = () => {
         {open ? <X size={24} /> : <List size={24} />}
       </button>
       {open && (
-        <div className={`${classes} flex flex-col gap-4 p-7 shadow-xl`}>
+        <div
+          className={`${classes} flex flex-col gap-4 rounded-3xl p-7 shadow-info-dialog`}
+        >
           <DialogEntry title="Podiums" text="20" />
           <DialogEntry title="Points" text="779" />
           <DialogEntry title="Grands Prix entered" text="97" />
@@ -84,19 +86,27 @@ const DriverData = ({ name, lastname, team }: IDriver) => {
       }`}
     >
       <div className="relative z-10 p-[5px]">
-        <DriverBadge
-          number={16}
-          country="monaco"
-          className="absolute top-6 left-6"
-        />
-        <InfoDialog />
-        <Image
-          src={`/drivers/front/${name}-${lastname}.jpeg`}
-          alt=""
-          width={788}
-          height={525}
-          className="flex-none rounded-[35px]"
-        />
+        <div className="relative z-10">
+          <DriverBadge
+            number={16}
+            country="monaco"
+            className="absolute top-6 left-6"
+          />
+          <InfoDialog />
+        </div>
+        <div className="relative overflow-hidden rounded-[35px]">
+          <div className="relative h-[525px] w-[788px]">
+            <div className="absolute bottom-0 left-0 h-1/2 w-full bg-gradient-to-b from-transparent to-brand-blue-400" />
+            <Image
+              src={`/drivers/front/${name}-${lastname}.jpeg`}
+              alt=""
+              width={1920}
+              height={1920}
+              className="h-full w-full flex-none object-cover object-top"
+            />
+          </div>
+          <div className="h-80 w-full bg-brand-blue-400" />
+        </div>
       </div>
       <div
         className={`absolute top-0 left-0 h-full w-full bg-gradient-to-b ${
