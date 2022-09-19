@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Image from "next/future/image";
 import { X, List } from "phosphor-react";
+import { ResponsiveLine } from "@nivo/line";
 
 import { DriverBadge } from "../DriverBadge";
 
@@ -9,6 +10,79 @@ interface IDriver {
   lastname: string;
   team: string;
 }
+
+const data = [
+  {
+    id: "verstappen",
+    color: "hsl(70, 70%, 50%)",
+    data: [
+      {
+        x: "1 - Bahrain",
+        y: 20,
+      },
+      {
+        x: "2 - Saudi Arabia",
+        y: 2,
+      },
+      {
+        x: "3 - Australia",
+        y: 20,
+      },
+      {
+        x: "4 - Italy",
+        y: 1,
+      },
+      {
+        x: "5 - United States",
+        y: 1,
+      },
+      {
+        x: "6 - Spain",
+        y: 1,
+      },
+      {
+        x: "7 - Monaco",
+        y: 3,
+      },
+      {
+        x: "8 - Azerbaijan",
+        y: 1,
+      },
+      {
+        x: "9 - Canada",
+        y: 1,
+      },
+      {
+        x: "10 - Great Britain",
+        y: 20,
+      },
+      {
+        x: "11 - Austria",
+        y: 2,
+      },
+      {
+        x: "12 - France",
+        y: 1,
+      },
+      {
+        x: "13 - Hungary",
+        y: 1,
+      },
+      {
+        x: "14 - Belgium",
+        y: 1,
+      },
+      {
+        x: "15 - Netherlands",
+        y: 1,
+      },
+      {
+        x: "16 - Italy",
+        y: 1,
+      },
+    ],
+  },
+];
 
 const InfoDialog = () => {
   const [open, setOpen] = useState(false);
@@ -45,6 +119,101 @@ const InfoDialog = () => {
         </div>
       )}
     </div>
+  );
+};
+
+interface ILineChart {
+  data: {
+    id: string;
+    color: string;
+    data: {
+      x: string;
+      y: number;
+    }[];
+  }[];
+}
+
+const LineChart = ({ data }: ILineChart) => {
+  return (
+    <ResponsiveLine
+      data={data}
+      margin={{ top: 20, right: 30, bottom: 110, left: 70 }}
+      colors={{ scheme: "blues" }}
+      xScale={{ type: "point" }}
+      yScale={{
+        type: "linear",
+        min: 1,
+        max: "auto",
+        stacked: true,
+        reverse: true,
+      }}
+      axisLeft={{
+        tickSize: 5,
+        tickPadding: 5,
+        tickRotation: 0,
+        legend: "Rank",
+        legendOffset: -45,
+        legendPosition: "middle",
+      }}
+      axisBottom={{
+        tickSize: 5,
+        tickPadding: 5,
+        tickRotation: -40,
+        legend: "Race",
+        legendOffset: 85,
+        legendPosition: "middle",
+      }}
+      pointSize={7}
+      pointColor={{ from: "color" }}
+      pointBorderWidth={2}
+      pointBorderColor={{ from: "color" }}
+      useMesh={true}
+      enableSlices="x"
+      enableGridY={false}
+      theme={{
+        background: "#060609",
+        textColor: "#454554",
+        fontSize: 11,
+        axis: {
+          domain: {
+            line: {
+              stroke: "#242433",
+              strokeWidth: 1,
+            },
+          },
+          ticks: {
+            line: {
+              stroke: "#242433",
+              strokeWidth: 0,
+            },
+            text: {
+              fontSize: 11,
+              fill: "#454554",
+            },
+          },
+        },
+        grid: {
+          line: {
+            stroke: "#242433",
+            strokeWidth: 1,
+          },
+        },
+      }}
+      sliceTooltip={({ slice }) => {
+        return (
+          <div className=" flex flex-col gap-1 rounded-lg border border-brand-white-100/10 bg-brand-blue-200 px-5 py-3 shadow-xl">
+            <p className="text-sm font-medium">
+              {slice.points[0]?.data.xFormatted}
+            </p>
+            {slice.points.map((point) => (
+              <p className="text-sm" key={point.id}>
+                Rank: {point.data.yFormatted}
+              </p>
+            ))}
+          </div>
+        );
+      }}
+    />
   );
 };
 
@@ -105,7 +274,9 @@ const DriverData = ({ name, lastname, team }: IDriver) => {
               className="h-full w-full flex-none object-cover object-top"
             />
           </div>
-          <div className="h-80 w-full bg-brand-blue-400" />
+          <div className="h-80 w-full bg-brand-blue-400">
+            <LineChart data={data} />
+          </div>
         </div>
       </div>
       <div
