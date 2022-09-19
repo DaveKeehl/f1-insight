@@ -2,6 +2,7 @@ import { useState } from "react";
 import Image from "next/future/image";
 import { X, List } from "phosphor-react";
 import { ResponsiveLine } from "@nivo/line";
+import { capitalize } from "lodash";
 
 import { DriverBadge } from "../DriverBadge";
 
@@ -296,7 +297,7 @@ export const Driver = (props: IDriver) => {
       <Image src="/f1_logo.svg" alt="" width={120} height={30} />
       <div className="flex flex-col items-center gap-2">
         <h1 className="text-center text-[40px] font-medium text-brand-white-100">
-          {name} {lastname}
+          {capitalize(name)} {capitalize(lastname)}
         </h1>
         <p className="text-center text-base font-medium uppercase text-brand-blue-100 opacity-70">
           {team}

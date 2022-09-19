@@ -17,7 +17,7 @@ export const TeamCard = ({ name }: ITeamCard) => {
   const imagePath = `/teams/${clean.name}.png`;
 
   return (
-    <div className="relative flex h-36 w-64 flex-none flex-col items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-tr from-brand-white-300 to-brand-white-200 px-4 py-10 text-brand-white-100 hover:cursor-pointer">
+    <div className="relative flex h-36 w-64 flex-none flex-col items-center overflow-hidden rounded-2xl bg-gradient-to-tr from-brand-white-300 to-brand-white-200 px-4 py-10 text-brand-white-100 hover:cursor-pointer">
       <h1 className="z-20 text-center text-2xl font-medium drop-shadow-card-text-md">
         {name}
       </h1>
