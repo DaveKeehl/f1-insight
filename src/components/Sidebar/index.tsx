@@ -18,10 +18,10 @@ export const Sidebar = () => {
         </Link>
         <div className="flex w-fit flex-col items-center gap-4">
           {/* <Button icon="ChartLine" /> */}
-          <Button icon="FlagCheckered" />
-          <Button icon="User" />
-          <Button icon="Users" />
-          <Button icon="Trophy" />
+          <Button icon="FlagCheckered" href="/races" />
+          <Button icon="User" href="/drivers" />
+          <Button icon="Users" href="/teams" />
+          <Button icon="Trophy" href="/standings" />
         </div>
       </div>
       <Link href="https://github.com/DaveKeehl/f1-insights">

@@ -1,9 +1,11 @@
+import Link from "next/link";
 import { ChartLine, FlagCheckered, Trophy, User, Users } from "phosphor-react";
 
 type ButtonIcon = "ChartLine" | "FlagCheckered" | "Trophy" | "User" | "Users";
 
 interface IButton {
   icon: ButtonIcon;
+  href: string;
 }
 
 interface IIcon {
@@ -27,10 +29,12 @@ const Icon = ({ name }: IIcon) => {
   return icons[name];
 };
 
-export const Button = ({ icon }: IButton) => {
+export const Button = ({ icon, href }: IButton) => {
   return (
-    <button className="rounded-lg bg-brand-red-200 p-[6px] transition hover:bg-brand-red-100">
-      <Icon name={icon} />
-    </button>
+    <Link href={href}>
+      <button className="rounded-lg bg-brand-red-200 p-[6px] transition hover:bg-brand-red-100">
+        <Icon name={icon} />
+      </button>
+    </Link>
   );
 };

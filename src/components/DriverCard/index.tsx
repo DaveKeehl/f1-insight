@@ -1,7 +1,5 @@
-import { useAtom } from "jotai";
 import Image from "next/future/image";
 import Link from "next/link";
-import { selectedDriverAtom } from "../../utils/atoms";
 
 interface IDriverCard {
   driverNumber: number;
@@ -18,7 +16,7 @@ const Backdrop = () => {
 export const DriverCard = ({ driverNumber, name, lastname }: IDriverCard) => {
   const clean = {
     name: name.toLowerCase(),
-    lastname: lastname.toLowerCase(),
+    lastname: lastname.toLowerCase().replace(/\s/g, "-"),
   };
   const imagePath = `/drivers/side/${clean.name}-${clean.lastname}.png`;
 

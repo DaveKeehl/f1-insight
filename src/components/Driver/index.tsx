@@ -10,6 +10,8 @@ interface IDriver {
   name: string;
   lastname: string;
   team: string;
+  permanentNumber: number;
+  nationality: string;
 }
 
 const data = [
@@ -218,7 +220,13 @@ const LineChart = ({ data }: ILineChart) => {
   );
 };
 
-const DriverData = ({ name, lastname, team }: IDriver) => {
+const DriverData = ({
+  name,
+  lastname,
+  team,
+  permanentNumber,
+  nationality,
+}: IDriver) => {
   const clean = {
     team: team.toLowerCase().replace(/\s/g, ""),
   };
@@ -243,7 +251,7 @@ const DriverData = ({ name, lastname, team }: IDriver) => {
     astonmartin: "from-[#123028] via-teams-astonmartin to-[#123028]",
     ferrari: "from-[#3D0108] via-teams-ferrari to-[#3D0108]",
     haas: "from-[#383B3E] via-teams-haas to-[#383B3E]",
-    mclaren: "from-[#3D0108] via-teams-mclaren to-[#3D0108]",
+    mclaren: "from-[#452003] via-teams-mclaren to-[#452003]",
     mercedes: "from-[#0F332C] via-teams-mercedes to-[#0F332C]",
     redbull: "from-[#0F2038] via-teams-redbull to-[#0F2038]",
     williams: "from-[#0B343D] via-teams-williams to-[#0B343D]",
@@ -258,8 +266,8 @@ const DriverData = ({ name, lastname, team }: IDriver) => {
       <div className="relative z-10 p-[5px]">
         <div className="relative z-10">
           <DriverBadge
-            number={16}
-            country="monaco"
+            number={permanentNumber}
+            country={nationality}
             className="absolute top-6 left-6"
           />
           <InfoDialog />

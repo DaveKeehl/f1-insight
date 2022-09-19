@@ -4,31 +4,40 @@ import { useRouter } from "next/router";
 import { Layout } from "../../components/Layout";
 import { Drivers } from "../../components/Drivers";
 import { Driver } from "../../components/Driver";
-import { useSetAtom } from "jotai";
-import { selectedDriverAtom } from "../../utils/atoms";
+import { driverStandings } from "../../utils/mock";
+import { getDriversWithTeam } from "../../utils/helpers";
 
 const DriverPage: NextPage = () => {
   const router = useRouter();
   const { driver } = router.query;
 
-  console.log(driver);
-
   if (driver) {
     const [name, lastname] = (driver as string).split("-");
 
-    console.log(name, lastname);
+    const drivers = getDriversWithTeam(driverStandings);
+    const driverData = drivers.find(
+      (driver) =>
+        name === driver.givenName.toLowerCase() &&
+        lastname === driver.familyName.toLowerCase()
+    );
 
-    if (name && lastname) {
+    if (name && lastname && driverData !== undefined) {
       return (
         <Layout>
           <Drivers />
-          <Driver name={name} lastname={lastname} team="Red Bull" />
+          <Driver
+            name={name}
+            lastname={lastname}
+            team={driverData.team}
+            permanentNumber={Number.parseInt(driverData.permanentNumber)}
+            nationality={driverData.nationality}
+          />
         </Layout>
       );
     }
   }
 
-  return <div>Invalid driver page</div>;
+  return <div className="h-screen w-screen bg-brand-blue-400" />;
 };
 
 export default DriverPage;
