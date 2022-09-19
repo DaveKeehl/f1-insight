@@ -48,6 +48,7 @@ module.exports = {
         "info-dialog": "0 8px 28px rgb(0 0 0 / 0.3)",
       },
       dropShadow: {
+        "card-text-sm": "0 2px 4px rgb(6 6 9 / 0.25)",
         "card-text-md": "0 2px 4px rgb(6 6 9 / 0.65)",
       },
     },

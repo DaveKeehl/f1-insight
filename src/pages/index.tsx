@@ -3,6 +3,7 @@ import type { NextPage } from "next";
 import { Races } from "../components/Races";
 import { Driver } from "../components/Driver";
 import { Layout } from "../components/Layout";
+import { Drivers } from "../components/Drivers";
 // import { trpc } from "../utils/trpc";
 
 const Home: NextPage = () => {
@@ -10,7 +11,8 @@ const Home: NextPage = () => {
 
   return (
     <Layout>
-      <Races />
+      {/* <Races /> */}
+      <Drivers />
       <Driver name="Max" lastname="Verstappen" team="Red Bull" />
     </Layout>
   );
