@@ -1,5 +1,6 @@
 import Image from "next/future/image";
 import { capitalize } from "lodash";
+import Link from "next/link";
 
 interface IRaceCard {
   round: number;
@@ -17,7 +18,7 @@ interface ILabel {
 const Label = ({ text, className }: ILabel) => {
   return (
     <div
-      className={`${className} rounded-full border border-brand-blue-300 bg-brand-blue-400 px-[10px] py-1 text-xs`.trim()}
+      className={`${className} rounded-full border border-brand-blue-300 bg-brand-blue-400 px-[10px] py-1 text-xs uppercase`.trim()}
     >
       {text}
     </div>
@@ -48,16 +49,20 @@ export const RaceCard = ({ round, circuitId, country, date }: IRaceCard) => {
   const imagePath = `/races/${clean.round}-${clean.country}.jpeg`;
 
   return (
-    <div className="relative flex h-36 w-64 flex-none flex-col items-center justify-center gap-2 overflow-hidden rounded-2xl p-5 text-center text-brand-white-100 hover:cursor-pointer">
-      <div className="z-20 drop-shadow-card-text-md">
-        <h1 className="text-[22px] font-medium">{clean.circuitId}</h1>
-        <h2 className="text-sm font-medium uppercase">
-          {corrections[country] || country}
-        </h2>
-      </div>
-      <Label text={date} className="z-20" />
-      <Backdrop />
-      <Image src={imagePath} alt="" className="object-cover" fill />
-    </div>
+    <Link href={`/races/${round}`}>
+      <a>
+        <div className="relative flex h-36 w-64 flex-none flex-col items-center justify-center gap-2 overflow-hidden rounded-2xl p-5 text-center text-brand-white-100 hover:cursor-pointer">
+          <div className="z-20 drop-shadow-card-text-md">
+            <h1 className="text-[22px] font-medium">{clean.circuitId}</h1>
+            <h2 className="text-sm font-medium uppercase">
+              {corrections[country] || country}
+            </h2>
+          </div>
+          <Label text={date} className="z-20" />
+          <Backdrop />
+          <Image src={imagePath} alt="" className="object-cover" fill />
+        </div>
+      </a>
+    </Link>
   );
 };

@@ -16,6 +16,7 @@
     "@trpc/next": "^9.27.2",
     "@trpc/react": "^9.27.2",
     "@trpc/server": "^9.27.2",
+    "date-fns": "^2.29.3",
     "jotai": "^1.8.4",
     "lodash": "^4.17.21",
     "next": "12.3.0",

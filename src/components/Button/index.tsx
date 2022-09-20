@@ -32,9 +32,11 @@ const Icon = ({ name }: IIcon) => {
 export const Button = ({ icon, href }: IButton) => {
   return (
     <Link href={href}>
-      <button className="rounded-lg bg-brand-red-200 p-[6px] transition hover:bg-brand-red-100">
-        <Icon name={icon} />
-      </button>
+      <a>
+        <button className="rounded-lg bg-brand-red-200 p-[6px] transition hover:bg-brand-red-100">
+          <Icon name={icon} />
+        </button>
+      </a>
     </Link>
   );
 };
