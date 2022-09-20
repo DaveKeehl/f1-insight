@@ -20,7 +20,7 @@ interface IDriver {
 
 const data = [
   {
-    id: "race",
+    id: "Race",
     color: "hsl(70, 70%, 50%)",
     data: verstappenRaceResults.map((race) => ({
       x: `${race.round} - ${race.Circuit.Location.country}`,
@@ -28,7 +28,7 @@ const data = [
     })),
   },
   {
-    id: "qualifying",
+    id: "Qualifying",
     color: "#2668d9",
     data: verstappenQualifyingResults.map((race) => ({
       x: `${race.round} - ${race.Circuit.Location.country}`,
@@ -84,14 +84,28 @@ interface ILineChart {
       y: number;
     }[];
   }[];
+  team: string;
 }
 
-const LineChart = ({ data }: ILineChart) => {
+const LineChart = ({ data, team }: ILineChart) => {
+  const scheme: { [key: string]: any } = {
+    "Red Bull": { scheme: "paired", size: 9 },
+    Alpine: { scheme: "paired", size: 9 },
+    AlphaTauri: { scheme: "paired", size: 9 },
+    Williams: { scheme: "paired", size: 9 },
+    Haas: { scheme: "pastel1", size: 7 },
+    Ferrari: { scheme: "spectral", size: 5 },
+    "Alfa Romeo": { scheme: "spectral", size: 6 },
+    Mercedes: { scheme: "set2", size: 3 },
+    "Aston Martin": { scheme: "set2", size: 3 },
+    McLaren: { scheme: "brown_blueGreen", size: 5 },
+  };
+
   return (
     <ResponsiveLine
       data={data}
       margin={{ top: 20, right: 30, bottom: 110, left: 70 }}
-      colors={{ scheme: "category10" }}
+      colors={scheme[team]}
       xScale={{ type: "point" }}
       yScale={{
         type: "linear",
@@ -159,7 +173,7 @@ const LineChart = ({ data }: ILineChart) => {
             </p>
             {slice.points.reverse().map((point) => (
               <p className="text-sm" key={point.id}>
-                {capitalize(point.serieId.toString())}: {point.data.yFormatted}
+                {point.serieId.toString()}: {point.data.yFormatted}
               </p>
             ))}
           </div>
@@ -179,16 +193,8 @@ const LineChart = ({ data }: ILineChart) => {
           itemOpacity: 0.75,
           symbolSize: 12,
           symbolShape: "circle",
-          symbolBorderColor: "rgba(0, 0, 0, .5)",
-          effects: [
-            {
-              on: "hover",
-              style: {
-                itemBackground: "rgba(0, 0, 0, .03)",
-                itemOpacity: 1,
-              },
-            },
-          ],
+          itemTextColor: "#C3C3D5",
+          padding: 4,
         },
       ]}
     />
@@ -259,7 +265,7 @@ const DriverData = ({
             />
           </div>
           <div className="h-80 w-full bg-brand-blue-400">
-            <LineChart data={data} />
+            <LineChart data={data} team={team} />
           </div>
         </div>
       </div>

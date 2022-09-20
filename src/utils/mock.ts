@@ -1597,6 +1597,7 @@ export const races: RaceSchedule[] = [
   },
 ];
 
+// https://ergast.com/api/f1/current/drivers/max_verstappen/results.json
 export const verstappenRaceResults: RaceResult[] = [
   {
     season: "2022",
@@ -2568,6 +2569,7 @@ export const verstappenRaceResults: RaceResult[] = [
   },
 ];
 
+// https://ergast.com/api/f1/current/drivers/max_verstappen/qualifying.json
 export const verstappenQualifyingResults: QualifyingResult[] = [
   {
     season: "2022",
