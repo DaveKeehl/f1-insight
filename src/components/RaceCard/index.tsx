@@ -1,8 +1,10 @@
 import Image from "next/future/image";
+import { capitalize } from "lodash";
 
 interface IRaceCard {
-  raceNumber: number;
-  circuit: string;
+  round: number;
+  circuitId: string;
+  country: string;
   year: string;
   date: string;
 }
@@ -26,18 +28,32 @@ const Backdrop = () => {
   return <div className="absolute z-10 h-full w-full bg-brand-blue-400/60" />;
 };
 
-export const RaceCard = ({ raceNumber, circuit, year, date }: IRaceCard) => {
-  const clean = {
-    raceNumber: String(raceNumber).padStart(2, "0"),
-    circuit: circuit.toLowerCase(),
+export const RaceCard = ({ round, circuitId, country, date }: IRaceCard) => {
+  const corrections: { [key: string]: string } = {
+    UK: "Great Britain",
+    UAE: "Abu Dhabi",
+    USA: "United States",
   };
-  const imagePath = `/races/${clean.raceNumber}-${clean.circuit}.jpeg`;
+
+  const clean = {
+    round: String(round).padStart(2, "0"),
+    circuitId: circuitId
+      .split("_")
+      .map((e) => capitalize(e))
+      .join(" "),
+    country: (corrections[country] || country)
+      .toLowerCase()
+      .replace(/\s/g, "-"),
+  };
+  const imagePath = `/races/${clean.round}-${clean.country}.jpeg`;
 
   return (
     <div className="relative flex h-36 w-64 flex-none flex-col items-center justify-center gap-2 overflow-hidden rounded-2xl p-5 text-center text-brand-white-100 hover:cursor-pointer">
       <div className="z-20 drop-shadow-card-text-md">
-        <h1 className="text-[22px] font-medium uppercase">{circuit}</h1>
-        <h2 className="text-base font-medium">{year}</h2>
+        <h1 className="text-[22px] font-medium">{clean.circuitId}</h1>
+        <h2 className="text-sm font-medium uppercase">
+          {corrections[country] || country}
+        </h2>
       </div>
       <Label text={date} className="z-20" />
       <Backdrop />

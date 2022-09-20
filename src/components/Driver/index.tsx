@@ -5,6 +5,10 @@ import { ResponsiveLine } from "@nivo/line";
 import { capitalize } from "lodash";
 
 import { DriverBadge } from "../DriverBadge";
+import {
+  verstappenQualifyingResults,
+  verstappenRaceResults,
+} from "../../utils/mock";
 
 interface IDriver {
   name: string;
@@ -16,74 +20,20 @@ interface IDriver {
 
 const data = [
   {
-    id: "verstappen",
+    id: "race",
     color: "hsl(70, 70%, 50%)",
-    data: [
-      {
-        x: "1 - Bahrain",
-        y: 20,
-      },
-      {
-        x: "2 - Saudi Arabia",
-        y: 2,
-      },
-      {
-        x: "3 - Australia",
-        y: 20,
-      },
-      {
-        x: "4 - Italy",
-        y: 1,
-      },
-      {
-        x: "5 - United States",
-        y: 1,
-      },
-      {
-        x: "6 - Spain",
-        y: 1,
-      },
-      {
-        x: "7 - Monaco",
-        y: 3,
-      },
-      {
-        x: "8 - Azerbaijan",
-        y: 1,
-      },
-      {
-        x: "9 - Canada",
-        y: 1,
-      },
-      {
-        x: "10 - Great Britain",
-        y: 20,
-      },
-      {
-        x: "11 - Austria",
-        y: 2,
-      },
-      {
-        x: "12 - France",
-        y: 1,
-      },
-      {
-        x: "13 - Hungary",
-        y: 1,
-      },
-      {
-        x: "14 - Belgium",
-        y: 1,
-      },
-      {
-        x: "15 - Netherlands",
-        y: 1,
-      },
-      {
-        x: "16 - Italy",
-        y: 1,
-      },
-    ],
+    data: verstappenRaceResults.map((race) => ({
+      x: `${race.round} - ${race.Circuit.Location.country}`,
+      y: Number.parseInt(race.Results[0]?.position || "0"),
+    })),
+  },
+  {
+    id: "qualifying",
+    color: "#2668d9",
+    data: verstappenQualifyingResults.map((race) => ({
+      x: `${race.round} - ${race.Circuit.Location.country}`,
+      y: Number.parseInt(race.QualifyingResults[0]?.position || "0"),
+    })),
   },
 ];
 
@@ -141,13 +91,13 @@ const LineChart = ({ data }: ILineChart) => {
     <ResponsiveLine
       data={data}
       margin={{ top: 20, right: 30, bottom: 110, left: 70 }}
-      colors={{ scheme: "blues" }}
+      colors={{ scheme: "category10" }}
       xScale={{ type: "point" }}
       yScale={{
         type: "linear",
         min: 1,
         max: "auto",
-        stacked: true,
+        stacked: false,
         reverse: true,
       }}
       axisLeft={{
@@ -198,24 +148,49 @@ const LineChart = ({ data }: ILineChart) => {
         grid: {
           line: {
             stroke: "#242433",
-            strokeWidth: 1,
           },
         },
       }}
       sliceTooltip={({ slice }) => {
         return (
           <div className=" flex flex-col gap-1 rounded-lg border border-brand-white-100/10 bg-brand-blue-200 px-5 py-3 shadow-xl">
-            <p className="text-sm font-medium">
+            <p className="text-base font-medium">
               {slice.points[0]?.data.xFormatted}
             </p>
-            {slice.points.map((point) => (
+            {slice.points.reverse().map((point) => (
               <p className="text-sm" key={point.id}>
-                Rank: {point.data.yFormatted}
+                {capitalize(point.serieId.toString())}: {point.data.yFormatted}
               </p>
             ))}
           </div>
         );
       }}
+      legends={[
+        {
+          anchor: "bottom-right",
+          direction: "column",
+          justify: false,
+          translateX: 0,
+          translateY: -20,
+          itemsSpacing: 0,
+          itemDirection: "left-to-right",
+          itemWidth: 80,
+          itemHeight: 20,
+          itemOpacity: 0.75,
+          symbolSize: 12,
+          symbolShape: "circle",
+          symbolBorderColor: "rgba(0, 0, 0, .5)",
+          effects: [
+            {
+              on: "hover",
+              style: {
+                itemBackground: "rgba(0, 0, 0, .03)",
+                itemOpacity: 1,
+              },
+            },
+          ],
+        },
+      ]}
     />
   );
 };

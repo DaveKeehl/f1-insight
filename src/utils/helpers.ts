@@ -1,4 +1,4 @@
-import { DriverStanding } from "./types";
+import { DriverStanding } from "./types/standings";
 
 export const getDriversWithTeam = (driverStandings: DriverStanding[]) => {
   return driverStandings.map((driverStandings) => {
