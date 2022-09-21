@@ -1,3 +1,4 @@
+import { sub } from "date-fns";
 import { DriverStanding } from "./types/standings";
 
 export const getDriversWithTeam = (driverStandings: DriverStanding[]) => {
@@ -14,4 +15,27 @@ export const getDriversWithTeam = (driverStandings: DriverStanding[]) => {
       team: corrections[team] || team,
     };
   });
+};
+
+export const getPrettyDate = (date: string) => {
+  const [year, month, day] = date.split("-").map((el: string) => +el);
+
+  if (year === undefined || month === undefined) {
+    return "";
+  }
+
+  const endDate = new Date(year, month - 1, day);
+  const endMonth = endDate.toLocaleString("default", {
+    month: "short",
+  });
+
+  const startDate = sub(endDate, { days: 3 });
+  const startMonth = startDate.toLocaleDateString("default", {
+    month: "short",
+  });
+
+  return (date =
+    startMonth === endMonth
+      ? `${startDate.getDate()} - ${endDate.getDate()} ${endMonth}`
+      : `${startDate.getDate()} ${startMonth} - ${endDate.getDate()} ${endMonth}`);
 };

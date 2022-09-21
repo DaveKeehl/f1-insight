@@ -2,19 +2,27 @@ import type { NextPage } from "next";
 import { useRouter } from "next/router";
 
 import { Layout } from "../../components/Layout";
-import { Drivers } from "../../components/Drivers";
+import { Races } from "../../components/Races";
 import { Race } from "../../components/Race";
 import { raceResult } from "../../utils/mock";
+import { getPrettyDate } from "../../utils/helpers";
 
 const RacePage: NextPage = () => {
   const router = useRouter();
-  const { round } = router.query;
+  const { round } = router.query; // use round to fetch data
 
-  if (round) {
+  if (raceResult[0]) {
+    const { Circuit, date, Results } = raceResult[0];
+
     return (
       <Layout>
-        <Drivers />
-        <Race />
+        <Races />
+        <Race
+          circuitId={Circuit.circuitId}
+          country={Circuit.Location.country}
+          date={getPrettyDate(date)}
+          results={Results}
+        />
       </Layout>
     );
   }

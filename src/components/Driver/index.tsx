@@ -118,7 +118,7 @@ const LineChart = ({ data, team }: ILineChart) => {
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
-        legend: "Rank",
+        legend: "Position",
         legendOffset: -45,
         legendPosition: "middle",
       }}
