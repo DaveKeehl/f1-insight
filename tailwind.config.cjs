@@ -8,18 +8,18 @@ module.exports = {
           white: {
             100: "#F6F6F9",
             200: "#6B6875",
-            300: "#2D2D2F",
+            300: "#2D2D2F"
           },
           red: {
             100: "#FF4C47",
-            200: "#E10600",
+            200: "#E10600"
           },
           blue: {
             100: "#C3C3D5",
             200: "#242433",
             300: "#15151E",
-            400: "#060609",
-          },
+            400: "#060609"
+          }
         },
         teams: {
           alfaromeo: "#C92D4B",
@@ -31,8 +31,8 @@ module.exports = {
           mercedes: "#6CD3BE",
           mclaren: "#F67F1F",
           redbull: "#3671C6",
-          williams: "#36BEDC",
-        },
+          williams: "#36BEDC"
+        }
       },
       boxShadow: {
         alfaromeo: "0 0 95px 24px rgb(201 45 75 / 0.15)",
@@ -57,13 +57,28 @@ module.exports = {
         "glow-williams": "0 0 15px rgb(54 190 220 / 0.4)",
         "info-dialog": "0 8px 28px rgb(0 0 0 / 0.3)",
         "brand-red": "0 0 15px rgb(225 6 1 / 0.5)",
-        "brand-white": "0 0 26px rgb(255 255 255 / 0.3)",
+        "brand-white": "0 0 26px rgb(255 255 255 / 0.3)"
       },
       dropShadow: {
         "card-text-sm": "0 2px 4px rgb(6 6 9 / 0.25)",
-        "card-text-md": "0 2px 4px rgb(6 6 9 / 0.65)",
-      },
+        "card-text-md": "0 2px 4px rgb(6 6 9 / 0.65)"
+      }
     },
+    animation: {
+      "fade-in": "fade-in 3s linear"
+    },
+    keyframes: {
+      "fade-in": {
+        "0%": {
+          opacity: "0",
+          transform: "translateY(-20px)"
+        },
+        "100%": {
+          opacity: "1",
+          transform: "none"
+        }
+      }
+    }
   },
-  plugins: [],
+  plugins: []
 };

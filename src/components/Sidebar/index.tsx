@@ -1,31 +1,29 @@
 import Image from "next/future/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
 
 import { Button } from "../Button";
 
 export const Sidebar = () => {
-  const router = useRouter();
-  const { pathname } = router;
-
   return (
     <aside className="flex h-screen w-16 flex-col items-center justify-between bg-brand-red-200 px-3 py-6">
       <div className="flex flex-col items-center gap-16">
         <Link href="/">
-          <Image
-            src="/f1_logo.svg"
-            alt=""
-            width={48}
-            height={12}
-            className="hover:cursor-pointer"
-          />
+          <a>
+            <Image
+              src="/f1_logo.svg"
+              alt=""
+              width={48}
+              height={12}
+              className="hover:cursor-pointer"
+            />
+          </a>
         </Link>
         <div className="flex w-fit flex-col items-center gap-4">
           {/* <Button icon="ChartLine" /> */}
-          <Button icon="FlagCheckered" href="/races" />
-          <Button icon="User" href="/drivers" />
-          <Button icon="Users" href="/teams" />
-          <Button icon="Trophy" href="/standings" />
+          <Button icon="FlagCheckered" text="Races" href="/races" />
+          <Button icon="User" text="Drivers" href="/drivers" />
+          <Button icon="Users" text="Teams" href="/teams" />
+          <Button icon="Trophy" text="Standings" href="/standings" />
         </div>
       </div>
       <Link href="https://github.com/DaveKeehl/f1-insights">
