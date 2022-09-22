@@ -20,7 +20,7 @@ interface IRace {
 
 export const Race = ({ circuitId, country, date, results }: IRace) => {
   const [mode, setMode] = useState<"race" | "qualifying">("race");
-  const [view, setView] = useState<"table" | "chart">("table");
+  // const [view, setView] = useState<"table" | "chart">("table");
 
   const clean = {
     circuitId: circuitId.replace(/_/g, " ")
@@ -49,19 +49,19 @@ export const Race = ({ circuitId, country, date, results }: IRace) => {
             selected: mode === "race",
             onClick: () => setMode("race")
           }
-        ],
-        [
-          {
-            text: "table view",
-            selected: view === "table",
-            onClick: () => setView("table")
-          },
-          {
-            text: "chart view",
-            selected: view === "chart",
-            onClick: () => setView("chart")
-          }
         ]
+        // [
+        //   {
+        //     text: "table view",
+        //     selected: view === "table",
+        //     onClick: () => setView("table")
+        //   },
+        //   {
+        //     text: "chart view",
+        //     selected: view === "chart",
+        //     onClick: () => setView("chart")
+        //   }
+        // ]
       ]}
     >
       {table}

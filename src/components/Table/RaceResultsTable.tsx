@@ -10,6 +10,7 @@ interface IRaceResultsTable {
 export const RaceResultsTable = ({ data }: IRaceResultsTable) => (
   <Table
     data={data}
+    breakpoint="2xl"
     renderItem={(result) => {
       const { status, Time, positionText, position, Driver, Constructor } =
         result;
