@@ -2,7 +2,7 @@ import { Table } from ".";
 import { Constructor } from "../../utils/types/constructor";
 
 import { DriverStanding } from "../../utils/types/standings";
-import { DriverRaceResultRow } from "../Row/DriverRaceResultRow";
+import { Row } from "../Row";
 
 interface IDriverStandingsTable {
   data: DriverStanding[];
@@ -14,16 +14,14 @@ export const DriverStandingsTable = ({ data }: IDriverStandingsTable) => (
     breakpoint="lg"
     renderItem={(result) => {
       const { position, Driver, Constructors, points } = result;
-      const { givenName: name, familyName: lastname } = Driver;
+      const team = (Constructors[0] as Constructor).name;
 
       return (
-        <DriverRaceResultRow
+        <Row
           position={position}
-          driver={{
-            name,
-            lastname
-          }}
-          team={(Constructors[0] as Constructor).name}
+          name={`${Driver.givenName} ${Driver.familyName}`}
+          team={team}
+          detail={team}
           value={points}
         />
       );

@@ -1,7 +1,7 @@
 import { Table } from ".";
 
 import { DriverRaceResult } from "../../utils/types/race";
-import { DriverRaceResultRow } from "../Row/DriverRaceResultRow";
+import { Row } from "../Row";
 
 interface IRaceResultsTable {
   data: DriverRaceResult[];
@@ -14,7 +14,6 @@ export const RaceResultsTable = ({ data }: IRaceResultsTable) => (
     renderItem={(result) => {
       const { status, Time, positionText, position, Driver, Constructor } =
         result;
-      const { givenName: name, familyName: lastname } = Driver;
 
       const lowGridDriversValue = status.startsWith("+")
         ? status
@@ -24,12 +23,9 @@ export const RaceResultsTable = ({ data }: IRaceResultsTable) => (
         status === "Finished" ? (Time?.time as string) : lowGridDriversValue;
 
       return (
-        <DriverRaceResultRow
+        <Row
           position={position}
-          driver={{
-            name,
-            lastname
-          }}
+          name={`${Driver.givenName} ${Driver.familyName}`}
           team={Constructor.name}
           value={value}
         />
