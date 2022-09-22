@@ -6,33 +6,28 @@ import { IPill, Pill } from "../Pill";
 interface IResults {
   title: string;
   subtitle?: string;
-  buttons: {
-    left: IPill[];
-    right: IPill[];
-  };
+  buttons: IPill[][];
 }
 
 interface IMenu {
-  buttons: {
-    left: IPill[];
-    right: IPill[];
-  };
+  buttonGroups: IPill[][];
 }
 
-const Menu = ({ buttons }: IMenu) => {
+const Divider = () => <div className="h-3 w-px bg-brand-blue-200" />;
+
+const Menu = ({ buttonGroups }: IMenu) => {
   return (
     <div className="flex items-center gap-5">
-      <div className="flex gap-[10px]">
-        {buttons.left.map((button) => (
-          <Pill key={uuidv4()} {...button} />
-        ))}
-      </div>
-      <div className="h-3 w-px bg-brand-blue-200" />
-      <div className="flex gap-[10px]">
-        {buttons.right.map((button) => (
-          <Pill key={uuidv4()} {...button} />
-        ))}
-      </div>
+      {buttonGroups.map((buttonGroup, idx) => (
+        <>
+          <div key={uuidv4()} className="flex gap-[10px]">
+            {buttonGroup.map((button) => (
+              <Pill key={uuidv4()} {...button} />
+            ))}
+          </div>
+          {idx < buttonGroups.length - 1 && <Divider />}
+        </>
+      ))}
     </div>
   );
 };
@@ -46,12 +41,12 @@ export const Results = ({ title, subtitle, buttons }: IResults) => {
           {title}
         </h1>
         {subtitle && (
-          <p className="break-normal text-center text-base font-medium uppercase text-brand-blue-100 opacity-70">
+          <p className="whitespace-pre break-normal text-center text-base font-medium uppercase text-brand-blue-100 opacity-70">
             {subtitle}
           </p>
         )}
       </div>
-      <Menu buttons={buttons} />
+      <Menu buttonGroups={buttons} />
       {/* <Results results={results} /> */}
     </div>
   );
