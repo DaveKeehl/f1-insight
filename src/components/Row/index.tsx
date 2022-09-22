@@ -2,30 +2,26 @@ import { background, glow } from "../../utils/mappings";
 
 interface IRow {
   position: string;
-  positionText: string;
-  driver: {
-    name: string;
-    lastname: string;
-  };
+  name: string;
   team: string;
-  status: string;
   value: string;
+  detail?: string;
 }
 
-export const Row = ({ position, driver, team, value }: IRow) => {
+export const Row = ({ position, name, team, detail, value }: IRow) => {
   const corrections: { [key: string]: string } = {
     "Haas F1 Team": "haas",
-    "Alpine F1 Team": "alpine",
+    "Alpine F1 Team": "alpine"
   };
 
   const clean = {
     team: Object.keys(corrections).includes(team)
       ? corrections[team]
-      : team.toLowerCase().replace(/\s/g, ""),
+      : team.toLowerCase().replace(/\s/g, "")
   };
 
   return (
-    <div className="flex w-full justify-between rounded-lg border border-brand-blue-200 bg-brand-blue-300 px-7 py-3 text-sm">
+    <div className="mb-[10px] flex w-full justify-between rounded-lg border border-brand-blue-200 bg-brand-blue-300 px-7 py-3 text-sm">
       <div className="flex items-center gap-4">
         <p className="w-5">{position}</p>
         <div
@@ -35,9 +31,14 @@ export const Row = ({ position, driver, team, value }: IRow) => {
         />
         <div className="flex items-end gap-2">
           <p>
-            {driver.name} <span className="font-medium">{driver.lastname}</span>
+            {name.split(" ")[0]}{" "}
+            <span className="font-medium">
+              {name.split(" ").slice(1).join(" ")}
+            </span>
           </p>
-          <p className="text-xs text-brand-blue-100 opacity-70">{team}</p>
+          {detail && (
+            <p className="text-xs text-brand-blue-100 opacity-70">{detail}</p>
+          )}
         </div>
       </div>
       <p>{value}</p>

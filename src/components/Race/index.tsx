@@ -1,13 +1,21 @@
 import { useState } from "react";
 
-import { DriverRaceResult } from "../../utils/types/race";
+import {
+  DriverQualifyingResult,
+  DriverRaceResult
+} from "../../utils/types/race";
 import { Results } from "../Results";
+import { QualifyingResultsTable } from "../Table/QualifyingResultsTable";
+import { RaceResultsTable } from "../Table/RaceResultsTable";
 
 interface IRace {
   circuitId: string;
   country: string;
   date: string;
-  results: DriverRaceResult[];
+  results: {
+    race: DriverRaceResult[];
+    qualifying: DriverQualifyingResult[];
+  };
 }
 
 export const Race = ({ circuitId, country, date, results }: IRace) => {
@@ -18,6 +26,13 @@ export const Race = ({ circuitId, country, date, results }: IRace) => {
     circuitId: circuitId.replace(/_/g, " ")
   };
 
+  const table =
+    mode === "race" ? (
+      <RaceResultsTable data={results.race} />
+    ) : (
+      <QualifyingResultsTable data={results.qualifying} />
+    );
+
   return (
     <Results
       title={country}
@@ -25,7 +40,7 @@ export const Race = ({ circuitId, country, date, results }: IRace) => {
       buttons={[
         [
           {
-            text: "Qualifying",
+            text: "qualifying",
             selected: mode === "qualifying",
             onClick: () => setMode("qualifying")
           },
@@ -37,17 +52,19 @@ export const Race = ({ circuitId, country, date, results }: IRace) => {
         ],
         [
           {
-            text: "Table view",
+            text: "table view",
             selected: view === "table",
             onClick: () => setView("table")
           },
           {
-            text: "Chart view",
+            text: "chart view",
             selected: view === "chart",
             onClick: () => setView("chart")
           }
         ]
       ]}
-    />
+    >
+      {table}
+    </Results>
   );
 };

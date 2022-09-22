@@ -1,12 +1,15 @@
 import Image from "next/future/image";
 import { v4 as uuidv4 } from "uuid";
+import { DriverRaceResult } from "../../utils/types/race";
 
 import { IPill, Pill } from "../Pill";
+import { RaceResultsTable } from "../Table/RaceResultsTable";
 
-interface IResults {
+interface IResults<T, U> {
   title: string;
   subtitle?: string;
   buttons: IPill[][];
+  children: React.ReactNode;
 }
 
 interface IMenu {
@@ -32,7 +35,12 @@ const Menu = ({ buttonGroups }: IMenu) => {
   );
 };
 
-export const Results = ({ title, subtitle, buttons }: IResults) => {
+export const Results = <T, U>({
+  title,
+  subtitle,
+  buttons,
+  children
+}: IResults<T, U>) => {
   return (
     <div className="flex flex-auto flex-col items-center gap-10 overflow-scroll bg-brand-blue-400 px-14 py-12 text-brand-white-100">
       <Image src="/f1_logo.svg" alt="" width={120} height={30} />
@@ -47,7 +55,7 @@ export const Results = ({ title, subtitle, buttons }: IResults) => {
         )}
       </div>
       <Menu buttonGroups={buttons} />
-      {/* <Results results={results} /> */}
+      {children}
     </div>
   );
 };

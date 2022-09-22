@@ -42,8 +42,8 @@ export interface DriverRaceResult extends DriverResult {
 
 export interface DriverQualifyingResult extends DriverResult {
   Q1: string;
-  Q2: string;
-  Q3: string;
+  Q2?: string;
+  Q3?: string;
 }
 
 export interface RaceResult extends Race {

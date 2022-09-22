@@ -13,7 +13,7 @@ export const drivers: Driver[] = [
     givenName: "Alexander",
     familyName: "Albon",
     dateOfBirth: "1996-03-23",
-    nationality: "Thai",
+    nationality: "Thai"
   },
   {
     driverId: "alonso",
@@ -23,7 +23,7 @@ export const drivers: Driver[] = [
     givenName: "Fernando",
     familyName: "Alonso",
     dateOfBirth: "1981-07-29",
-    nationality: "Spanish",
+    nationality: "Spanish"
   },
   {
     driverId: "bottas",
@@ -33,7 +33,7 @@ export const drivers: Driver[] = [
     givenName: "Valtteri",
     familyName: "Bottas",
     dateOfBirth: "1989-08-28",
-    nationality: "Finnish",
+    nationality: "Finnish"
   },
   {
     driverId: "de_vries",
@@ -43,7 +43,7 @@ export const drivers: Driver[] = [
     givenName: "Nyck",
     familyName: "de Vries",
     dateOfBirth: "1995-02-06",
-    nationality: "Dutch",
+    nationality: "Dutch"
   },
   {
     driverId: "gasly",
@@ -53,7 +53,7 @@ export const drivers: Driver[] = [
     givenName: "Pierre",
     familyName: "Gasly",
     dateOfBirth: "1996-02-07",
-    nationality: "French",
+    nationality: "French"
   },
   {
     driverId: "hamilton",
@@ -63,7 +63,7 @@ export const drivers: Driver[] = [
     givenName: "Lewis",
     familyName: "Hamilton",
     dateOfBirth: "1985-01-07",
-    nationality: "British",
+    nationality: "British"
   },
   {
     driverId: "hulkenberg",
@@ -73,7 +73,7 @@ export const drivers: Driver[] = [
     givenName: "Nico",
     familyName: "Hülkenberg",
     dateOfBirth: "1987-08-19",
-    nationality: "German",
+    nationality: "German"
   },
   {
     driverId: "latifi",
@@ -83,7 +83,7 @@ export const drivers: Driver[] = [
     givenName: "Nicholas",
     familyName: "Latifi",
     dateOfBirth: "1995-06-29",
-    nationality: "Canadian",
+    nationality: "Canadian"
   },
   {
     driverId: "leclerc",
@@ -93,7 +93,7 @@ export const drivers: Driver[] = [
     givenName: "Charles",
     familyName: "Leclerc",
     dateOfBirth: "1997-10-16",
-    nationality: "Monegasque",
+    nationality: "Monegasque"
   },
   {
     driverId: "kevin_magnussen",
@@ -103,7 +103,7 @@ export const drivers: Driver[] = [
     givenName: "Kevin",
     familyName: "Magnussen",
     dateOfBirth: "1992-10-05",
-    nationality: "Danish",
+    nationality: "Danish"
   },
   {
     driverId: "norris",
@@ -113,7 +113,7 @@ export const drivers: Driver[] = [
     givenName: "Lando",
     familyName: "Norris",
     dateOfBirth: "1999-11-13",
-    nationality: "British",
+    nationality: "British"
   },
   {
     driverId: "ocon",
@@ -123,7 +123,7 @@ export const drivers: Driver[] = [
     givenName: "Esteban",
     familyName: "Ocon",
     dateOfBirth: "1996-09-17",
-    nationality: "French",
+    nationality: "French"
   },
   {
     driverId: "perez",
@@ -133,7 +133,7 @@ export const drivers: Driver[] = [
     givenName: "Sergio",
     familyName: "Pérez",
     dateOfBirth: "1990-01-26",
-    nationality: "Mexican",
+    nationality: "Mexican"
   },
   {
     driverId: "ricciardo",
@@ -143,7 +143,7 @@ export const drivers: Driver[] = [
     givenName: "Daniel",
     familyName: "Ricciardo",
     dateOfBirth: "1989-07-01",
-    nationality: "Australian",
+    nationality: "Australian"
   },
   {
     driverId: "russell",
@@ -153,7 +153,7 @@ export const drivers: Driver[] = [
     givenName: "George",
     familyName: "Russell",
     dateOfBirth: "1998-02-15",
-    nationality: "British",
+    nationality: "British"
   },
   {
     driverId: "sainz",
@@ -163,7 +163,7 @@ export const drivers: Driver[] = [
     givenName: "Carlos",
     familyName: "Sainz",
     dateOfBirth: "1994-09-01",
-    nationality: "Spanish",
+    nationality: "Spanish"
   },
   {
     driverId: "mick_schumacher",
@@ -173,7 +173,7 @@ export const drivers: Driver[] = [
     givenName: "Mick",
     familyName: "Schumacher",
     dateOfBirth: "1999-03-22",
-    nationality: "German",
+    nationality: "German"
   },
   {
     driverId: "stroll",
@@ -183,7 +183,7 @@ export const drivers: Driver[] = [
     givenName: "Lance",
     familyName: "Stroll",
     dateOfBirth: "1998-10-29",
-    nationality: "Canadian",
+    nationality: "Canadian"
   },
   {
     driverId: "tsunoda",
@@ -193,7 +193,7 @@ export const drivers: Driver[] = [
     givenName: "Yuki",
     familyName: "Tsunoda",
     dateOfBirth: "2000-05-11",
-    nationality: "Japanese",
+    nationality: "Japanese"
   },
   {
     driverId: "max_verstappen",
@@ -203,7 +203,7 @@ export const drivers: Driver[] = [
     givenName: "Max",
     familyName: "Verstappen",
     dateOfBirth: "1997-09-30",
-    nationality: "Dutch",
+    nationality: "Dutch"
   },
   {
     driverId: "vettel",
@@ -213,7 +213,7 @@ export const drivers: Driver[] = [
     givenName: "Sebastian",
     familyName: "Vettel",
     dateOfBirth: "1987-07-03",
-    nationality: "German",
+    nationality: "German"
   },
   {
     driverId: "zhou",
@@ -223,8 +223,8 @@ export const drivers: Driver[] = [
     givenName: "Guanyu",
     familyName: "Zhou",
     dateOfBirth: "1999-05-30",
-    nationality: "Chinese",
-  },
+    nationality: "Chinese"
+  }
 ];
 
 // https://ergast.com/api/f1/current/constructors.json
@@ -233,62 +233,62 @@ export const constructors: Constructor[] = [
     constructorId: "alfa",
     url: "http://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One",
     name: "Alfa Romeo",
-    nationality: "Swiss",
+    nationality: "Swiss"
   },
   {
     constructorId: "alphatauri",
     url: "http://en.wikipedia.org/wiki/Scuderia_AlphaTauri",
     name: "AlphaTauri",
-    nationality: "Italian",
+    nationality: "Italian"
   },
   {
     constructorId: "alpine",
     url: "http://en.wikipedia.org/wiki/Alpine_F1_Team",
     name: "Alpine F1 Team",
-    nationality: "French",
+    nationality: "French"
   },
   {
     constructorId: "aston_martin",
     url: "http://en.wikipedia.org/wiki/Aston_Martin_in_Formula_One",
     name: "Aston Martin",
-    nationality: "British",
+    nationality: "British"
   },
   {
     constructorId: "ferrari",
     url: "http://en.wikipedia.org/wiki/Scuderia_Ferrari",
     name: "Ferrari",
-    nationality: "Italian",
+    nationality: "Italian"
   },
   {
     constructorId: "haas",
     url: "http://en.wikipedia.org/wiki/Haas_F1_Team",
     name: "Haas F1 Team",
-    nationality: "American",
+    nationality: "American"
   },
   {
     constructorId: "mclaren",
     url: "http://en.wikipedia.org/wiki/McLaren",
     name: "McLaren",
-    nationality: "British",
+    nationality: "British"
   },
   {
     constructorId: "mercedes",
     url: "http://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One",
     name: "Mercedes",
-    nationality: "German",
+    nationality: "German"
   },
   {
     constructorId: "red_bull",
     url: "http://en.wikipedia.org/wiki/Red_Bull_Racing",
     name: "Red Bull",
-    nationality: "Austrian",
+    nationality: "Austrian"
   },
   {
     constructorId: "williams",
     url: "http://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering",
     name: "Williams",
-    nationality: "British",
-  },
+    nationality: "British"
+  }
 ];
 
 // https://ergast.com/api/f1/current/driverStandings.json
@@ -306,16 +306,16 @@ export const driverStandings: DriverStanding[] = [
       givenName: "Max",
       familyName: "Verstappen",
       dateOfBirth: "1997-09-30",
-      nationality: "Dutch",
+      nationality: "Dutch"
     },
     Constructors: [
       {
         constructorId: "red_bull",
         url: "http://en.wikipedia.org/wiki/Red_Bull_Racing",
         name: "Red Bull",
-        nationality: "Austrian",
-      },
-    ],
+        nationality: "Austrian"
+      }
+    ]
   },
   {
     position: "2",
@@ -330,16 +330,16 @@ export const driverStandings: DriverStanding[] = [
       givenName: "Charles",
       familyName: "Leclerc",
       dateOfBirth: "1997-10-16",
-      nationality: "Monegasque",
+      nationality: "Monegasque"
     },
     Constructors: [
       {
         constructorId: "ferrari",
         url: "http://en.wikipedia.org/wiki/Scuderia_Ferrari",
         name: "Ferrari",
-        nationality: "Italian",
-      },
-    ],
+        nationality: "Italian"
+      }
+    ]
   },
   {
     position: "3",
@@ -354,16 +354,16 @@ export const driverStandings: DriverStanding[] = [
       givenName: "Sergio",
       familyName: "Pérez",
       dateOfBirth: "1990-01-26",
-      nationality: "Mexican",
+      nationality: "Mexican"
     },
     Constructors: [
       {
         constructorId: "red_bull",
         url: "http://en.wikipedia.org/wiki/Red_Bull_Racing",
         name: "Red Bull",
-        nationality: "Austrian",
-      },
-    ],
+        nationality: "Austrian"
+      }
+    ]
   },
   {
     position: "4",
@@ -378,16 +378,16 @@ export const driverStandings: DriverStanding[] = [
       givenName: "George",
       familyName: "Russell",
       dateOfBirth: "1998-02-15",
-      nationality: "British",
+      nationality: "British"
     },
     Constructors: [
       {
         constructorId: "mercedes",
         url: "http://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One",
         name: "Mercedes",
-        nationality: "German",
-      },
-    ],
+        nationality: "German"
+      }
+    ]
   },
   {
     position: "5",
@@ -402,16 +402,16 @@ export const driverStandings: DriverStanding[] = [
       givenName: "Carlos",
       familyName: "Sainz",
       dateOfBirth: "1994-09-01",
-      nationality: "Spanish",
+      nationality: "Spanish"
     },
     Constructors: [
       {
         constructorId: "ferrari",
         url: "http://en.wikipedia.org/wiki/Scuderia_Ferrari",
         name: "Ferrari",
-        nationality: "Italian",
-      },
-    ],
+        nationality: "Italian"
+      }
+    ]
   },
   {
     position: "6",
@@ -426,16 +426,16 @@ export const driverStandings: DriverStanding[] = [
       givenName: "Lewis",
       familyName: "Hamilton",
       dateOfBirth: "1985-01-07",
-      nationality: "British",
+      nationality: "British"
     },
     Constructors: [
       {
         constructorId: "mercedes",
         url: "http://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One",
         name: "Mercedes",
-        nationality: "German",
-      },
-    ],
+        nationality: "German"
+      }
+    ]
   },
   {
     position: "7",
@@ -450,16 +450,16 @@ export const driverStandings: DriverStanding[] = [
       givenName: "Lando",
       familyName: "Norris",
       dateOfBirth: "1999-11-13",
-      nationality: "British",
+      nationality: "British"
     },
     Constructors: [
       {
         constructorId: "mclaren",
         url: "http://en.wikipedia.org/wiki/McLaren",
         name: "McLaren",
-        nationality: "British",
-      },
-    ],
+        nationality: "British"
+      }
+    ]
   },
   {
     position: "8",
@@ -474,16 +474,16 @@ export const driverStandings: DriverStanding[] = [
       givenName: "Esteban",
       familyName: "Ocon",
       dateOfBirth: "1996-09-17",
-      nationality: "French",
+      nationality: "French"
     },
     Constructors: [
       {
         constructorId: "alpine",
         url: "http://en.wikipedia.org/wiki/Alpine_F1_Team",
         name: "Alpine F1 Team",
-        nationality: "French",
-      },
-    ],
+        nationality: "French"
+      }
+    ]
   },
   {
     position: "9",
@@ -498,16 +498,16 @@ export const driverStandings: DriverStanding[] = [
       givenName: "Fernando",
       familyName: "Alonso",
       dateOfBirth: "1981-07-29",
-      nationality: "Spanish",
+      nationality: "Spanish"
     },
     Constructors: [
       {
         constructorId: "alpine",
         url: "http://en.wikipedia.org/wiki/Alpine_F1_Team",
         name: "Alpine F1 Team",
-        nationality: "French",
-      },
-    ],
+        nationality: "French"
+      }
+    ]
   },
   {
     position: "10",
@@ -522,16 +522,16 @@ export const driverStandings: DriverStanding[] = [
       givenName: "Valtteri",
       familyName: "Bottas",
       dateOfBirth: "1989-08-28",
-      nationality: "Finnish",
+      nationality: "Finnish"
     },
     Constructors: [
       {
         constructorId: "alfa",
         url: "http://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One",
         name: "Alfa Romeo",
-        nationality: "Swiss",
-      },
-    ],
+        nationality: "Swiss"
+      }
+    ]
   },
   {
     position: "11",
@@ -546,16 +546,16 @@ export const driverStandings: DriverStanding[] = [
       givenName: "Pierre",
       familyName: "Gasly",
       dateOfBirth: "1996-02-07",
-      nationality: "French",
+      nationality: "French"
     },
     Constructors: [
       {
         constructorId: "alphatauri",
         url: "http://en.wikipedia.org/wiki/Scuderia_AlphaTauri",
         name: "AlphaTauri",
-        nationality: "Italian",
-      },
-    ],
+        nationality: "Italian"
+      }
+    ]
   },
   {
     position: "12",
@@ -570,16 +570,16 @@ export const driverStandings: DriverStanding[] = [
       givenName: "Kevin",
       familyName: "Magnussen",
       dateOfBirth: "1992-10-05",
-      nationality: "Danish",
+      nationality: "Danish"
     },
     Constructors: [
       {
         constructorId: "haas",
         url: "http://en.wikipedia.org/wiki/Haas_F1_Team",
         name: "Haas F1 Team",
-        nationality: "American",
-      },
-    ],
+        nationality: "American"
+      }
+    ]
   },
   {
     position: "13",
@@ -594,16 +594,16 @@ export const driverStandings: DriverStanding[] = [
       givenName: "Sebastian",
       familyName: "Vettel",
       dateOfBirth: "1987-07-03",
-      nationality: "German",
+      nationality: "German"
     },
     Constructors: [
       {
         constructorId: "aston_martin",
         url: "http://en.wikipedia.org/wiki/Aston_Martin_in_Formula_One",
         name: "Aston Martin",
-        nationality: "British",
-      },
-    ],
+        nationality: "British"
+      }
+    ]
   },
   {
     position: "14",
@@ -618,16 +618,16 @@ export const driverStandings: DriverStanding[] = [
       givenName: "Daniel",
       familyName: "Ricciardo",
       dateOfBirth: "1989-07-01",
-      nationality: "Australian",
+      nationality: "Australian"
     },
     Constructors: [
       {
         constructorId: "mclaren",
         url: "http://en.wikipedia.org/wiki/McLaren",
         name: "McLaren",
-        nationality: "British",
-      },
-    ],
+        nationality: "British"
+      }
+    ]
   },
   {
     position: "15",
@@ -642,16 +642,16 @@ export const driverStandings: DriverStanding[] = [
       givenName: "Mick",
       familyName: "Schumacher",
       dateOfBirth: "1999-03-22",
-      nationality: "German",
+      nationality: "German"
     },
     Constructors: [
       {
         constructorId: "haas",
         url: "http://en.wikipedia.org/wiki/Haas_F1_Team",
         name: "Haas F1 Team",
-        nationality: "American",
-      },
-    ],
+        nationality: "American"
+      }
+    ]
   },
   {
     position: "16",
@@ -666,16 +666,16 @@ export const driverStandings: DriverStanding[] = [
       givenName: "Yuki",
       familyName: "Tsunoda",
       dateOfBirth: "2000-05-11",
-      nationality: "Japanese",
+      nationality: "Japanese"
     },
     Constructors: [
       {
         constructorId: "alphatauri",
         url: "http://en.wikipedia.org/wiki/Scuderia_AlphaTauri",
         name: "AlphaTauri",
-        nationality: "Italian",
-      },
-    ],
+        nationality: "Italian"
+      }
+    ]
   },
   {
     position: "17",
@@ -690,16 +690,16 @@ export const driverStandings: DriverStanding[] = [
       givenName: "Guanyu",
       familyName: "Zhou",
       dateOfBirth: "1999-05-30",
-      nationality: "Chinese",
+      nationality: "Chinese"
     },
     Constructors: [
       {
         constructorId: "alfa",
         url: "http://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One",
         name: "Alfa Romeo",
-        nationality: "Swiss",
-      },
-    ],
+        nationality: "Swiss"
+      }
+    ]
   },
   {
     position: "18",
@@ -714,16 +714,16 @@ export const driverStandings: DriverStanding[] = [
       givenName: "Lance",
       familyName: "Stroll",
       dateOfBirth: "1998-10-29",
-      nationality: "Canadian",
+      nationality: "Canadian"
     },
     Constructors: [
       {
         constructorId: "aston_martin",
         url: "http://en.wikipedia.org/wiki/Aston_Martin_in_Formula_One",
         name: "Aston Martin",
-        nationality: "British",
-      },
-    ],
+        nationality: "British"
+      }
+    ]
   },
   {
     position: "19",
@@ -738,16 +738,16 @@ export const driverStandings: DriverStanding[] = [
       givenName: "Alexander",
       familyName: "Albon",
       dateOfBirth: "1996-03-23",
-      nationality: "Thai",
+      nationality: "Thai"
     },
     Constructors: [
       {
         constructorId: "williams",
         url: "http://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering",
         name: "Williams",
-        nationality: "British",
-      },
-    ],
+        nationality: "British"
+      }
+    ]
   },
   {
     position: "20",
@@ -762,16 +762,16 @@ export const driverStandings: DriverStanding[] = [
       givenName: "Nyck",
       familyName: "de Vries",
       dateOfBirth: "1995-02-06",
-      nationality: "Dutch",
+      nationality: "Dutch"
     },
     Constructors: [
       {
         constructorId: "williams",
         url: "http://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering",
         name: "Williams",
-        nationality: "British",
-      },
-    ],
+        nationality: "British"
+      }
+    ]
   },
   {
     position: "21",
@@ -786,16 +786,16 @@ export const driverStandings: DriverStanding[] = [
       givenName: "Nicholas",
       familyName: "Latifi",
       dateOfBirth: "1995-06-29",
-      nationality: "Canadian",
+      nationality: "Canadian"
     },
     Constructors: [
       {
         constructorId: "williams",
         url: "http://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering",
         name: "Williams",
-        nationality: "British",
-      },
-    ],
+        nationality: "British"
+      }
+    ]
   },
   {
     position: "22",
@@ -810,17 +810,17 @@ export const driverStandings: DriverStanding[] = [
       givenName: "Nico",
       familyName: "Hülkenberg",
       dateOfBirth: "1987-08-19",
-      nationality: "German",
+      nationality: "German"
     },
     Constructors: [
       {
         constructorId: "aston_martin",
         url: "http://en.wikipedia.org/wiki/Aston_Martin_in_Formula_One",
         name: "Aston Martin",
-        nationality: "British",
-      },
-    ],
-  },
+        nationality: "British"
+      }
+    ]
+  }
 ];
 
 // https://ergast.com/api/f1/current.json
@@ -838,27 +838,27 @@ export const races: RaceSchedule[] = [
         lat: "26.0325",
         long: "50.5106",
         locality: "Sakhir",
-        country: "Bahrain",
-      },
+        country: "Bahrain"
+      }
     },
     date: "2022-03-20",
     time: "15:00:00Z",
     FirstPractice: {
       date: "2022-03-18",
-      time: "12:00:00Z",
+      time: "12:00:00Z"
     },
     SecondPractice: {
       date: "2022-03-18",
-      time: "15:00:00Z",
+      time: "15:00:00Z"
     },
     ThirdPractice: {
       date: "2022-03-19",
-      time: "12:00:00Z",
+      time: "12:00:00Z"
     },
     Qualifying: {
       date: "2022-03-19",
-      time: "15:00:00Z",
-    },
+      time: "15:00:00Z"
+    }
   },
   {
     season: "2022",
@@ -873,27 +873,27 @@ export const races: RaceSchedule[] = [
         lat: "21.6319",
         long: "39.1044",
         locality: "Jeddah",
-        country: "Saudi Arabia",
-      },
+        country: "Saudi Arabia"
+      }
     },
     date: "2022-03-27",
     time: "17:00:00Z",
     FirstPractice: {
       date: "2022-03-25",
-      time: "14:00:00Z",
+      time: "14:00:00Z"
     },
     SecondPractice: {
       date: "2022-03-25",
-      time: "17:00:00Z",
+      time: "17:00:00Z"
     },
     ThirdPractice: {
       date: "2022-03-26",
-      time: "14:00:00Z",
+      time: "14:00:00Z"
     },
     Qualifying: {
       date: "2022-03-26",
-      time: "17:00:00Z",
-    },
+      time: "17:00:00Z"
+    }
   },
   {
     season: "2022",
@@ -908,27 +908,27 @@ export const races: RaceSchedule[] = [
         lat: "-37.8497",
         long: "144.968",
         locality: "Melbourne",
-        country: "Australia",
-      },
+        country: "Australia"
+      }
     },
     date: "2022-04-10",
     time: "05:00:00Z",
     FirstPractice: {
       date: "2022-04-08",
-      time: "03:00:00Z",
+      time: "03:00:00Z"
     },
     SecondPractice: {
       date: "2022-04-08",
-      time: "06:00:00Z",
+      time: "06:00:00Z"
     },
     ThirdPractice: {
       date: "2022-04-09",
-      time: "03:00:00Z",
+      time: "03:00:00Z"
     },
     Qualifying: {
       date: "2022-04-09",
-      time: "06:00:00Z",
-    },
+      time: "06:00:00Z"
+    }
   },
   {
     season: "2022",
@@ -943,27 +943,27 @@ export const races: RaceSchedule[] = [
         lat: "44.3439",
         long: "11.7167",
         locality: "Imola",
-        country: "Italy",
-      },
+        country: "Italy"
+      }
     },
     date: "2022-04-24",
     time: "13:00:00Z",
     FirstPractice: {
       date: "2022-04-22",
-      time: "11:30:00Z",
+      time: "11:30:00Z"
     },
     Qualifying: {
       date: "2022-04-22",
-      time: "15:00:00Z",
+      time: "15:00:00Z"
     },
     SecondPractice: {
       date: "2022-04-23",
-      time: "10:30:00Z",
+      time: "10:30:00Z"
     },
     Sprint: {
       date: "2022-04-23",
-      time: "14:30:00Z",
-    },
+      time: "14:30:00Z"
+    }
   },
   {
     season: "2022",
@@ -978,27 +978,27 @@ export const races: RaceSchedule[] = [
         lat: "25.9581",
         long: "-80.2389",
         locality: "Miami",
-        country: "USA",
-      },
+        country: "USA"
+      }
     },
     date: "2022-05-08",
     time: "19:30:00Z",
     FirstPractice: {
       date: "2022-05-06",
-      time: "18:30:00Z",
+      time: "18:30:00Z"
     },
     SecondPractice: {
       date: "2022-05-06",
-      time: "21:30:00Z",
+      time: "21:30:00Z"
     },
     ThirdPractice: {
       date: "2022-05-07",
-      time: "17:00:00Z",
+      time: "17:00:00Z"
     },
     Qualifying: {
       date: "2022-05-07",
-      time: "20:00:00Z",
-    },
+      time: "20:00:00Z"
+    }
   },
   {
     season: "2022",
@@ -1013,27 +1013,27 @@ export const races: RaceSchedule[] = [
         lat: "41.57",
         long: "2.26111",
         locality: "Montmeló",
-        country: "Spain",
-      },
+        country: "Spain"
+      }
     },
     date: "2022-05-22",
     time: "13:00:00Z",
     FirstPractice: {
       date: "2022-05-20",
-      time: "12:00:00Z",
+      time: "12:00:00Z"
     },
     SecondPractice: {
       date: "2022-05-20",
-      time: "15:00:00Z",
+      time: "15:00:00Z"
     },
     ThirdPractice: {
       date: "2022-05-21",
-      time: "11:00:00Z",
+      time: "11:00:00Z"
     },
     Qualifying: {
       date: "2022-05-21",
-      time: "14:00:00Z",
-    },
+      time: "14:00:00Z"
+    }
   },
   {
     season: "2022",
@@ -1048,27 +1048,27 @@ export const races: RaceSchedule[] = [
         lat: "43.7347",
         long: "7.42056",
         locality: "Monte-Carlo",
-        country: "Monaco",
-      },
+        country: "Monaco"
+      }
     },
     date: "2022-05-29",
     time: "13:00:00Z",
     FirstPractice: {
       date: "2022-05-27",
-      time: "12:00:00Z",
+      time: "12:00:00Z"
     },
     SecondPractice: {
       date: "2022-05-27",
-      time: "15:00:00Z",
+      time: "15:00:00Z"
     },
     ThirdPractice: {
       date: "2022-05-28",
-      time: "11:00:00Z",
+      time: "11:00:00Z"
     },
     Qualifying: {
       date: "2022-05-28",
-      time: "14:00:00Z",
-    },
+      time: "14:00:00Z"
+    }
   },
   {
     season: "2022",
@@ -1083,27 +1083,27 @@ export const races: RaceSchedule[] = [
         lat: "40.3725",
         long: "49.8533",
         locality: "Baku",
-        country: "Azerbaijan",
-      },
+        country: "Azerbaijan"
+      }
     },
     date: "2022-06-12",
     time: "11:00:00Z",
     FirstPractice: {
       date: "2022-06-10",
-      time: "11:00:00Z",
+      time: "11:00:00Z"
     },
     SecondPractice: {
       date: "2022-06-10",
-      time: "14:00:00Z",
+      time: "14:00:00Z"
     },
     ThirdPractice: {
       date: "2022-06-11",
-      time: "11:00:00Z",
+      time: "11:00:00Z"
     },
     Qualifying: {
       date: "2022-06-11",
-      time: "14:00:00Z",
-    },
+      time: "14:00:00Z"
+    }
   },
   {
     season: "2022",
@@ -1118,27 +1118,27 @@ export const races: RaceSchedule[] = [
         lat: "45.5",
         long: "-73.5228",
         locality: "Montreal",
-        country: "Canada",
-      },
+        country: "Canada"
+      }
     },
     date: "2022-06-19",
     time: "18:00:00Z",
     FirstPractice: {
       date: "2022-06-17",
-      time: "18:00:00Z",
+      time: "18:00:00Z"
     },
     SecondPractice: {
       date: "2022-06-17",
-      time: "21:00:00Z",
+      time: "21:00:00Z"
     },
     ThirdPractice: {
       date: "2022-06-18",
-      time: "17:00:00Z",
+      time: "17:00:00Z"
     },
     Qualifying: {
       date: "2022-06-18",
-      time: "20:00:00Z",
-    },
+      time: "20:00:00Z"
+    }
   },
   {
     season: "2022",
@@ -1153,27 +1153,27 @@ export const races: RaceSchedule[] = [
         lat: "52.0786",
         long: "-1.01694",
         locality: "Silverstone",
-        country: "UK",
-      },
+        country: "UK"
+      }
     },
     date: "2022-07-03",
     time: "14:00:00Z",
     FirstPractice: {
       date: "2022-07-01",
-      time: "12:00:00Z",
+      time: "12:00:00Z"
     },
     SecondPractice: {
       date: "2022-07-01",
-      time: "15:00:00Z",
+      time: "15:00:00Z"
     },
     ThirdPractice: {
       date: "2022-07-02",
-      time: "11:00:00Z",
+      time: "11:00:00Z"
     },
     Qualifying: {
       date: "2022-07-02",
-      time: "14:00:00Z",
-    },
+      time: "14:00:00Z"
+    }
   },
   {
     season: "2022",
@@ -1188,27 +1188,27 @@ export const races: RaceSchedule[] = [
         lat: "47.2197",
         long: "14.7647",
         locality: "Spielberg",
-        country: "Austria",
-      },
+        country: "Austria"
+      }
     },
     date: "2022-07-10",
     time: "13:00:00Z",
     FirstPractice: {
       date: "2022-07-08",
-      time: "11:30:00Z",
+      time: "11:30:00Z"
     },
     Qualifying: {
       date: "2022-07-08",
-      time: "15:00:00Z",
+      time: "15:00:00Z"
     },
     SecondPractice: {
       date: "2022-07-09",
-      time: "10:30:00Z",
+      time: "10:30:00Z"
     },
     Sprint: {
       date: "2022-07-09",
-      time: "14:30:00Z",
-    },
+      time: "14:30:00Z"
+    }
   },
   {
     season: "2022",
@@ -1223,27 +1223,27 @@ export const races: RaceSchedule[] = [
         lat: "43.2506",
         long: "5.79167",
         locality: "Le Castellet",
-        country: "France",
-      },
+        country: "France"
+      }
     },
     date: "2022-07-24",
     time: "13:00:00Z",
     FirstPractice: {
       date: "2022-07-22",
-      time: "12:00:00Z",
+      time: "12:00:00Z"
     },
     SecondPractice: {
       date: "2022-07-22",
-      time: "15:00:00Z",
+      time: "15:00:00Z"
     },
     ThirdPractice: {
       date: "2022-07-23",
-      time: "11:00:00Z",
+      time: "11:00:00Z"
     },
     Qualifying: {
       date: "2022-07-23",
-      time: "14:00:00Z",
-    },
+      time: "14:00:00Z"
+    }
   },
   {
     season: "2022",
@@ -1258,27 +1258,27 @@ export const races: RaceSchedule[] = [
         lat: "47.5789",
         long: "19.2486",
         locality: "Budapest",
-        country: "Hungary",
-      },
+        country: "Hungary"
+      }
     },
     date: "2022-07-31",
     time: "13:00:00Z",
     FirstPractice: {
       date: "2022-07-29",
-      time: "12:00:00Z",
+      time: "12:00:00Z"
     },
     SecondPractice: {
       date: "2022-07-29",
-      time: "15:00:00Z",
+      time: "15:00:00Z"
     },
     ThirdPractice: {
       date: "2022-07-30",
-      time: "11:00:00Z",
+      time: "11:00:00Z"
     },
     Qualifying: {
       date: "2022-07-30",
-      time: "14:00:00Z",
-    },
+      time: "14:00:00Z"
+    }
   },
   {
     season: "2022",
@@ -1293,27 +1293,27 @@ export const races: RaceSchedule[] = [
         lat: "50.4372",
         long: "5.97139",
         locality: "Spa",
-        country: "Belgium",
-      },
+        country: "Belgium"
+      }
     },
     date: "2022-08-28",
     time: "13:00:00Z",
     FirstPractice: {
       date: "2022-08-26",
-      time: "12:00:00Z",
+      time: "12:00:00Z"
     },
     SecondPractice: {
       date: "2022-08-26",
-      time: "15:00:00Z",
+      time: "15:00:00Z"
     },
     ThirdPractice: {
       date: "2022-08-27",
-      time: "11:00:00Z",
+      time: "11:00:00Z"
     },
     Qualifying: {
       date: "2022-08-27",
-      time: "14:00:00Z",
-    },
+      time: "14:00:00Z"
+    }
   },
   {
     season: "2022",
@@ -1328,27 +1328,27 @@ export const races: RaceSchedule[] = [
         lat: "52.3888",
         long: "4.54092",
         locality: "Zandvoort",
-        country: "Netherlands",
-      },
+        country: "Netherlands"
+      }
     },
     date: "2022-09-04",
     time: "13:00:00Z",
     FirstPractice: {
       date: "2022-09-02",
-      time: "10:30:00Z",
+      time: "10:30:00Z"
     },
     SecondPractice: {
       date: "2022-09-02",
-      time: "14:00:00Z",
+      time: "14:00:00Z"
     },
     ThirdPractice: {
       date: "2022-09-03",
-      time: "10:00:00Z",
+      time: "10:00:00Z"
     },
     Qualifying: {
       date: "2022-09-03",
-      time: "13:00:00Z",
-    },
+      time: "13:00:00Z"
+    }
   },
   {
     season: "2022",
@@ -1363,27 +1363,27 @@ export const races: RaceSchedule[] = [
         lat: "45.6156",
         long: "9.28111",
         locality: "Monza",
-        country: "Italy",
-      },
+        country: "Italy"
+      }
     },
     date: "2022-09-11",
     time: "13:00:00Z",
     FirstPractice: {
       date: "2022-09-09",
-      time: "12:00:00Z",
+      time: "12:00:00Z"
     },
     SecondPractice: {
       date: "2022-09-09",
-      time: "15:00:00Z",
+      time: "15:00:00Z"
     },
     ThirdPractice: {
       date: "2022-09-10",
-      time: "11:00:00Z",
+      time: "11:00:00Z"
     },
     Qualifying: {
       date: "2022-09-10",
-      time: "14:00:00Z",
-    },
+      time: "14:00:00Z"
+    }
   },
   {
     season: "2022",
@@ -1398,27 +1398,27 @@ export const races: RaceSchedule[] = [
         lat: "1.2914",
         long: "103.864",
         locality: "Marina Bay",
-        country: "Singapore",
-      },
+        country: "Singapore"
+      }
     },
     date: "2022-10-02",
     time: "12:00:00Z",
     FirstPractice: {
       date: "2022-09-30",
-      time: "10:00:00Z",
+      time: "10:00:00Z"
     },
     SecondPractice: {
       date: "2022-09-30",
-      time: "13:00:00Z",
+      time: "13:00:00Z"
     },
     ThirdPractice: {
       date: "2022-10-01",
-      time: "10:00:00Z",
+      time: "10:00:00Z"
     },
     Qualifying: {
       date: "2022-10-01",
-      time: "13:00:00Z",
-    },
+      time: "13:00:00Z"
+    }
   },
   {
     season: "2022",
@@ -1433,27 +1433,27 @@ export const races: RaceSchedule[] = [
         lat: "34.8431",
         long: "136.541",
         locality: "Suzuka",
-        country: "Japan",
-      },
+        country: "Japan"
+      }
     },
     date: "2022-10-09",
     time: "05:00:00Z",
     FirstPractice: {
       date: "2022-10-07",
-      time: "03:00:00Z",
+      time: "03:00:00Z"
     },
     SecondPractice: {
       date: "2022-10-07",
-      time: "06:00:00Z",
+      time: "06:00:00Z"
     },
     ThirdPractice: {
       date: "2022-10-08",
-      time: "03:00:00Z",
+      time: "03:00:00Z"
     },
     Qualifying: {
       date: "2022-10-08",
-      time: "06:00:00Z",
-    },
+      time: "06:00:00Z"
+    }
   },
   {
     season: "2022",
@@ -1468,27 +1468,27 @@ export const races: RaceSchedule[] = [
         lat: "30.1328",
         long: "-97.6411",
         locality: "Austin",
-        country: "USA",
-      },
+        country: "USA"
+      }
     },
     date: "2022-10-23",
     time: "19:00:00Z",
     FirstPractice: {
       date: "2022-10-21",
-      time: "19:00:00Z",
+      time: "19:00:00Z"
     },
     SecondPractice: {
       date: "2022-10-21",
-      time: "22:00:00Z",
+      time: "22:00:00Z"
     },
     ThirdPractice: {
       date: "2022-10-22",
-      time: "19:00:00Z",
+      time: "19:00:00Z"
     },
     Qualifying: {
       date: "2022-10-22",
-      time: "22:00:00Z",
-    },
+      time: "22:00:00Z"
+    }
   },
   {
     season: "2022",
@@ -1503,27 +1503,27 @@ export const races: RaceSchedule[] = [
         lat: "19.4042",
         long: "-99.0907",
         locality: "Mexico City",
-        country: "Mexico",
-      },
+        country: "Mexico"
+      }
     },
     date: "2022-10-30",
     time: "20:00:00Z",
     FirstPractice: {
       date: "2022-10-28",
-      time: "18:00:00Z",
+      time: "18:00:00Z"
     },
     SecondPractice: {
       date: "2022-10-28",
-      time: "21:00:00Z",
+      time: "21:00:00Z"
     },
     ThirdPractice: {
       date: "2022-10-29",
-      time: "17:00:00Z",
+      time: "17:00:00Z"
     },
     Qualifying: {
       date: "2022-10-29",
-      time: "20:00:00Z",
-    },
+      time: "20:00:00Z"
+    }
   },
   {
     season: "2022",
@@ -1538,27 +1538,27 @@ export const races: RaceSchedule[] = [
         lat: "-23.7036",
         long: "-46.6997",
         locality: "São Paulo",
-        country: "Brazil",
-      },
+        country: "Brazil"
+      }
     },
     date: "2022-11-13",
     time: "18:00:00Z",
     FirstPractice: {
       date: "2022-11-11",
-      time: "15:30:00Z",
+      time: "15:30:00Z"
     },
     Qualifying: {
       date: "2022-11-11",
-      time: "19:00:00Z",
+      time: "19:00:00Z"
     },
     SecondPractice: {
       date: "2022-11-12",
-      time: "15:30:00Z",
+      time: "15:30:00Z"
     },
     Sprint: {
       date: "2022-11-12",
-      time: "19:30:00Z",
-    },
+      time: "19:30:00Z"
+    }
   },
   {
     season: "2022",
@@ -1573,28 +1573,28 @@ export const races: RaceSchedule[] = [
         lat: "24.4672",
         long: "54.6031",
         locality: "Abu Dhabi",
-        country: "UAE",
-      },
+        country: "UAE"
+      }
     },
     date: "2022-11-20",
     time: "13:00:00Z",
     FirstPractice: {
       date: "2022-11-18",
-      time: "10:00:00Z",
+      time: "10:00:00Z"
     },
     SecondPractice: {
       date: "2022-11-18",
-      time: "13:00:00Z",
+      time: "13:00:00Z"
     },
     ThirdPractice: {
       date: "2022-11-19",
-      time: "11:00:00Z",
+      time: "11:00:00Z"
     },
     Qualifying: {
       date: "2022-11-19",
-      time: "14:00:00Z",
-    },
-  },
+      time: "14:00:00Z"
+    }
+  }
 ];
 
 // https://ergast.com/api/f1/current/drivers/max_verstappen/results.json
@@ -1612,8 +1612,8 @@ export const verstappenRaceResults: RaceResult[] = [
         lat: "26.0325",
         long: "50.5106",
         locality: "Sakhir",
-        country: "Bahrain",
-      },
+        country: "Bahrain"
+      }
     },
     date: "2022-03-20",
     time: "15:00:00Z",
@@ -1631,13 +1631,13 @@ export const verstappenRaceResults: RaceResult[] = [
           givenName: "Max",
           familyName: "Verstappen",
           dateOfBirth: "1997-09-30",
-          nationality: "Dutch",
+          nationality: "Dutch"
         },
         Constructor: {
           constructorId: "red_bull",
           url: "http://en.wikipedia.org/wiki/Red_Bull_Racing",
           name: "Red Bull",
-          nationality: "Austrian",
+          nationality: "Austrian"
         },
         grid: "2",
         laps: "54",
@@ -1646,15 +1646,15 @@ export const verstappenRaceResults: RaceResult[] = [
           rank: "2",
           lap: "51",
           Time: {
-            time: "1:35.440",
+            time: "1:35.440"
           },
           AverageSpeed: {
             units: "kph",
-            speed: "204.140",
-          },
-        },
-      },
-    ],
+            speed: "204.140"
+          }
+        }
+      }
+    ]
   },
   {
     season: "2022",
@@ -1669,8 +1669,8 @@ export const verstappenRaceResults: RaceResult[] = [
         lat: "21.6319",
         long: "39.1044",
         locality: "Jeddah",
-        country: "Saudi Arabia",
-      },
+        country: "Saudi Arabia"
+      }
     },
     date: "2022-03-27",
     time: "17:00:00Z",
@@ -1688,34 +1688,34 @@ export const verstappenRaceResults: RaceResult[] = [
           givenName: "Max",
           familyName: "Verstappen",
           dateOfBirth: "1997-09-30",
-          nationality: "Dutch",
+          nationality: "Dutch"
         },
         Constructor: {
           constructorId: "red_bull",
           url: "http://en.wikipedia.org/wiki/Red_Bull_Racing",
           name: "Red Bull",
-          nationality: "Austrian",
+          nationality: "Austrian"
         },
         grid: "4",
         laps: "50",
         status: "Finished",
         Time: {
           millis: "5059293",
-          time: "1:24:19.293",
+          time: "1:24:19.293"
         },
         FastestLap: {
           rank: "2",
           lap: "50",
           Time: {
-            time: "1:31.772",
+            time: "1:31.772"
           },
           AverageSpeed: {
             units: "kph",
-            speed: "242.191",
-          },
-        },
-      },
-    ],
+            speed: "242.191"
+          }
+        }
+      }
+    ]
   },
   {
     season: "2022",
@@ -1730,8 +1730,8 @@ export const verstappenRaceResults: RaceResult[] = [
         lat: "-37.8497",
         long: "144.968",
         locality: "Melbourne",
-        country: "Australia",
-      },
+        country: "Australia"
+      }
     },
     date: "2022-04-10",
     time: "05:00:00Z",
@@ -1749,13 +1749,13 @@ export const verstappenRaceResults: RaceResult[] = [
           givenName: "Max",
           familyName: "Verstappen",
           dateOfBirth: "1997-09-30",
-          nationality: "Dutch",
+          nationality: "Dutch"
         },
         Constructor: {
           constructorId: "red_bull",
           url: "http://en.wikipedia.org/wiki/Red_Bull_Racing",
           name: "Red Bull",
-          nationality: "Austrian",
+          nationality: "Austrian"
         },
         grid: "2",
         laps: "38",
@@ -1764,15 +1764,15 @@ export const verstappenRaceResults: RaceResult[] = [
           rank: "6",
           lap: "37",
           Time: {
-            time: "1:21.677",
+            time: "1:21.677"
           },
           AverageSpeed: {
             units: "kph",
-            speed: "232.633",
-          },
-        },
-      },
-    ],
+            speed: "232.633"
+          }
+        }
+      }
+    ]
   },
   {
     season: "2022",
@@ -1787,8 +1787,8 @@ export const verstappenRaceResults: RaceResult[] = [
         lat: "44.3439",
         long: "11.7167",
         locality: "Imola",
-        country: "Italy",
-      },
+        country: "Italy"
+      }
     },
     date: "2022-04-24",
     time: "13:00:00Z",
@@ -1806,34 +1806,34 @@ export const verstappenRaceResults: RaceResult[] = [
           givenName: "Max",
           familyName: "Verstappen",
           dateOfBirth: "1997-09-30",
-          nationality: "Dutch",
+          nationality: "Dutch"
         },
         Constructor: {
           constructorId: "red_bull",
           url: "http://en.wikipedia.org/wiki/Red_Bull_Racing",
           name: "Red Bull",
-          nationality: "Austrian",
+          nationality: "Austrian"
         },
         grid: "1",
         laps: "63",
         status: "Finished",
         Time: {
           millis: "5527986",
-          time: "1:32:07.986",
+          time: "1:32:07.986"
         },
         FastestLap: {
           rank: "1",
           lap: "55",
           Time: {
-            time: "1:18.446",
+            time: "1:18.446"
           },
           AverageSpeed: {
             units: "kph",
-            speed: "225.281",
-          },
-        },
-      },
-    ],
+            speed: "225.281"
+          }
+        }
+      }
+    ]
   },
   {
     season: "2022",
@@ -1848,8 +1848,8 @@ export const verstappenRaceResults: RaceResult[] = [
         lat: "25.9581",
         long: "-80.2389",
         locality: "Miami",
-        country: "USA",
-      },
+        country: "USA"
+      }
     },
     date: "2022-05-08",
     time: "19:30:00Z",
@@ -1867,34 +1867,34 @@ export const verstappenRaceResults: RaceResult[] = [
           givenName: "Max",
           familyName: "Verstappen",
           dateOfBirth: "1997-09-30",
-          nationality: "Dutch",
+          nationality: "Dutch"
         },
         Constructor: {
           constructorId: "red_bull",
           url: "http://en.wikipedia.org/wiki/Red_Bull_Racing",
           name: "Red Bull",
-          nationality: "Austrian",
+          nationality: "Austrian"
         },
         grid: "3",
         laps: "57",
         status: "Finished",
         Time: {
           millis: "5664258",
-          time: "1:34:24.258",
+          time: "1:34:24.258"
         },
         FastestLap: {
           rank: "1",
           lap: "54",
           Time: {
-            time: "1:31.361",
+            time: "1:31.361"
           },
           AverageSpeed: {
             units: "kph",
-            speed: "213.255",
-          },
-        },
-      },
-    ],
+            speed: "213.255"
+          }
+        }
+      }
+    ]
   },
   {
     season: "2022",
@@ -1909,8 +1909,8 @@ export const verstappenRaceResults: RaceResult[] = [
         lat: "41.57",
         long: "2.26111",
         locality: "Montmeló",
-        country: "Spain",
-      },
+        country: "Spain"
+      }
     },
     date: "2022-05-22",
     time: "13:00:00Z",
@@ -1928,34 +1928,34 @@ export const verstappenRaceResults: RaceResult[] = [
           givenName: "Max",
           familyName: "Verstappen",
           dateOfBirth: "1997-09-30",
-          nationality: "Dutch",
+          nationality: "Dutch"
         },
         Constructor: {
           constructorId: "red_bull",
           url: "http://en.wikipedia.org/wiki/Red_Bull_Racing",
           name: "Red Bull",
-          nationality: "Austrian",
+          nationality: "Austrian"
         },
         grid: "2",
         laps: "66",
         status: "Finished",
         Time: {
           millis: "5840475",
-          time: "1:37:20.475",
+          time: "1:37:20.475"
         },
         FastestLap: {
           rank: "4",
           lap: "46",
           Time: {
-            time: "1:25.456",
+            time: "1:25.456"
           },
           AverageSpeed: {
             units: "kph",
-            speed: "196.943",
-          },
-        },
-      },
-    ],
+            speed: "196.943"
+          }
+        }
+      }
+    ]
   },
   {
     season: "2022",
@@ -1970,8 +1970,8 @@ export const verstappenRaceResults: RaceResult[] = [
         lat: "43.7347",
         long: "7.42056",
         locality: "Monte-Carlo",
-        country: "Monaco",
-      },
+        country: "Monaco"
+      }
     },
     date: "2022-05-29",
     time: "13:00:00Z",
@@ -1989,34 +1989,34 @@ export const verstappenRaceResults: RaceResult[] = [
           givenName: "Max",
           familyName: "Verstappen",
           dateOfBirth: "1997-09-30",
-          nationality: "Dutch",
+          nationality: "Dutch"
         },
         Constructor: {
           constructorId: "red_bull",
           url: "http://en.wikipedia.org/wiki/Red_Bull_Racing",
           name: "Red Bull",
-          nationality: "Austrian",
+          nationality: "Austrian"
         },
         grid: "4",
         laps: "64",
         status: "Finished",
         Time: {
           millis: "6991756",
-          time: "+1.491",
+          time: "+1.491"
         },
         FastestLap: {
           rank: "5",
           lap: "47",
           Time: {
-            time: "1:16.052",
+            time: "1:16.052"
           },
           AverageSpeed: {
             units: "kph",
-            speed: "157.960",
-          },
-        },
-      },
-    ],
+            speed: "157.960"
+          }
+        }
+      }
+    ]
   },
   {
     season: "2022",
@@ -2031,8 +2031,8 @@ export const verstappenRaceResults: RaceResult[] = [
         lat: "40.3725",
         long: "49.8533",
         locality: "Baku",
-        country: "Azerbaijan",
-      },
+        country: "Azerbaijan"
+      }
     },
     date: "2022-06-12",
     time: "11:00:00Z",
@@ -2050,34 +2050,34 @@ export const verstappenRaceResults: RaceResult[] = [
           givenName: "Max",
           familyName: "Verstappen",
           dateOfBirth: "1997-09-30",
-          nationality: "Dutch",
+          nationality: "Dutch"
         },
         Constructor: {
           constructorId: "red_bull",
           url: "http://en.wikipedia.org/wiki/Red_Bull_Racing",
           name: "Red Bull",
-          nationality: "Austrian",
+          nationality: "Austrian"
         },
         grid: "3",
         laps: "51",
         status: "Finished",
         Time: {
           millis: "5645941",
-          time: "1:34:05.941",
+          time: "1:34:05.941"
         },
         FastestLap: {
           rank: "2",
           lap: "50",
           Time: {
-            time: "1:46.050",
+            time: "1:46.050"
           },
           AverageSpeed: {
             units: "kph",
-            speed: "203.779",
-          },
-        },
-      },
-    ],
+            speed: "203.779"
+          }
+        }
+      }
+    ]
   },
   {
     season: "2022",
@@ -2092,8 +2092,8 @@ export const verstappenRaceResults: RaceResult[] = [
         lat: "45.5",
         long: "-73.5228",
         locality: "Montreal",
-        country: "Canada",
-      },
+        country: "Canada"
+      }
     },
     date: "2022-06-19",
     time: "18:00:00Z",
@@ -2111,34 +2111,34 @@ export const verstappenRaceResults: RaceResult[] = [
           givenName: "Max",
           familyName: "Verstappen",
           dateOfBirth: "1997-09-30",
-          nationality: "Dutch",
+          nationality: "Dutch"
         },
         Constructor: {
           constructorId: "red_bull",
           url: "http://en.wikipedia.org/wiki/Red_Bull_Racing",
           name: "Red Bull",
-          nationality: "Austrian",
+          nationality: "Austrian"
         },
         grid: "1",
         laps: "70",
         status: "Finished",
         Time: {
           millis: "5781757",
-          time: "1:36:21.757",
+          time: "1:36:21.757"
         },
         FastestLap: {
           rank: "2",
           lap: "64",
           Time: {
-            time: "1:15.839",
+            time: "1:15.839"
           },
           AverageSpeed: {
             units: "kph",
-            speed: "207.012",
-          },
-        },
-      },
-    ],
+            speed: "207.012"
+          }
+        }
+      }
+    ]
   },
   {
     season: "2022",
@@ -2153,8 +2153,8 @@ export const verstappenRaceResults: RaceResult[] = [
         lat: "52.0786",
         long: "-1.01694",
         locality: "Silverstone",
-        country: "UK",
-      },
+        country: "UK"
+      }
     },
     date: "2022-07-03",
     time: "14:00:00Z",
@@ -2172,34 +2172,34 @@ export const verstappenRaceResults: RaceResult[] = [
           givenName: "Max",
           familyName: "Verstappen",
           dateOfBirth: "1997-09-30",
-          nationality: "Dutch",
+          nationality: "Dutch"
         },
         Constructor: {
           constructorId: "red_bull",
           url: "http://en.wikipedia.org/wiki/Red_Bull_Racing",
           name: "Red Bull",
-          nationality: "Austrian",
+          nationality: "Austrian"
         },
         grid: "2",
         laps: "52",
         status: "Finished",
         Time: {
           millis: "8289088",
-          time: "+18.777",
+          time: "+18.777"
         },
         FastestLap: {
           rank: "8",
           lap: "44",
           Time: {
-            time: "1:32.354",
+            time: "1:32.354"
           },
           AverageSpeed: {
             units: "kph",
-            speed: "229.633",
-          },
-        },
-      },
-    ],
+            speed: "229.633"
+          }
+        }
+      }
+    ]
   },
   {
     season: "2022",
@@ -2214,8 +2214,8 @@ export const verstappenRaceResults: RaceResult[] = [
         lat: "47.2197",
         long: "14.7647",
         locality: "Spielberg",
-        country: "Austria",
-      },
+        country: "Austria"
+      }
     },
     date: "2022-07-10",
     time: "13:00:00Z",
@@ -2233,34 +2233,34 @@ export const verstappenRaceResults: RaceResult[] = [
           givenName: "Max",
           familyName: "Verstappen",
           dateOfBirth: "1997-09-30",
-          nationality: "Dutch",
+          nationality: "Dutch"
         },
         Constructor: {
           constructorId: "red_bull",
           url: "http://en.wikipedia.org/wiki/Red_Bull_Racing",
           name: "Red Bull",
-          nationality: "Austrian",
+          nationality: "Austrian"
         },
         grid: "1",
         laps: "71",
         status: "Finished",
         Time: {
           millis: "5065844",
-          time: "+1.532",
+          time: "+1.532"
         },
         FastestLap: {
           rank: "1",
           lap: "62",
           Time: {
-            time: "1:07.275",
+            time: "1:07.275"
           },
           AverageSpeed: {
             units: "kph",
-            speed: "231.063",
-          },
-        },
-      },
-    ],
+            speed: "231.063"
+          }
+        }
+      }
+    ]
   },
   {
     season: "2022",
@@ -2275,8 +2275,8 @@ export const verstappenRaceResults: RaceResult[] = [
         lat: "43.2506",
         long: "5.79167",
         locality: "Le Castellet",
-        country: "France",
-      },
+        country: "France"
+      }
     },
     date: "2022-07-24",
     time: "13:00:00Z",
@@ -2294,34 +2294,34 @@ export const verstappenRaceResults: RaceResult[] = [
           givenName: "Max",
           familyName: "Verstappen",
           dateOfBirth: "1997-09-30",
-          nationality: "Dutch",
+          nationality: "Dutch"
         },
         Constructor: {
           constructorId: "red_bull",
           url: "http://en.wikipedia.org/wiki/Red_Bull_Racing",
           name: "Red Bull",
-          nationality: "Austrian",
+          nationality: "Austrian"
         },
         grid: "2",
         laps: "53",
         status: "Finished",
         Time: {
           millis: "5402112",
-          time: "1:30:02.112",
+          time: "1:30:02.112"
         },
         FastestLap: {
           rank: "2",
           lap: "30",
           Time: {
-            time: "1:37.491",
+            time: "1:37.491"
           },
           AverageSpeed: {
             units: "kph",
-            speed: "215.724",
-          },
-        },
-      },
-    ],
+            speed: "215.724"
+          }
+        }
+      }
+    ]
   },
   {
     season: "2022",
@@ -2336,8 +2336,8 @@ export const verstappenRaceResults: RaceResult[] = [
         lat: "47.5789",
         long: "19.2486",
         locality: "Budapest",
-        country: "Hungary",
-      },
+        country: "Hungary"
+      }
     },
     date: "2022-07-31",
     time: "13:00:00Z",
@@ -2355,34 +2355,34 @@ export const verstappenRaceResults: RaceResult[] = [
           givenName: "Max",
           familyName: "Verstappen",
           dateOfBirth: "1997-09-30",
-          nationality: "Dutch",
+          nationality: "Dutch"
         },
         Constructor: {
           constructorId: "red_bull",
           url: "http://en.wikipedia.org/wiki/Red_Bull_Racing",
           name: "Red Bull",
-          nationality: "Austrian",
+          nationality: "Austrian"
         },
         grid: "10",
         laps: "70",
         status: "Finished",
         Time: {
           millis: "5975912",
-          time: "1:39:35.912",
+          time: "1:39:35.912"
         },
         FastestLap: {
           rank: "6",
           lap: "45",
           Time: {
-            time: "1:22.126",
+            time: "1:22.126"
           },
           AverageSpeed: {
             units: "kph",
-            speed: "192.041",
-          },
-        },
-      },
-    ],
+            speed: "192.041"
+          }
+        }
+      }
+    ]
   },
   {
     season: "2022",
@@ -2397,8 +2397,8 @@ export const verstappenRaceResults: RaceResult[] = [
         lat: "50.4372",
         long: "5.97139",
         locality: "Spa",
-        country: "Belgium",
-      },
+        country: "Belgium"
+      }
     },
     date: "2022-08-28",
     time: "13:00:00Z",
@@ -2416,34 +2416,34 @@ export const verstappenRaceResults: RaceResult[] = [
           givenName: "Max",
           familyName: "Verstappen",
           dateOfBirth: "1997-09-30",
-          nationality: "Dutch",
+          nationality: "Dutch"
         },
         Constructor: {
           constructorId: "red_bull",
           url: "http://en.wikipedia.org/wiki/Red_Bull_Racing",
           name: "Red Bull",
-          nationality: "Austrian",
+          nationality: "Austrian"
         },
         grid: "14",
         laps: "44",
         status: "Finished",
         Time: {
           millis: "5152894",
-          time: "1:25:52.894",
+          time: "1:25:52.894"
         },
         FastestLap: {
           rank: "1",
           lap: "32",
           Time: {
-            time: "1:49.354",
+            time: "1:49.354"
           },
           AverageSpeed: {
             units: "kph",
-            speed: "230.575",
-          },
-        },
-      },
-    ],
+            speed: "230.575"
+          }
+        }
+      }
+    ]
   },
   {
     season: "2022",
@@ -2458,8 +2458,8 @@ export const verstappenRaceResults: RaceResult[] = [
         lat: "52.3888",
         long: "4.54092",
         locality: "Zandvoort",
-        country: "Netherlands",
-      },
+        country: "Netherlands"
+      }
     },
     date: "2022-09-04",
     time: "13:00:00Z",
@@ -2477,34 +2477,34 @@ export const verstappenRaceResults: RaceResult[] = [
           givenName: "Max",
           familyName: "Verstappen",
           dateOfBirth: "1997-09-30",
-          nationality: "Dutch",
+          nationality: "Dutch"
         },
         Constructor: {
           constructorId: "red_bull",
           url: "http://en.wikipedia.org/wiki/Red_Bull_Racing",
           name: "Red Bull",
-          nationality: "Austrian",
+          nationality: "Austrian"
         },
         grid: "1",
         laps: "72",
         status: "Finished",
         Time: {
           millis: "5802773",
-          time: "1:36:42.773",
+          time: "1:36:42.773"
         },
         FastestLap: {
           rank: "1",
           lap: "62",
           Time: {
-            time: "1:13.652",
+            time: "1:13.652"
           },
           AverageSpeed: {
             units: "kph",
-            speed: "208.173",
-          },
-        },
-      },
-    ],
+            speed: "208.173"
+          }
+        }
+      }
+    ]
   },
   {
     season: "2022",
@@ -2519,8 +2519,8 @@ export const verstappenRaceResults: RaceResult[] = [
         lat: "45.6156",
         long: "9.28111",
         locality: "Monza",
-        country: "Italy",
-      },
+        country: "Italy"
+      }
     },
     date: "2022-09-11",
     time: "13:00:00Z",
@@ -2538,35 +2538,35 @@ export const verstappenRaceResults: RaceResult[] = [
           givenName: "Max",
           familyName: "Verstappen",
           dateOfBirth: "1997-09-30",
-          nationality: "Dutch",
+          nationality: "Dutch"
         },
         Constructor: {
           constructorId: "red_bull",
           url: "http://en.wikipedia.org/wiki/Red_Bull_Racing",
           name: "Red Bull",
-          nationality: "Austrian",
+          nationality: "Austrian"
         },
         grid: "7",
         laps: "53",
         status: "Finished",
         Time: {
           millis: "4827511",
-          time: "1:20:27.511",
+          time: "1:20:27.511"
         },
         FastestLap: {
           rank: "6",
           lap: "38",
           Time: {
-            time: "1:24.745",
+            time: "1:24.745"
           },
           AverageSpeed: {
             units: "kph",
-            speed: "246.088",
-          },
-        },
-      },
-    ],
-  },
+            speed: "246.088"
+          }
+        }
+      }
+    ]
+  }
 ];
 
 // https://ergast.com/api/f1/current/drivers/max_verstappen/qualifying.json
@@ -2584,8 +2584,8 @@ export const verstappenQualifyingResults: QualifyingResult[] = [
         lat: "26.0325",
         long: "50.5106",
         locality: "Sakhir",
-        country: "Bahrain",
-      },
+        country: "Bahrain"
+      }
     },
     date: "2022-03-20",
     time: "15:00:00Z",
@@ -2601,19 +2601,19 @@ export const verstappenQualifyingResults: QualifyingResult[] = [
           givenName: "Max",
           familyName: "Verstappen",
           dateOfBirth: "1997-09-30",
-          nationality: "Dutch",
+          nationality: "Dutch"
         },
         Constructor: {
           constructorId: "red_bull",
           url: "http://en.wikipedia.org/wiki/Red_Bull_Racing",
           name: "Red Bull",
-          nationality: "Austrian",
+          nationality: "Austrian"
         },
         Q1: "1:31.785",
         Q2: "1:30.757",
-        Q3: "1:30.681",
-      },
-    ],
+        Q3: "1:30.681"
+      }
+    ]
   },
   {
     season: "2022",
@@ -2628,8 +2628,8 @@ export const verstappenQualifyingResults: QualifyingResult[] = [
         lat: "21.6319",
         long: "39.1044",
         locality: "Jeddah",
-        country: "Saudi Arabia",
-      },
+        country: "Saudi Arabia"
+      }
     },
     date: "2022-03-27",
     time: "17:00:00Z",
@@ -2645,19 +2645,19 @@ export const verstappenQualifyingResults: QualifyingResult[] = [
           givenName: "Max",
           familyName: "Verstappen",
           dateOfBirth: "1997-09-30",
-          nationality: "Dutch",
+          nationality: "Dutch"
         },
         Constructor: {
           constructorId: "red_bull",
           url: "http://en.wikipedia.org/wiki/Red_Bull_Racing",
           name: "Red Bull",
-          nationality: "Austrian",
+          nationality: "Austrian"
         },
         Q1: "1:28.928",
         Q2: "1:28.945",
-        Q3: "1:28.461",
-      },
-    ],
+        Q3: "1:28.461"
+      }
+    ]
   },
   {
     season: "2022",
@@ -2672,8 +2672,8 @@ export const verstappenQualifyingResults: QualifyingResult[] = [
         lat: "-37.8497",
         long: "144.968",
         locality: "Melbourne",
-        country: "Australia",
-      },
+        country: "Australia"
+      }
     },
     date: "2022-04-10",
     time: "05:00:00Z",
@@ -2689,19 +2689,19 @@ export const verstappenQualifyingResults: QualifyingResult[] = [
           givenName: "Max",
           familyName: "Verstappen",
           dateOfBirth: "1997-09-30",
-          nationality: "Dutch",
+          nationality: "Dutch"
         },
         Constructor: {
           constructorId: "red_bull",
           url: "http://en.wikipedia.org/wiki/Red_Bull_Racing",
           name: "Red Bull",
-          nationality: "Austrian",
+          nationality: "Austrian"
         },
         Q1: "1:18.580",
         Q2: "1:18.611",
-        Q3: "1:18.154",
-      },
-    ],
+        Q3: "1:18.154"
+      }
+    ]
   },
   {
     season: "2022",
@@ -2716,8 +2716,8 @@ export const verstappenQualifyingResults: QualifyingResult[] = [
         lat: "44.3439",
         long: "11.7167",
         locality: "Imola",
-        country: "Italy",
-      },
+        country: "Italy"
+      }
     },
     date: "2022-04-24",
     time: "13:00:00Z",
@@ -2733,19 +2733,19 @@ export const verstappenQualifyingResults: QualifyingResult[] = [
           givenName: "Max",
           familyName: "Verstappen",
           dateOfBirth: "1997-09-30",
-          nationality: "Dutch",
+          nationality: "Dutch"
         },
         Constructor: {
           constructorId: "red_bull",
           url: "http://en.wikipedia.org/wiki/Red_Bull_Racing",
           name: "Red Bull",
-          nationality: "Austrian",
+          nationality: "Austrian"
         },
         Q1: "1:19.295",
         Q2: "1:18.793",
-        Q3: "1:27.999",
-      },
-    ],
+        Q3: "1:27.999"
+      }
+    ]
   },
   {
     season: "2022",
@@ -2760,8 +2760,8 @@ export const verstappenQualifyingResults: QualifyingResult[] = [
         lat: "25.9581",
         long: "-80.2389",
         locality: "Miami",
-        country: "USA",
-      },
+        country: "USA"
+      }
     },
     date: "2022-05-08",
     time: "19:30:00Z",
@@ -2777,19 +2777,19 @@ export const verstappenQualifyingResults: QualifyingResult[] = [
           givenName: "Max",
           familyName: "Verstappen",
           dateOfBirth: "1997-09-30",
-          nationality: "Dutch",
+          nationality: "Dutch"
         },
         Constructor: {
           constructorId: "red_bull",
           url: "http://en.wikipedia.org/wiki/Red_Bull_Racing",
           name: "Red Bull",
-          nationality: "Austrian",
+          nationality: "Austrian"
         },
         Q1: "1:29.836",
         Q2: "1:29.202",
-        Q3: "1:28.991",
-      },
-    ],
+        Q3: "1:28.991"
+      }
+    ]
   },
   {
     season: "2022",
@@ -2804,8 +2804,8 @@ export const verstappenQualifyingResults: QualifyingResult[] = [
         lat: "41.57",
         long: "2.26111",
         locality: "Montmeló",
-        country: "Spain",
-      },
+        country: "Spain"
+      }
     },
     date: "2022-05-22",
     time: "13:00:00Z",
@@ -2821,19 +2821,19 @@ export const verstappenQualifyingResults: QualifyingResult[] = [
           givenName: "Max",
           familyName: "Verstappen",
           dateOfBirth: "1997-09-30",
-          nationality: "Dutch",
+          nationality: "Dutch"
         },
         Constructor: {
           constructorId: "red_bull",
           url: "http://en.wikipedia.org/wiki/Red_Bull_Racing",
           name: "Red Bull",
-          nationality: "Austrian",
+          nationality: "Austrian"
         },
         Q1: "1:20.091",
         Q2: "1:19.219",
-        Q3: "1:19.073",
-      },
-    ],
+        Q3: "1:19.073"
+      }
+    ]
   },
   {
     season: "2022",
@@ -2848,8 +2848,8 @@ export const verstappenQualifyingResults: QualifyingResult[] = [
         lat: "43.7347",
         long: "7.42056",
         locality: "Monte-Carlo",
-        country: "Monaco",
-      },
+        country: "Monaco"
+      }
     },
     date: "2022-05-29",
     time: "13:00:00Z",
@@ -2865,19 +2865,19 @@ export const verstappenQualifyingResults: QualifyingResult[] = [
           givenName: "Max",
           familyName: "Verstappen",
           dateOfBirth: "1997-09-30",
-          nationality: "Dutch",
+          nationality: "Dutch"
         },
         Constructor: {
           constructorId: "red_bull",
           url: "http://en.wikipedia.org/wiki/Red_Bull_Racing",
           name: "Red Bull",
-          nationality: "Austrian",
+          nationality: "Austrian"
         },
         Q1: "1:12.993",
         Q2: "1:12.117",
-        Q3: "1:11.666",
-      },
-    ],
+        Q3: "1:11.666"
+      }
+    ]
   },
   {
     season: "2022",
@@ -2892,8 +2892,8 @@ export const verstappenQualifyingResults: QualifyingResult[] = [
         lat: "40.3725",
         long: "49.8533",
         locality: "Baku",
-        country: "Azerbaijan",
-      },
+        country: "Azerbaijan"
+      }
     },
     date: "2022-06-12",
     time: "11:00:00Z",
@@ -2909,19 +2909,19 @@ export const verstappenQualifyingResults: QualifyingResult[] = [
           givenName: "Max",
           familyName: "Verstappen",
           dateOfBirth: "1997-09-30",
-          nationality: "Dutch",
+          nationality: "Dutch"
         },
         Constructor: {
           constructorId: "red_bull",
           url: "http://en.wikipedia.org/wiki/Red_Bull_Racing",
           name: "Red Bull",
-          nationality: "Austrian",
+          nationality: "Austrian"
         },
         Q1: "1:42.722",
         Q2: "1:42.227",
-        Q3: "1:41.706",
-      },
-    ],
+        Q3: "1:41.706"
+      }
+    ]
   },
   {
     season: "2022",
@@ -2936,8 +2936,8 @@ export const verstappenQualifyingResults: QualifyingResult[] = [
         lat: "45.5",
         long: "-73.5228",
         locality: "Montreal",
-        country: "Canada",
-      },
+        country: "Canada"
+      }
     },
     date: "2022-06-19",
     time: "18:00:00Z",
@@ -2953,19 +2953,19 @@ export const verstappenQualifyingResults: QualifyingResult[] = [
           givenName: "Max",
           familyName: "Verstappen",
           dateOfBirth: "1997-09-30",
-          nationality: "Dutch",
+          nationality: "Dutch"
         },
         Constructor: {
           constructorId: "red_bull",
           url: "http://en.wikipedia.org/wiki/Red_Bull_Racing",
           name: "Red Bull",
-          nationality: "Austrian",
+          nationality: "Austrian"
         },
         Q1: "1:32.219",
         Q2: "1:23.746",
-        Q3: "1:21.299",
-      },
-    ],
+        Q3: "1:21.299"
+      }
+    ]
   },
   {
     season: "2022",
@@ -2980,8 +2980,8 @@ export const verstappenQualifyingResults: QualifyingResult[] = [
         lat: "52.0786",
         long: "-1.01694",
         locality: "Silverstone",
-        country: "UK",
-      },
+        country: "UK"
+      }
     },
     date: "2022-07-03",
     time: "14:00:00Z",
@@ -2997,19 +2997,19 @@ export const verstappenQualifyingResults: QualifyingResult[] = [
           givenName: "Max",
           familyName: "Verstappen",
           dateOfBirth: "1997-09-30",
-          nationality: "Dutch",
+          nationality: "Dutch"
         },
         Constructor: {
           constructorId: "red_bull",
           url: "http://en.wikipedia.org/wiki/Red_Bull_Racing",
           name: "Red Bull",
-          nationality: "Austrian",
+          nationality: "Austrian"
         },
         Q1: "1:39.129",
         Q2: "1:40.655",
-        Q3: "1:41.055",
-      },
-    ],
+        Q3: "1:41.055"
+      }
+    ]
   },
   {
     season: "2022",
@@ -3024,8 +3024,8 @@ export const verstappenQualifyingResults: QualifyingResult[] = [
         lat: "47.2197",
         long: "14.7647",
         locality: "Spielberg",
-        country: "Austria",
-      },
+        country: "Austria"
+      }
     },
     date: "2022-07-10",
     time: "13:00:00Z",
@@ -3041,19 +3041,19 @@ export const verstappenQualifyingResults: QualifyingResult[] = [
           givenName: "Max",
           familyName: "Verstappen",
           dateOfBirth: "1997-09-30",
-          nationality: "Dutch",
+          nationality: "Dutch"
         },
         Constructor: {
           constructorId: "red_bull",
           url: "http://en.wikipedia.org/wiki/Red_Bull_Racing",
           name: "Red Bull",
-          nationality: "Austrian",
+          nationality: "Austrian"
         },
         Q1: "1:05.852",
         Q2: "1:05.374",
-        Q3: "1:04.984",
-      },
-    ],
+        Q3: "1:04.984"
+      }
+    ]
   },
   {
     season: "2022",
@@ -3068,8 +3068,8 @@ export const verstappenQualifyingResults: QualifyingResult[] = [
         lat: "43.2506",
         long: "5.79167",
         locality: "Le Castellet",
-        country: "France",
-      },
+        country: "France"
+      }
     },
     date: "2022-07-24",
     time: "13:00:00Z",
@@ -3085,19 +3085,19 @@ export const verstappenQualifyingResults: QualifyingResult[] = [
           givenName: "Max",
           familyName: "Verstappen",
           dateOfBirth: "1997-09-30",
-          nationality: "Dutch",
+          nationality: "Dutch"
         },
         Constructor: {
           constructorId: "red_bull",
           url: "http://en.wikipedia.org/wiki/Red_Bull_Racing",
           name: "Red Bull",
-          nationality: "Austrian",
+          nationality: "Austrian"
         },
         Q1: "1:31.891",
         Q2: "1:31.990",
-        Q3: "1:31.176",
-      },
-    ],
+        Q3: "1:31.176"
+      }
+    ]
   },
   {
     season: "2022",
@@ -3112,8 +3112,8 @@ export const verstappenQualifyingResults: QualifyingResult[] = [
         lat: "47.5789",
         long: "19.2486",
         locality: "Budapest",
-        country: "Hungary",
-      },
+        country: "Hungary"
+      }
     },
     date: "2022-07-31",
     time: "13:00:00Z",
@@ -3129,19 +3129,19 @@ export const verstappenQualifyingResults: QualifyingResult[] = [
           givenName: "Max",
           familyName: "Verstappen",
           dateOfBirth: "1997-09-30",
-          nationality: "Dutch",
+          nationality: "Dutch"
         },
         Constructor: {
           constructorId: "red_bull",
           url: "http://en.wikipedia.org/wiki/Red_Bull_Racing",
           name: "Red Bull",
-          nationality: "Austrian",
+          nationality: "Austrian"
         },
         Q1: "1:18.509",
         Q2: "1:17.703",
-        Q3: "1:18.823",
-      },
-    ],
+        Q3: "1:18.823"
+      }
+    ]
   },
   {
     season: "2022",
@@ -3156,8 +3156,8 @@ export const verstappenQualifyingResults: QualifyingResult[] = [
         lat: "50.4372",
         long: "5.97139",
         locality: "Spa",
-        country: "Belgium",
-      },
+        country: "Belgium"
+      }
     },
     date: "2022-08-28",
     time: "13:00:00Z",
@@ -3173,19 +3173,19 @@ export const verstappenQualifyingResults: QualifyingResult[] = [
           givenName: "Max",
           familyName: "Verstappen",
           dateOfBirth: "1997-09-30",
-          nationality: "Dutch",
+          nationality: "Dutch"
         },
         Constructor: {
           constructorId: "red_bull",
           url: "http://en.wikipedia.org/wiki/Red_Bull_Racing",
           name: "Red Bull",
-          nationality: "Austrian",
+          nationality: "Austrian"
         },
         Q1: "1:44.581",
         Q2: "1:44.723",
-        Q3: "1:43.665",
-      },
-    ],
+        Q3: "1:43.665"
+      }
+    ]
   },
   {
     season: "2022",
@@ -3200,8 +3200,8 @@ export const verstappenQualifyingResults: QualifyingResult[] = [
         lat: "52.3888",
         long: "4.54092",
         locality: "Zandvoort",
-        country: "Netherlands",
-      },
+        country: "Netherlands"
+      }
     },
     date: "2022-09-04",
     time: "13:00:00Z",
@@ -3217,19 +3217,19 @@ export const verstappenQualifyingResults: QualifyingResult[] = [
           givenName: "Max",
           familyName: "Verstappen",
           dateOfBirth: "1997-09-30",
-          nationality: "Dutch",
+          nationality: "Dutch"
         },
         Constructor: {
           constructorId: "red_bull",
           url: "http://en.wikipedia.org/wiki/Red_Bull_Racing",
           name: "Red Bull",
-          nationality: "Austrian",
+          nationality: "Austrian"
         },
         Q1: "1:11.317",
         Q2: "1:10.927",
-        Q3: "1:10.342",
-      },
-    ],
+        Q3: "1:10.342"
+      }
+    ]
   },
   {
     season: "2022",
@@ -3244,8 +3244,8 @@ export const verstappenQualifyingResults: QualifyingResult[] = [
         lat: "45.6156",
         long: "9.28111",
         locality: "Monza",
-        country: "Italy",
-      },
+        country: "Italy"
+      }
     },
     date: "2022-09-11",
     time: "13:00:00Z",
@@ -3261,20 +3261,20 @@ export const verstappenQualifyingResults: QualifyingResult[] = [
           givenName: "Max",
           familyName: "Verstappen",
           dateOfBirth: "1997-09-30",
-          nationality: "Dutch",
+          nationality: "Dutch"
         },
         Constructor: {
           constructorId: "red_bull",
           url: "http://en.wikipedia.org/wiki/Red_Bull_Racing",
           name: "Red Bull",
-          nationality: "Austrian",
+          nationality: "Austrian"
         },
         Q1: "1:20.922",
         Q2: "1:21.265",
-        Q3: "1:20.306",
-      },
-    ],
-  },
+        Q3: "1:20.306"
+      }
+    ]
+  }
 ];
 
 // https://ergast.com/api/f1/current/11/results.json
@@ -3292,8 +3292,8 @@ export const raceResult: RaceResult[] = [
         lat: "47.2197",
         long: "14.7647",
         locality: "Spielberg",
-        country: "Austria",
-      },
+        country: "Austria"
+      }
     },
     date: "2022-07-10",
     time: "13:00:00Z",
@@ -3311,32 +3311,32 @@ export const raceResult: RaceResult[] = [
           givenName: "Charles",
           familyName: "Leclerc",
           dateOfBirth: "1997-10-16",
-          nationality: "Monegasque",
+          nationality: "Monegasque"
         },
         Constructor: {
           constructorId: "ferrari",
           url: "http://en.wikipedia.org/wiki/Scuderia_Ferrari",
           name: "Ferrari",
-          nationality: "Italian",
+          nationality: "Italian"
         },
         grid: "2",
         laps: "71",
         status: "Finished",
         Time: {
           millis: "5064312",
-          time: "1:24:24.312",
+          time: "1:24:24.312"
         },
         FastestLap: {
           rank: "2",
           lap: "62",
           Time: {
-            time: "1:07.583",
+            time: "1:07.583"
           },
           AverageSpeed: {
             units: "kph",
-            speed: "230.010",
-          },
-        },
+            speed: "230.010"
+          }
+        }
       },
       {
         number: "1",
@@ -3351,32 +3351,32 @@ export const raceResult: RaceResult[] = [
           givenName: "Max",
           familyName: "Verstappen",
           dateOfBirth: "1997-09-30",
-          nationality: "Dutch",
+          nationality: "Dutch"
         },
         Constructor: {
           constructorId: "red_bull",
           url: "http://en.wikipedia.org/wiki/Red_Bull_Racing",
           name: "Red Bull",
-          nationality: "Austrian",
+          nationality: "Austrian"
         },
         grid: "1",
         laps: "71",
         status: "Finished",
         Time: {
           millis: "5065844",
-          time: "+1.532",
+          time: "+1.532"
         },
         FastestLap: {
           rank: "1",
           lap: "62",
           Time: {
-            time: "1:07.275",
+            time: "1:07.275"
           },
           AverageSpeed: {
             units: "kph",
-            speed: "231.063",
-          },
-        },
+            speed: "231.063"
+          }
+        }
       },
       {
         number: "44",
@@ -3391,32 +3391,32 @@ export const raceResult: RaceResult[] = [
           givenName: "Lewis",
           familyName: "Hamilton",
           dateOfBirth: "1985-01-07",
-          nationality: "British",
+          nationality: "British"
         },
         Constructor: {
           constructorId: "mercedes",
           url: "http://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One",
           name: "Mercedes",
-          nationality: "German",
+          nationality: "German"
         },
         grid: "8",
         laps: "71",
         status: "Finished",
         Time: {
           millis: "5105529",
-          time: "+41.217",
+          time: "+41.217"
         },
         FastestLap: {
           rank: "5",
           lap: "63",
           Time: {
-            time: "1:09.000",
+            time: "1:09.000"
           },
           AverageSpeed: {
             units: "kph",
-            speed: "225.286",
-          },
-        },
+            speed: "225.286"
+          }
+        }
       },
       {
         number: "63",
@@ -3431,32 +3431,32 @@ export const raceResult: RaceResult[] = [
           givenName: "George",
           familyName: "Russell",
           dateOfBirth: "1998-02-15",
-          nationality: "British",
+          nationality: "British"
         },
         Constructor: {
           constructorId: "mercedes",
           url: "http://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One",
           name: "Mercedes",
-          nationality: "German",
+          nationality: "German"
         },
         grid: "4",
         laps: "71",
         status: "Finished",
         Time: {
           millis: "5123284",
-          time: "+58.972",
+          time: "+58.972"
         },
         FastestLap: {
           rank: "6",
           lap: "61",
           Time: {
-            time: "1:09.075",
+            time: "1:09.075"
           },
           AverageSpeed: {
             units: "kph",
-            speed: "225.042",
-          },
-        },
+            speed: "225.042"
+          }
+        }
       },
       {
         number: "31",
@@ -3471,32 +3471,32 @@ export const raceResult: RaceResult[] = [
           givenName: "Esteban",
           familyName: "Ocon",
           dateOfBirth: "1996-09-17",
-          nationality: "French",
+          nationality: "French"
         },
         Constructor: {
           constructorId: "alpine",
           url: "http://en.wikipedia.org/wiki/Alpine_F1_Team",
           name: "Alpine F1 Team",
-          nationality: "French",
+          nationality: "French"
         },
         grid: "6",
         laps: "71",
         status: "Finished",
         Time: {
           millis: "5132748",
-          time: "+1:08.436",
+          time: "+1:08.436"
         },
         FastestLap: {
           rank: "10",
           lap: "62",
           Time: {
-            time: "1:09.559",
+            time: "1:09.559"
           },
           AverageSpeed: {
             units: "kph",
-            speed: "223.476",
-          },
-        },
+            speed: "223.476"
+          }
+        }
       },
       {
         number: "47",
@@ -3511,13 +3511,13 @@ export const raceResult: RaceResult[] = [
           givenName: "Mick",
           familyName: "Schumacher",
           dateOfBirth: "1999-03-22",
-          nationality: "German",
+          nationality: "German"
         },
         Constructor: {
           constructorId: "haas",
           url: "http://en.wikipedia.org/wiki/Haas_F1_Team",
           name: "Haas F1 Team",
-          nationality: "American",
+          nationality: "American"
         },
         grid: "9",
         laps: "70",
@@ -3526,13 +3526,13 @@ export const raceResult: RaceResult[] = [
           rank: "11",
           lap: "50",
           Time: {
-            time: "1:09.625",
+            time: "1:09.625"
           },
           AverageSpeed: {
             units: "kph",
-            speed: "223.264",
-          },
-        },
+            speed: "223.264"
+          }
+        }
       },
       {
         number: "4",
@@ -3547,13 +3547,13 @@ export const raceResult: RaceResult[] = [
           givenName: "Lando",
           familyName: "Norris",
           dateOfBirth: "1999-11-13",
-          nationality: "British",
+          nationality: "British"
         },
         Constructor: {
           constructorId: "mclaren",
           url: "http://en.wikipedia.org/wiki/McLaren",
           name: "McLaren",
-          nationality: "British",
+          nationality: "British"
         },
         grid: "10",
         laps: "70",
@@ -3562,13 +3562,13 @@ export const raceResult: RaceResult[] = [
           rank: "8",
           lap: "62",
           Time: {
-            time: "1:09.304",
+            time: "1:09.304"
           },
           AverageSpeed: {
             units: "kph",
-            speed: "224.298",
-          },
-        },
+            speed: "224.298"
+          }
+        }
       },
       {
         number: "20",
@@ -3583,13 +3583,13 @@ export const raceResult: RaceResult[] = [
           givenName: "Kevin",
           familyName: "Magnussen",
           dateOfBirth: "1992-10-05",
-          nationality: "Danish",
+          nationality: "Danish"
         },
         Constructor: {
           constructorId: "haas",
           url: "http://en.wikipedia.org/wiki/Haas_F1_Team",
           name: "Haas F1 Team",
-          nationality: "American",
+          nationality: "American"
         },
         grid: "7",
         laps: "70",
@@ -3598,13 +3598,13 @@ export const raceResult: RaceResult[] = [
           rank: "14",
           lap: "61",
           Time: {
-            time: "1:09.938",
+            time: "1:09.938"
           },
           AverageSpeed: {
             units: "kph",
-            speed: "222.265",
-          },
-        },
+            speed: "222.265"
+          }
+        }
       },
       {
         number: "3",
@@ -3619,13 +3619,13 @@ export const raceResult: RaceResult[] = [
           givenName: "Daniel",
           familyName: "Ricciardo",
           dateOfBirth: "1989-07-01",
-          nationality: "Australian",
+          nationality: "Australian"
         },
         Constructor: {
           constructorId: "mclaren",
           url: "http://en.wikipedia.org/wiki/McLaren",
           name: "McLaren",
-          nationality: "British",
+          nationality: "British"
         },
         grid: "11",
         laps: "70",
@@ -3634,13 +3634,13 @@ export const raceResult: RaceResult[] = [
           rank: "13",
           lap: "61",
           Time: {
-            time: "1:09.924",
+            time: "1:09.924"
           },
           AverageSpeed: {
             units: "kph",
-            speed: "222.309",
-          },
-        },
+            speed: "222.309"
+          }
+        }
       },
       {
         number: "14",
@@ -3655,13 +3655,13 @@ export const raceResult: RaceResult[] = [
           givenName: "Fernando",
           familyName: "Alonso",
           dateOfBirth: "1981-07-29",
-          nationality: "Spanish",
+          nationality: "Spanish"
         },
         Constructor: {
           constructorId: "alpine",
           url: "http://en.wikipedia.org/wiki/Alpine_F1_Team",
           name: "Alpine F1 Team",
-          nationality: "French",
+          nationality: "French"
         },
         grid: "19",
         laps: "70",
@@ -3670,13 +3670,13 @@ export const raceResult: RaceResult[] = [
           rank: "3",
           lap: "62",
           Time: {
-            time: "1:08.558",
+            time: "1:08.558"
           },
           AverageSpeed: {
             units: "kph",
-            speed: "226.739",
-          },
-        },
+            speed: "226.739"
+          }
+        }
       },
       {
         number: "77",
@@ -3691,13 +3691,13 @@ export const raceResult: RaceResult[] = [
           givenName: "Valtteri",
           familyName: "Bottas",
           dateOfBirth: "1989-08-28",
-          nationality: "Finnish",
+          nationality: "Finnish"
         },
         Constructor: {
           constructorId: "alfa",
           url: "http://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One",
           name: "Alfa Romeo",
-          nationality: "Swiss",
+          nationality: "Swiss"
         },
         grid: "0",
         laps: "70",
@@ -3706,13 +3706,13 @@ export const raceResult: RaceResult[] = [
           rank: "7",
           lap: "61",
           Time: {
-            time: "1:09.266",
+            time: "1:09.266"
           },
           AverageSpeed: {
             units: "kph",
-            speed: "224.421",
-          },
-        },
+            speed: "224.421"
+          }
+        }
       },
       {
         number: "23",
@@ -3727,13 +3727,13 @@ export const raceResult: RaceResult[] = [
           givenName: "Alexander",
           familyName: "Albon",
           dateOfBirth: "1996-03-23",
-          nationality: "Thai",
+          nationality: "Thai"
         },
         Constructor: {
           constructorId: "williams",
           url: "http://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering",
           name: "Williams",
-          nationality: "British",
+          nationality: "British"
         },
         grid: "15",
         laps: "70",
@@ -3742,13 +3742,13 @@ export const raceResult: RaceResult[] = [
           rank: "12",
           lap: "60",
           Time: {
-            time: "1:09.669",
+            time: "1:09.669"
           },
           AverageSpeed: {
             units: "kph",
-            speed: "223.123",
-          },
-        },
+            speed: "223.123"
+          }
+        }
       },
       {
         number: "18",
@@ -3763,13 +3763,13 @@ export const raceResult: RaceResult[] = [
           givenName: "Lance",
           familyName: "Stroll",
           dateOfBirth: "1998-10-29",
-          nationality: "Canadian",
+          nationality: "Canadian"
         },
         Constructor: {
           constructorId: "aston_martin",
           url: "http://en.wikipedia.org/wiki/Aston_Martin_in_Formula_One",
           name: "Aston Martin",
-          nationality: "British",
+          nationality: "British"
         },
         grid: "12",
         laps: "70",
@@ -3778,13 +3778,13 @@ export const raceResult: RaceResult[] = [
           rank: "17",
           lap: "64",
           Time: {
-            time: "1:10.048",
+            time: "1:10.048"
           },
           AverageSpeed: {
             units: "kph",
-            speed: "221.916",
-          },
-        },
+            speed: "221.916"
+          }
+        }
       },
       {
         number: "24",
@@ -3799,13 +3799,13 @@ export const raceResult: RaceResult[] = [
           givenName: "Guanyu",
           familyName: "Zhou",
           dateOfBirth: "1999-05-30",
-          nationality: "Chinese",
+          nationality: "Chinese"
         },
         Constructor: {
           constructorId: "alfa",
           url: "http://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One",
           name: "Alfa Romeo",
-          nationality: "Swiss",
+          nationality: "Swiss"
         },
         grid: "13",
         laps: "70",
@@ -3814,13 +3814,13 @@ export const raceResult: RaceResult[] = [
           rank: "9",
           lap: "50",
           Time: {
-            time: "1:09.380",
+            time: "1:09.380"
           },
           AverageSpeed: {
             units: "kph",
-            speed: "224.053",
-          },
-        },
+            speed: "224.053"
+          }
+        }
       },
       {
         number: "10",
@@ -3835,13 +3835,13 @@ export const raceResult: RaceResult[] = [
           givenName: "Pierre",
           familyName: "Gasly",
           dateOfBirth: "1996-02-07",
-          nationality: "French",
+          nationality: "French"
         },
         Constructor: {
           constructorId: "alphatauri",
           url: "http://en.wikipedia.org/wiki/Scuderia_AlphaTauri",
           name: "AlphaTauri",
-          nationality: "Italian",
+          nationality: "Italian"
         },
         grid: "14",
         laps: "70",
@@ -3850,13 +3850,13 @@ export const raceResult: RaceResult[] = [
           rank: "18",
           lap: "61",
           Time: {
-            time: "1:10.104",
+            time: "1:10.104"
           },
           AverageSpeed: {
             units: "kph",
-            speed: "221.739",
-          },
-        },
+            speed: "221.739"
+          }
+        }
       },
       {
         number: "22",
@@ -3871,13 +3871,13 @@ export const raceResult: RaceResult[] = [
           givenName: "Yuki",
           familyName: "Tsunoda",
           dateOfBirth: "2000-05-11",
-          nationality: "Japanese",
+          nationality: "Japanese"
         },
         Constructor: {
           constructorId: "alphatauri",
           url: "http://en.wikipedia.org/wiki/Scuderia_AlphaTauri",
           name: "AlphaTauri",
-          nationality: "Italian",
+          nationality: "Italian"
         },
         grid: "16",
         laps: "70",
@@ -3886,13 +3886,13 @@ export const raceResult: RaceResult[] = [
           rank: "16",
           lap: "62",
           Time: {
-            time: "1:10.023",
+            time: "1:10.023"
           },
           AverageSpeed: {
             units: "kph",
-            speed: "221.995",
-          },
-        },
+            speed: "221.995"
+          }
+        }
       },
       {
         number: "5",
@@ -3907,13 +3907,13 @@ export const raceResult: RaceResult[] = [
           givenName: "Sebastian",
           familyName: "Vettel",
           dateOfBirth: "1987-07-03",
-          nationality: "German",
+          nationality: "German"
         },
         Constructor: {
           constructorId: "aston_martin",
           url: "http://en.wikipedia.org/wiki/Aston_Martin_in_Formula_One",
           name: "Aston Martin",
-          nationality: "British",
+          nationality: "British"
         },
         grid: "18",
         laps: "70",
@@ -3922,13 +3922,13 @@ export const raceResult: RaceResult[] = [
           rank: "15",
           lap: "62",
           Time: {
-            time: "1:10.001",
+            time: "1:10.001"
           },
           AverageSpeed: {
             units: "kph",
-            speed: "222.065",
-          },
-        },
+            speed: "222.065"
+          }
+        }
       },
       {
         number: "55",
@@ -3943,13 +3943,13 @@ export const raceResult: RaceResult[] = [
           givenName: "Carlos",
           familyName: "Sainz",
           dateOfBirth: "1994-09-01",
-          nationality: "Spanish",
+          nationality: "Spanish"
         },
         Constructor: {
           constructorId: "ferrari",
           url: "http://en.wikipedia.org/wiki/Scuderia_Ferrari",
           name: "Ferrari",
-          nationality: "Italian",
+          nationality: "Italian"
         },
         grid: "3",
         laps: "56",
@@ -3958,13 +3958,13 @@ export const raceResult: RaceResult[] = [
           rank: "4",
           lap: "55",
           Time: {
-            time: "1:08.649",
+            time: "1:08.649"
           },
           AverageSpeed: {
             units: "kph",
-            speed: "226.438",
-          },
-        },
+            speed: "226.438"
+          }
+        }
       },
       {
         number: "6",
@@ -3979,13 +3979,13 @@ export const raceResult: RaceResult[] = [
           givenName: "Nicholas",
           familyName: "Latifi",
           dateOfBirth: "1995-06-29",
-          nationality: "Canadian",
+          nationality: "Canadian"
         },
         Constructor: {
           constructorId: "williams",
           url: "http://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering",
           name: "Williams",
-          nationality: "British",
+          nationality: "British"
         },
         grid: "17",
         laps: "48",
@@ -3994,13 +3994,13 @@ export const raceResult: RaceResult[] = [
           rank: "19",
           lap: "14",
           Time: {
-            time: "1:10.890",
+            time: "1:10.890"
           },
           AverageSpeed: {
             units: "kph",
-            speed: "219.280",
-          },
-        },
+            speed: "219.280"
+          }
+        }
       },
       {
         number: "11",
@@ -4015,13 +4015,13 @@ export const raceResult: RaceResult[] = [
           givenName: "Sergio",
           familyName: "Pérez",
           dateOfBirth: "1990-01-26",
-          nationality: "Mexican",
+          nationality: "Mexican"
         },
         Constructor: {
           constructorId: "red_bull",
           url: "http://en.wikipedia.org/wiki/Red_Bull_Racing",
           name: "Red Bull",
-          nationality: "Austrian",
+          nationality: "Austrian"
         },
         grid: "5",
         laps: "24",
@@ -4030,14 +4030,482 @@ export const raceResult: RaceResult[] = [
           rank: "20",
           lap: "5",
           Time: {
-            time: "1:11.843",
+            time: "1:11.843"
           },
           AverageSpeed: {
             units: "kph",
-            speed: "216.371",
-          },
+            speed: "216.371"
+          }
+        }
+      }
+    ]
+  }
+];
+
+export const qualifyingResult: QualifyingResult[] = [
+  {
+    season: "2022",
+    round: "11",
+    url: "http://en.wikipedia.org/wiki/2022_Austrian_Grand_Prix",
+    raceName: "Austrian Grand Prix",
+    Circuit: {
+      circuitId: "red_bull_ring",
+      url: "http://en.wikipedia.org/wiki/Red_Bull_Ring",
+      circuitName: "Red Bull Ring",
+      Location: {
+        lat: "47.2197",
+        long: "14.7647",
+        locality: "Spielberg",
+        country: "Austria"
+      }
+    },
+    date: "2022-07-10",
+    time: "13:00:00Z",
+    QualifyingResults: [
+      {
+        number: "1",
+        position: "1",
+        Driver: {
+          driverId: "max_verstappen",
+          permanentNumber: "33",
+          code: "VER",
+          url: "http://en.wikipedia.org/wiki/Max_Verstappen",
+          givenName: "Max",
+          familyName: "Verstappen",
+          dateOfBirth: "1997-09-30",
+          nationality: "Dutch"
         },
+        Constructor: {
+          constructorId: "red_bull",
+          url: "http://en.wikipedia.org/wiki/Red_Bull_Racing",
+          name: "Red Bull",
+          nationality: "Austrian"
+        },
+        Q1: "1:05.852",
+        Q2: "1:05.374",
+        Q3: "1:04.984"
       },
-    ],
-  },
+      {
+        number: "16",
+        position: "2",
+        Driver: {
+          driverId: "leclerc",
+          permanentNumber: "16",
+          code: "LEC",
+          url: "http://en.wikipedia.org/wiki/Charles_Leclerc",
+          givenName: "Charles",
+          familyName: "Leclerc",
+          dateOfBirth: "1997-10-16",
+          nationality: "Monegasque"
+        },
+        Constructor: {
+          constructorId: "ferrari",
+          url: "http://en.wikipedia.org/wiki/Scuderia_Ferrari",
+          name: "Ferrari",
+          nationality: "Italian"
+        },
+        Q1: "1:05.419",
+        Q2: "1:05.287",
+        Q3: "1:05.013"
+      },
+      {
+        number: "55",
+        position: "3",
+        Driver: {
+          driverId: "sainz",
+          permanentNumber: "55",
+          code: "SAI",
+          url: "http://en.wikipedia.org/wiki/Carlos_Sainz_Jr.",
+          givenName: "Carlos",
+          familyName: "Sainz",
+          dateOfBirth: "1994-09-01",
+          nationality: "Spanish"
+        },
+        Constructor: {
+          constructorId: "ferrari",
+          url: "http://en.wikipedia.org/wiki/Scuderia_Ferrari",
+          name: "Ferrari",
+          nationality: "Italian"
+        },
+        Q1: "1:05.660",
+        Q2: "1:05.576",
+        Q3: "1:05.066"
+      },
+      {
+        number: "63",
+        position: "4",
+        Driver: {
+          driverId: "russell",
+          permanentNumber: "63",
+          code: "RUS",
+          url: "http://en.wikipedia.org/wiki/George_Russell_%28racing_driver%29",
+          givenName: "George",
+          familyName: "Russell",
+          dateOfBirth: "1998-02-15",
+          nationality: "British"
+        },
+        Constructor: {
+          constructorId: "mercedes",
+          url: "http://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One",
+          name: "Mercedes",
+          nationality: "German"
+        },
+        Q1: "1:06.235",
+        Q2: "1:05.697",
+        Q3: "1:05.431"
+      },
+      {
+        number: "31",
+        position: "5",
+        Driver: {
+          driverId: "ocon",
+          permanentNumber: "31",
+          code: "OCO",
+          url: "http://en.wikipedia.org/wiki/Esteban_Ocon",
+          givenName: "Esteban",
+          familyName: "Ocon",
+          dateOfBirth: "1996-09-17",
+          nationality: "French"
+        },
+        Constructor: {
+          constructorId: "alpine",
+          url: "http://en.wikipedia.org/wiki/Alpine_F1_Team",
+          name: "Alpine F1 Team",
+          nationality: "French"
+        },
+        Q1: "1:06.468",
+        Q2: "1:05.993",
+        Q3: "1:05.726"
+      },
+      {
+        number: "20",
+        position: "6",
+        Driver: {
+          driverId: "kevin_magnussen",
+          permanentNumber: "20",
+          code: "MAG",
+          url: "http://en.wikipedia.org/wiki/Kevin_Magnussen",
+          givenName: "Kevin",
+          familyName: "Magnussen",
+          dateOfBirth: "1992-10-05",
+          nationality: "Danish"
+        },
+        Constructor: {
+          constructorId: "haas",
+          url: "http://en.wikipedia.org/wiki/Haas_F1_Team",
+          name: "Haas F1 Team",
+          nationality: "American"
+        },
+        Q1: "1:06.366",
+        Q2: "1:05.894",
+        Q3: "1:05.879"
+      },
+      {
+        number: "47",
+        position: "7",
+        Driver: {
+          driverId: "mick_schumacher",
+          permanentNumber: "47",
+          code: "MSC",
+          url: "http://en.wikipedia.org/wiki/Mick_Schumacher",
+          givenName: "Mick",
+          familyName: "Schumacher",
+          dateOfBirth: "1999-03-22",
+          nationality: "German"
+        },
+        Constructor: {
+          constructorId: "haas",
+          url: "http://en.wikipedia.org/wiki/Haas_F1_Team",
+          name: "Haas F1 Team",
+          nationality: "American"
+        },
+        Q1: "1:06.405",
+        Q2: "1:06.151",
+        Q3: "1:06.011"
+      },
+      {
+        number: "14",
+        position: "8",
+        Driver: {
+          driverId: "alonso",
+          permanentNumber: "14",
+          code: "ALO",
+          url: "http://en.wikipedia.org/wiki/Fernando_Alonso",
+          givenName: "Fernando",
+          familyName: "Alonso",
+          dateOfBirth: "1981-07-29",
+          nationality: "Spanish"
+        },
+        Constructor: {
+          constructorId: "alpine",
+          url: "http://en.wikipedia.org/wiki/Alpine_F1_Team",
+          name: "Alpine F1 Team",
+          nationality: "French"
+        },
+        Q1: "1:06.016",
+        Q2: "1:06.082",
+        Q3: "1:06.103"
+      },
+      {
+        number: "44",
+        position: "9",
+        Driver: {
+          driverId: "hamilton",
+          permanentNumber: "44",
+          code: "HAM",
+          url: "http://en.wikipedia.org/wiki/Lewis_Hamilton",
+          givenName: "Lewis",
+          familyName: "Hamilton",
+          dateOfBirth: "1985-01-07",
+          nationality: "British"
+        },
+        Constructor: {
+          constructorId: "mercedes",
+          url: "http://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One",
+          name: "Mercedes",
+          nationality: "German"
+        },
+        Q1: "1:06.079",
+        Q2: "1:05.475",
+        Q3: "1:13.151"
+      },
+      {
+        number: "10",
+        position: "10",
+        Driver: {
+          driverId: "gasly",
+          permanentNumber: "10",
+          code: "GAS",
+          url: "http://en.wikipedia.org/wiki/Pierre_Gasly",
+          givenName: "Pierre",
+          familyName: "Gasly",
+          dateOfBirth: "1996-02-07",
+          nationality: "French"
+        },
+        Constructor: {
+          constructorId: "alphatauri",
+          url: "http://en.wikipedia.org/wiki/Scuderia_AlphaTauri",
+          name: "AlphaTauri",
+          nationality: "Italian"
+        },
+        Q1: "1:06.589",
+        Q2: "1:06.160"
+      },
+      {
+        number: "23",
+        position: "11",
+        Driver: {
+          driverId: "albon",
+          permanentNumber: "23",
+          code: "ALB",
+          url: "http://en.wikipedia.org/wiki/Alexander_Albon",
+          givenName: "Alexander",
+          familyName: "Albon",
+          dateOfBirth: "1996-03-23",
+          nationality: "Thai"
+        },
+        Constructor: {
+          constructorId: "williams",
+          url: "http://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering",
+          name: "Williams",
+          nationality: "British"
+        },
+        Q1: "1:06.516",
+        Q2: "1:06.230"
+      },
+      {
+        number: "77",
+        position: "12",
+        Driver: {
+          driverId: "bottas",
+          permanentNumber: "77",
+          code: "BOT",
+          url: "http://en.wikipedia.org/wiki/Valtteri_Bottas",
+          givenName: "Valtteri",
+          familyName: "Bottas",
+          dateOfBirth: "1989-08-28",
+          nationality: "Finnish"
+        },
+        Constructor: {
+          constructorId: "alfa",
+          url: "http://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One",
+          name: "Alfa Romeo",
+          nationality: "Swiss"
+        },
+        Q1: "1:06.442",
+        Q2: "1:06.319"
+      },
+      {
+        number: "11",
+        position: "13",
+        Driver: {
+          driverId: "perez",
+          permanentNumber: "11",
+          code: "PER",
+          url: "http://en.wikipedia.org/wiki/Sergio_P%C3%A9rez",
+          givenName: "Sergio",
+          familyName: "Pérez",
+          dateOfBirth: "1990-01-26",
+          nationality: "Mexican"
+        },
+        Constructor: {
+          constructorId: "red_bull",
+          url: "http://en.wikipedia.org/wiki/Red_Bull_Racing",
+          name: "Red Bull",
+          nationality: "Austrian"
+        },
+        Q1: "1:06.143",
+        Q2: "1:06.458"
+      },
+      {
+        number: "22",
+        position: "14",
+        Driver: {
+          driverId: "tsunoda",
+          permanentNumber: "22",
+          code: "TSU",
+          url: "http://en.wikipedia.org/wiki/Yuki_Tsunoda",
+          givenName: "Yuki",
+          familyName: "Tsunoda",
+          dateOfBirth: "2000-05-11",
+          nationality: "Japanese"
+        },
+        Constructor: {
+          constructorId: "alphatauri",
+          url: "http://en.wikipedia.org/wiki/Scuderia_AlphaTauri",
+          name: "AlphaTauri",
+          nationality: "Italian"
+        },
+        Q1: "1:06.463",
+        Q2: "1:06.851"
+      },
+      {
+        number: "4",
+        position: "15",
+        Driver: {
+          driverId: "norris",
+          permanentNumber: "4",
+          code: "NOR",
+          url: "http://en.wikipedia.org/wiki/Lando_Norris",
+          givenName: "Lando",
+          familyName: "Norris",
+          dateOfBirth: "1999-11-13",
+          nationality: "British"
+        },
+        Constructor: {
+          constructorId: "mclaren",
+          url: "http://en.wikipedia.org/wiki/McLaren",
+          name: "McLaren",
+          nationality: "British"
+        },
+        Q1: "1:06.330",
+        Q2: "1:25.847"
+      },
+      {
+        number: "3",
+        position: "16",
+        Driver: {
+          driverId: "ricciardo",
+          permanentNumber: "3",
+          code: "RIC",
+          url: "http://en.wikipedia.org/wiki/Daniel_Ricciardo",
+          givenName: "Daniel",
+          familyName: "Ricciardo",
+          dateOfBirth: "1989-07-01",
+          nationality: "Australian"
+        },
+        Constructor: {
+          constructorId: "mclaren",
+          url: "http://en.wikipedia.org/wiki/McLaren",
+          name: "McLaren",
+          nationality: "British"
+        },
+        Q1: "1:06.613"
+      },
+      {
+        number: "18",
+        position: "17",
+        Driver: {
+          driverId: "stroll",
+          permanentNumber: "18",
+          code: "STR",
+          url: "http://en.wikipedia.org/wiki/Lance_Stroll",
+          givenName: "Lance",
+          familyName: "Stroll",
+          dateOfBirth: "1998-10-29",
+          nationality: "Canadian"
+        },
+        Constructor: {
+          constructorId: "aston_martin",
+          url: "http://en.wikipedia.org/wiki/Aston_Martin_in_Formula_One",
+          name: "Aston Martin",
+          nationality: "British"
+        },
+        Q1: "1:06.847"
+      },
+      {
+        number: "24",
+        position: "18",
+        Driver: {
+          driverId: "zhou",
+          permanentNumber: "24",
+          code: "ZHO",
+          url: "http://en.wikipedia.org/wiki/Guanyu_Zhou",
+          givenName: "Guanyu",
+          familyName: "Zhou",
+          dateOfBirth: "1999-05-30",
+          nationality: "Chinese"
+        },
+        Constructor: {
+          constructorId: "alfa",
+          url: "http://en.wikipedia.org/wiki/Alfa_Romeo_in_Formula_One",
+          name: "Alfa Romeo",
+          nationality: "Swiss"
+        },
+        Q1: "1:06.901"
+      },
+      {
+        number: "6",
+        position: "19",
+        Driver: {
+          driverId: "latifi",
+          permanentNumber: "6",
+          code: "LAT",
+          url: "http://en.wikipedia.org/wiki/Nicholas_Latifi",
+          givenName: "Nicholas",
+          familyName: "Latifi",
+          dateOfBirth: "1995-06-29",
+          nationality: "Canadian"
+        },
+        Constructor: {
+          constructorId: "williams",
+          url: "http://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering",
+          name: "Williams",
+          nationality: "British"
+        },
+        Q1: "1:07.003"
+      },
+      {
+        number: "5",
+        position: "20",
+        Driver: {
+          driverId: "vettel",
+          permanentNumber: "5",
+          code: "VET",
+          url: "http://en.wikipedia.org/wiki/Sebastian_Vettel",
+          givenName: "Sebastian",
+          familyName: "Vettel",
+          dateOfBirth: "1987-07-03",
+          nationality: "German"
+        },
+        Constructor: {
+          constructorId: "aston_martin",
+          url: "http://en.wikipedia.org/wiki/Aston_Martin_in_Formula_One",
+          name: "Aston Martin",
+          nationality: "British"
+        },
+        Q1: "1:07.083"
+      }
+    ]
+  }
 ];
