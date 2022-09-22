@@ -1,6 +1,7 @@
 import Image from "next/future/image";
 import { capitalize } from "lodash";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 interface IRaceCard {
   round: number;
@@ -30,6 +31,13 @@ const Backdrop = () => {
 };
 
 export const RaceCard = ({ round, circuitId, country, date }: IRaceCard) => {
+  const router = useRouter();
+  const { asPath } = router;
+
+  const selected = asPath.split("/").at(-1) === round.toString();
+  const border = selected ? "border border-[6px] border-brand-white-100" : "";
+  const shadow = selected ? "shadow-brand-white" : "";
+
   const corrections: { [key: string]: string } = {
     UK: "Great Britain",
     UAE: "Abu Dhabi",
@@ -51,7 +59,9 @@ export const RaceCard = ({ round, circuitId, country, date }: IRaceCard) => {
   return (
     <Link href={`/races/${round}`}>
       <a>
-        <div className="relative flex h-36 w-64 flex-none flex-col items-center justify-center gap-2 overflow-hidden rounded-2xl p-5 text-center text-brand-white-100 hover:cursor-pointer">
+        <div
+          className={`relative flex h-36 w-64 flex-none flex-col items-center justify-center gap-2 overflow-hidden rounded-2xl p-5 text-center text-brand-white-100 transition-all hover:cursor-pointer ${border} ${shadow}`.trim()}
+        >
           <div className="z-20 drop-shadow-card-text-md">
             <h1 className="text-[22px] font-medium">
               {corrections[country] || country}

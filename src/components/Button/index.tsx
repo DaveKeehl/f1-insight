@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { ChartLine, FlagCheckered, Trophy, User, Users } from "phosphor-react";
 
 type ButtonIcon = "ChartLine" | "FlagCheckered" | "Trophy" | "User" | "Users";
@@ -30,10 +31,18 @@ const Icon = ({ name }: IIcon) => {
 };
 
 export const Button = ({ icon, href }: IButton) => {
+  const router = useRouter();
+  const { asPath } = router;
+
+  const selected = asPath.includes(href);
+  const background = selected ? "bg-brand-red-100" : "bg-brand-red-200";
+
   return (
     <Link href={href}>
       <a>
-        <button className="rounded-lg bg-brand-red-200 p-[6px] transition hover:bg-brand-red-100">
+        <button
+          className={`rounded-lg ${background} p-[6px] transition hover:bg-brand-red-100/50 active:bg-brand-red-100`}
+        >
           <Icon name={icon} />
         </button>
       </a>

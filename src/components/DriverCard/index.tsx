@@ -1,5 +1,6 @@
 import Image from "next/future/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 interface IDriverCard {
   driverNumber: number;
@@ -14,15 +15,26 @@ const Backdrop = () => {
 };
 
 export const DriverCard = ({ driverNumber, name, lastname }: IDriverCard) => {
+  const router = useRouter();
+  const { asPath } = router;
+
   const clean = {
     name: name.toLowerCase(),
     lastname: lastname.toLowerCase().replace(/\s/g, "-"),
   };
+
+  const selected =
+    decodeURI(asPath).split("/").at(-1) === `${clean.name}-${clean.lastname}`;
+  const border = selected ? "border border-[6px] border-brand-white-100" : "";
+  const shadow = selected ? "shadow-brand-white" : "";
+
   const imagePath = `/drivers/side/${clean.name}-${clean.lastname}.png`;
 
   return (
     <Link href={`/drivers/${clean.name}-${clean.lastname}`}>
-      <div className="relative flex h-36 w-64 flex-none flex-col justify-between overflow-hidden rounded-2xl bg-gradient-to-tr from-brand-white-300 to-brand-white-200 p-4 text-brand-white-100 hover:cursor-pointer">
+      <div
+        className={`relative flex h-36 w-64 flex-none flex-col justify-between overflow-hidden rounded-2xl bg-gradient-to-tr from-brand-white-300 to-brand-white-200 p-4 text-brand-white-100 transition-all hover:cursor-pointer ${border} ${shadow}`}
+      >
         <h1 className="z-20 text-xl font-medium drop-shadow-card-text-sm">
           {driverNumber}
         </h1>

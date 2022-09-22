@@ -1,9 +1,13 @@
 import Image from "next/future/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 import { Button } from "../Button";
 
 export const Sidebar = () => {
+  const router = useRouter();
+  const { pathname } = router;
+
   return (
     <aside className="flex h-screen w-16 flex-col items-center justify-between bg-brand-red-200 px-3 py-6">
       <div className="flex flex-col items-center gap-16">

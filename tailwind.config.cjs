@@ -45,7 +45,7 @@ module.exports = {
         mercedes: "0 0 95px 24px rgb(108 211 190 / 0.09)",
         redbull: "0 0 95px 24px rgb(54 113 198 / 0.13)",
         williams: "0 0 95px 24px rgb(54 190 220 / 0.13)",
-        "glow-alfaromeo": "0 0 15px rgb(201 45 75 / 1)",
+        "glow-alfaromeo": "0 0 15px rgb(201 45 75 / 0.5)",
         "glow-alphatauri": "0 0 15px rgb(94 144 169 / 0.6)",
         "glow-alpine": "0 0 15px rgb(35 147 209 / 0.6)",
         "glow-astonmartin": "0 0 15px rgb(54 140 117 / 0.5)",
@@ -57,6 +57,7 @@ module.exports = {
         "glow-williams": "0 0 15px rgb(54 190 220 / 0.4)",
         "info-dialog": "0 8px 28px rgb(0 0 0 / 0.3)",
         "brand-red": "0 0 15px rgb(225 6 1 / 0.5)",
+        "brand-white": "0 0 26px rgb(255 255 255 / 0.3)",
       },
       dropShadow: {
         "card-text-sm": "0 2px 4px rgb(6 6 9 / 0.25)",
