@@ -5,6 +5,9 @@ import { capitalize } from "lodash";
 import { Layout } from "../../components/Layout";
 import { Teams } from "../../components/Teams";
 import { Team } from "../../components/Team";
+import { driverStandings, drivers } from "../../utils/mock";
+import { getDriversWithTeam } from "../../utils/helpers";
+import { Driver } from "../../utils/types/driver";
 
 const TeamPage: NextPage = () => {
   const router = useRouter();
@@ -15,14 +18,29 @@ const TeamPage: NextPage = () => {
       team: (team as string)
         .split("-")
         .map((e) => capitalize(e))
-        .join(" "),
+        .join(" ")
     };
+
+    const teamDrivers = getDriversWithTeam(driverStandings)
+      .filter((driver) => driver.team === clean.team)
+      .map((driver) => {
+        const driverData = drivers.find(
+          (d) => d.driverId === driver.driverId
+        ) as Driver;
+
+        return {
+          name: driverData?.givenName,
+          lastname: driverData?.familyName,
+          permanentNumber: driverData?.permanentNumber,
+          nationality: driverData?.nationality
+        };
+      });
 
     if (team) {
       return (
         <Layout>
           <Teams />
-          <Team name={clean.team} />
+          <Team name={clean.team} drivers={teamDrivers} />
         </Layout>
       );
     }

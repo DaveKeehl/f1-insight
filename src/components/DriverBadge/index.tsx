@@ -1,7 +1,7 @@
 import Image from "next/future/image";
 
 interface IDriverBadge {
-  number: number;
+  number: string;
   country: string;
   className?: string;
 }
@@ -9,7 +9,7 @@ interface IDriverBadge {
 export const DriverBadge = ({
   number,
   country,
-  className = "",
+  className = ""
 }: IDriverBadge) => {
   return (
     <div
