@@ -1,4 +1,5 @@
 // src/pages/_app.tsx
+import Head from "next/head";
 import type { AppType } from "next/dist/shared/lib/utils";
 import { httpBatchLink } from "@trpc/client/links/httpBatchLink";
 import { loggerLink } from "@trpc/client/links/loggerLink";
@@ -10,7 +11,14 @@ import type { AppRouter } from "../server/router";
 import "../styles/globals.css";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <Head>
+        <title>F1 Insights</title>
+      </Head>
+      <Component {...pageProps} />
+    </>
+  );
 };
 
 const getBaseUrl = () => {
