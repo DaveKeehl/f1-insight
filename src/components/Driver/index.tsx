@@ -7,7 +7,7 @@ import { DriverBadge } from "../DriverBadge";
 import { LineChart } from "../LineChart";
 import {
   verstappenQualifyingResults,
-  verstappenRaceResults,
+  verstappenRaceResults
 } from "../../utils/mock";
 import { gradient, shadow } from "../../utils/mappings";
 
@@ -15,7 +15,7 @@ interface IDriver {
   name: string;
   lastname: string;
   team: string;
-  permanentNumber: number;
+  permanentNumber: string;
   nationality: string;
 }
 
@@ -25,17 +25,17 @@ const data = [
     color: "hsl(70, 70%, 50%)",
     data: verstappenRaceResults.map((race) => ({
       x: `${race.round} - ${race.Circuit.Location.country}`,
-      y: Number.parseInt(race.Results[0]?.position || "0"),
-    })),
+      y: Number.parseInt(race.Results[0]?.position || "0")
+    }))
   },
   {
     id: "Qualifying",
     color: "#2668d9",
     data: verstappenQualifyingResults.map((race) => ({
       x: `${race.round} - ${race.Circuit.Location.country}`,
-      y: Number.parseInt(race.QualifyingResults[0]?.position || "0"),
-    })),
-  },
+      y: Number.parseInt(race.QualifyingResults[0]?.position || "0")
+    }))
+  }
 ];
 
 const InfoDialog = () => {
@@ -81,10 +81,10 @@ const DriverData = ({
   lastname,
   team,
   permanentNumber,
-  nationality,
+  nationality
 }: IDriver) => {
   const clean = {
-    team: team.toLowerCase().replace(/\s/g, ""),
+    team: team.toLowerCase().replace(/\s/g, "")
   };
 
   return (

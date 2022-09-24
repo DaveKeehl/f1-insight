@@ -1,13 +1,17 @@
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
 
-import { Layout } from "../../components/Layout";
+import { PageLayout } from "@layouts/PageLayout";
 import { Races } from "../../components/Races";
-import { Race } from "../../components/Race";
 import { raceResult, qualifyingResult } from "../../utils/mock";
 import { getPrettyDate } from "../../utils/helpers";
+import { useState } from "react";
+import { RaceResultsTable } from "@components/Table/RaceResultsTable";
+import { QualifyingResultsTable } from "@components/Table/QualifyingResultsTable";
 
 const RacePage: NextPage = () => {
+  const [mode, setMode] = useState<"race" | "qualifying">("race");
+
   const router = useRouter();
   const { round } = router.query; // use round to fetch data
 
@@ -15,19 +19,38 @@ const RacePage: NextPage = () => {
     const { Circuit, date, Results: RaceResults } = raceResult[0];
     const { QualifyingResults } = qualifyingResult[0];
 
+    const clean = {
+      circuitId: Circuit.circuitId.replace(/_/g, " ")
+    };
+
+    const table =
+      mode === "race" ? (
+        <RaceResultsTable data={RaceResults} />
+      ) : (
+        <QualifyingResultsTable data={QualifyingResults} />
+      );
+
     return (
-      <Layout>
-        <Races />
-        <Race
-          circuitId={Circuit.circuitId}
-          country={Circuit.Location.country}
-          date={getPrettyDate(date)}
-          results={{
-            race: RaceResults,
-            qualifying: QualifyingResults
-          }}
-        />
-      </Layout>
+      <PageLayout
+        side={<Races />}
+        title={Circuit.Location.country}
+        subtitle={`@${clean.circuitId}   //   ${getPrettyDate(date)}`}
+        buttons={[
+          [
+            {
+              text: "qualifying",
+              selected: mode === "qualifying",
+              onClick: () => setMode("qualifying")
+            },
+            {
+              text: "race",
+              selected: mode === "race",
+              onClick: () => setMode("race")
+            }
+          ]
+        ]}
+        body={table}
+      />
     );
   }
 

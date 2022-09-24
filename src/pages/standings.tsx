@@ -1,17 +1,42 @@
 import type { NextPage } from "next";
+import { useState } from "react";
 
-import { Layout } from "../components/Layout";
-import { driverStandings, constructorStandings } from "../utils/mock";
-import { Standings } from "../components/Standings";
+import { PageLayout } from "@layouts/PageLayout";
+
+import { DriverStandingsTable } from "@components/Table/DriverStandingsTable";
+import { ConstructorStandingsTable } from "@components/Table/ConstructorStandingsTable";
+
+import { driverStandings, constructorStandings } from "@utils/mock";
 
 const StandingsPage: NextPage = () => {
+  const [mode, setMode] = useState<"drivers" | "constructors">("drivers");
+
+  const table =
+    mode === "drivers" ? (
+      <DriverStandingsTable data={driverStandings} />
+    ) : (
+      <ConstructorStandingsTable data={constructorStandings} />
+    );
+
   return (
-    <Layout>
-      <Standings
-        drivers={driverStandings}
-        constructors={constructorStandings}
-      />
-    </Layout>
+    <PageLayout
+      title="Standings"
+      buttons={[
+        [
+          {
+            text: "drivers",
+            selected: mode === "drivers",
+            onClick: () => setMode("drivers")
+          },
+          {
+            text: "constructors",
+            selected: mode === "constructors",
+            onClick: () => setMode("constructors")
+          }
+        ]
+      ]}
+      body={table}
+    />
   );
 };
 

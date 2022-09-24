@@ -1,9 +1,7 @@
 import Image from "next/future/image";
 import { v4 as uuidv4 } from "uuid";
-import { DriverRaceResult } from "../../utils/types/race";
 
 import { IPill, Pill } from "../Pill";
-import { RaceResultsTable } from "../Table/RaceResultsTable";
 
 interface IResults<T, U> {
   title: string;
