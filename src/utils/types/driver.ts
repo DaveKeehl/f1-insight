@@ -1,4 +1,4 @@
-export interface Driver {
+export interface IDriver {
   code: string;
   dateOfBirth: string;
   driverId: string;
@@ -7,4 +7,8 @@ export interface Driver {
   nationality: string;
   permanentNumber: string;
   url: string;
+}
+
+export interface IDriverWithTeam extends IDriver {
+  team: string;
 }

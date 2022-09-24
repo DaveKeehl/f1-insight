@@ -1,8 +1,8 @@
-import { Table } from ".";
-import { Constructor } from "../../utils/types/constructor";
-
-import { DriverStanding } from "../../utils/types/standings";
+import { Table } from "./Table";
 import { Row } from "../Row";
+
+import { Constructor } from "@utils/types/constructor";
+import { DriverStanding } from "@utils/types/standings";
 
 interface IDriverStandingsTable {
   data: DriverStanding[];

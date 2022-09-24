@@ -3,7 +3,6 @@ import { ResponsiveLine } from "@nivo/line";
 interface ILineChart {
   data: {
     id: string;
-    color: string;
     data: {
       x: string;
       y: number;
@@ -23,7 +22,7 @@ export const LineChart = ({ data, team }: ILineChart) => {
     "Alfa Romeo": { scheme: "spectral", size: 6 },
     Mercedes: { scheme: "set2", size: 3 },
     "Aston Martin": { scheme: "set2", size: 3 },
-    McLaren: { scheme: "brown_blueGreen", size: 5 },
+    McLaren: { scheme: "brown_blueGreen", size: 5 }
   };
 
   return (
@@ -37,7 +36,7 @@ export const LineChart = ({ data, team }: ILineChart) => {
         min: 1,
         max: "auto",
         stacked: false,
-        reverse: true,
+        reverse: true
       }}
       axisLeft={{
         tickSize: 5,
@@ -45,7 +44,7 @@ export const LineChart = ({ data, team }: ILineChart) => {
         tickRotation: 0,
         legend: "Position",
         legendOffset: -45,
-        legendPosition: "middle",
+        legendPosition: "middle"
       }}
       axisBottom={{
         tickSize: 5,
@@ -53,7 +52,7 @@ export const LineChart = ({ data, team }: ILineChart) => {
         tickRotation: -40,
         legend: "Race",
         legendOffset: 85,
-        legendPosition: "middle",
+        legendPosition: "middle"
       }}
       pointSize={7}
       pointColor={{ from: "color" }}
@@ -70,33 +69,35 @@ export const LineChart = ({ data, team }: ILineChart) => {
           domain: {
             line: {
               stroke: "#242433",
-              strokeWidth: 1,
-            },
+              strokeWidth: 1
+            }
           },
           ticks: {
             line: {
               stroke: "#242433",
-              strokeWidth: 0,
+              strokeWidth: 0
             },
             text: {
               fontSize: 11,
-              fill: "#454554",
-            },
-          },
+              fill: "#454554"
+            }
+          }
         },
         grid: {
           line: {
-            stroke: "#242433",
-          },
-        },
+            stroke: "#242433"
+          }
+        }
       }}
       sliceTooltip={({ slice }) => {
+        const reversedSlices = slice.points.reverse();
+
         return (
           <div className=" flex flex-col gap-1 rounded-lg border border-brand-white-100/10 bg-brand-blue-200 px-5 py-3 shadow-xl">
             <p className="text-base font-medium">
               {slice.points[0]?.data.xFormatted}
             </p>
-            {slice.points.reverse().map((point) => (
+            {reversedSlices.map((point) => (
               <p className="text-sm" key={point.id}>
                 {point.serieId.toString()}: {point.data.yFormatted}
               </p>
@@ -119,8 +120,8 @@ export const LineChart = ({ data, team }: ILineChart) => {
           symbolSize: 12,
           symbolShape: "circle",
           itemTextColor: "#C3C3D5",
-          padding: 4,
-        },
+          padding: 4
+        }
       ]}
     />
   );

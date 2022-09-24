@@ -1,7 +1,7 @@
-import { Table } from ".";
-
-import { DriverRaceResult } from "../../utils/types/race";
+import { Table } from "./Table";
 import { Row } from "../Row";
+
+import { DriverRaceResult } from "@utils/types/race";
 
 interface IRaceResultsTable {
   data: DriverRaceResult[];

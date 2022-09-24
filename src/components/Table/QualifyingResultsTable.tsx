@@ -1,4 +1,4 @@
-import { Table } from ".";
+import { Table } from "./Table";
 
 import { DriverQualifyingResult } from "../../utils/types/race";
 import { Row } from "../Row";

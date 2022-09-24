@@ -1,4 +1,5 @@
 import { sub } from "date-fns";
+import { IDriverWithTeam } from "./types/driver";
 import { DriverStanding } from "./types/standings";
 
 export const getDriversWithTeam = (driverStandings: DriverStanding[]) => {
@@ -7,13 +8,13 @@ export const getDriversWithTeam = (driverStandings: DriverStanding[]) => {
 
     const corrections: { [key: string]: string } = {
       "Alpine F1 Team": "Alpine",
-      "Haas F1 Team": "Haas",
+      "Haas F1 Team": "Haas"
     };
 
     return {
       ...driverStandings.Driver,
-      team: corrections[team] || team,
-    };
+      team: corrections[team] || team
+    } as IDriverWithTeam;
   });
 };
 
@@ -26,12 +27,12 @@ export const getPrettyDate = (date: string) => {
 
   const endDate = new Date(year, month - 1, day);
   const endMonth = endDate.toLocaleString("default", {
-    month: "short",
+    month: "short"
   });
 
   const startDate = sub(endDate, { days: 3 });
   const startMonth = startDate.toLocaleDateString("default", {
-    month: "short",
+    month: "short"
   });
 
   return (date =

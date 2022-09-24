@@ -12,13 +12,9 @@ interface IPageLayout {
   body: React.ReactNode;
 }
 
-interface IMenu {
-  buttonGroups: IPill[][];
-}
-
 const Divider = () => <div className="h-3 w-px bg-brand-blue-200" />;
 
-const Menu = ({ buttonGroups }: IMenu) => {
+const Menu = ({ buttonGroups }: { buttonGroups: IPill[][] }) => {
   return (
     <div className="flex items-center gap-5">
       {buttonGroups.map((buttonGroup, idx) => (
@@ -35,6 +31,27 @@ const Menu = ({ buttonGroups }: IMenu) => {
   );
 };
 
+const PageContext = ({
+  title,
+  subtitle
+}: {
+  title: string;
+  subtitle?: string;
+}) => {
+  return (
+    <div className="flex flex-col items-center gap-2">
+      <h1 className="text-center text-[40px] font-medium text-brand-white-100">
+        {title}
+      </h1>
+      {subtitle && (
+        <p className="whitespace-pre break-normal text-center text-base font-medium uppercase text-brand-blue-100 opacity-70">
+          {subtitle}
+        </p>
+      )}
+    </div>
+  );
+};
+
 export const PageLayout = ({
   title,
   subtitle,
@@ -47,16 +64,7 @@ export const PageLayout = ({
       {side}
       <div className="flex flex-auto flex-col items-center gap-10 overflow-scroll bg-brand-blue-400 px-14 py-12 text-brand-white-100">
         <Image src="/f1_logo.svg" alt="" width={120} height={30} />
-        <div className="flex flex-col items-center gap-2">
-          <h1 className="text-center text-[40px] font-medium text-brand-white-100">
-            {title}
-          </h1>
-          {subtitle && (
-            <p className="whitespace-pre break-normal text-center text-base font-medium uppercase text-brand-blue-100 opacity-70">
-              {subtitle}
-            </p>
-          )}
-        </div>
+        <PageContext title={title} subtitle={subtitle} />
         {buttons && <Menu buttonGroups={buttons} />}
         {body}
       </div>
