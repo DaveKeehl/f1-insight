@@ -13,9 +13,9 @@ export const Drivers = () => {
       keyExtractor={(driver) => driver.driverId}
       renderCard={(driver) => (
         <DriverCard
-          driverNumber={Number.parseInt(driver.permanentNumber)}
-          name={driver.givenName}
-          lastname={driver.familyName}
+          givenName={driver.givenName}
+          familyName={driver.familyName}
+          permanentNumber={driver.permanentNumber}
         />
       )}
     />
