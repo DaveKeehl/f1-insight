@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Image from "next/future/image";
 import { capitalize } from "lodash";
 
@@ -17,6 +18,8 @@ const Backdrop = () => {
 };
 
 export const RaceCard = ({ round, circuitId, country, date }: IRaceCard) => {
+  const [hover, setHover] = useState(false);
+
   const corrections: { [key: string]: string } = {
     UK: "Great Britain",
     UAE: "Abu Dhabi",
@@ -33,11 +36,15 @@ export const RaceCard = ({ round, circuitId, country, date }: IRaceCard) => {
   };
   const imagePath = `/races/${clean.round}-${clean.country}.jpeg`;
 
+  const hoverEffect = hover && "scale-[102%]";
+
   return (
     <Card
       href={`/races/${round}`}
       selected={(asPath) => asPath.split("/").at(-1) === round.toString()}
       className="items-center justify-center gap-2 p-5 text-center"
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
     >
       <div className="z-20 drop-shadow-card-text-md">
         <h1 className="text-[22px] font-medium">
@@ -50,7 +57,7 @@ export const RaceCard = ({ round, circuitId, country, date }: IRaceCard) => {
       <Image
         src={imagePath}
         alt={`${circuitId}, ${country}, ${date}}`}
-        className="object-cover"
+        className={`object-cover transition-transform ${hoverEffect}`}
         fill
       />
     </Card>

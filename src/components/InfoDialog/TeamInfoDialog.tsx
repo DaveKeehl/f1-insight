@@ -5,28 +5,44 @@ export const TeamInfoDialog = () => {
     <InfoDialog
       data={[
         {
-          title: "Podiums",
-          value: "20"
+          title: "Base",
+          value: "Milton Keynes, United Kingdom"
         },
         {
-          title: "Points",
-          value: "779"
+          title: "Team Chief",
+          value: "Christian Horner"
         },
         {
-          title: "Grands Prix entered",
-          value: "97"
+          title: "Technical Chief",
+          value: "Pierre Waché"
+        },
+        {
+          title: "Chassis",
+          value: "RB18"
+        },
+        {
+          title: "Power Unit",
+          value: "Red Bull Powertrains"
+        },
+        {
+          title: "First Team Entry",
+          value: "1997"
         },
         {
           title: "World Championships",
-          value: "0"
+          value: "4"
         },
         {
-          title: "Highest race finish",
-          value: "1 (x5)"
+          title: "Highest Race Finish",
+          value: "1 (x87)"
         },
         {
-          title: "Highest grid position",
-          value: "1"
+          title: "Pole Positions",
+          value: "78"
+        },
+        {
+          title: "Fastest Laps",
+          value: "84"
         }
       ]}
     />
