@@ -1,5 +1,3 @@
-import { v4 as uuidv4 } from "uuid";
-
 import { RaceCard } from "../Card";
 import { Cards } from "./Cards";
 
@@ -10,9 +8,9 @@ export const Races = () => {
   return (
     <Cards
       data={races}
+      keyExtractor={(race) => race.round}
       renderCard={(race) => (
         <RaceCard
-          key={uuidv4()}
           round={Number.parseInt(race.round)}
           circuitId={race.Circuit.circuitId}
           country={race.Circuit.Location.country}
