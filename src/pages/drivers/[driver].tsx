@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
-import { capitalize } from "lodash";
 
 import { PageLayout } from "@layouts/PageLayout";
 import { ActorLayout } from "@layouts/ActorLayout";
@@ -75,7 +74,8 @@ const DriverPage: NextPage = () => {
   const { driver } = router.query;
 
   if (driver) {
-    const [givenName, familyName] = (driver as string).split("-");
+    const givenName = (driver as string).split("-")[0];
+    const familyName = (driver as string).split("-").slice(1).join(" ");
 
     const drivers = getDriversWithTeam(driverStandings);
 
@@ -89,7 +89,7 @@ const DriverPage: NextPage = () => {
       return (
         <PageLayout
           side={<Drivers />}
-          title={`${capitalize(givenName)} ${capitalize(familyName)}`}
+          title={`${driverData.givenName} ${driverData.familyName}`}
           subtitle={driverData.team}
           body={<DriverData {...driverData} />}
         />
