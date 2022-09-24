@@ -1,10 +1,10 @@
 import { Constructor } from "./types/constructor";
-import { Driver } from "./types/driver";
+import { IDriver } from "./types/driver";
 import { QualifyingResult, RaceResult, RaceSchedule } from "./types/race";
 import { ConstructorStanding, DriverStanding } from "./types/standings";
 
 // https://ergast.com/api/f1/current/drivers.json
-export const drivers: Driver[] = [
+export const drivers: IDriver[] = [
   {
     driverId: "albon",
     permanentNumber: "23",

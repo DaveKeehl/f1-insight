@@ -31,8 +31,8 @@ interface IDriverIdentity {
 }
 
 const DriverIdentity = ({ driver }: IDriverIdentity) => (
-  <div className="absolute left-1/2 bottom-10 z-20 -translate-x-1/2">
-    <div className="mb-4 flex flex-col items-center gap-[2px] text-center text-2xl text-brand-white-100 drop-shadow-card-text-md">
+  <div className="absolute left-1/2 bottom-10 z-20 flex -translate-x-1/2 flex-col items-center gap-4">
+    <div className="flex flex-col items-center gap-[2px] text-center text-2xl text-brand-white-100 drop-shadow-card-text-md">
       <h2>{driver.givenName}</h2>
       <h2 className="font-medium uppercase">{driver.familyName}</h2>
     </div>
@@ -106,22 +106,33 @@ const TeamPage: NextPage = () => {
         .join(" ")
     };
 
+    console.log({ team: clean.team });
+
     const corrections: { [key: string]: string } = {
       Alphatauri: "AlphaTauri",
-      Mclaren: "McLaren"
+      Mclaren: "McLaren",
+      "Haas F1 Team": "Haas",
+      "Alpine F1 Team": "Alpine"
     };
 
     const teamDrivers = getDriversWithTeam(driverStandings)
-      .filter((driver) => driver.team === clean.team)
+      .filter(
+        (driver) => driver.team === (corrections[clean.team] || clean.team)
+      )
       .map((driver) => {
         return drivers.find((d) => d.driverId === driver.driverId) as IDriver;
       });
 
     return (
       <PageLayout
-        title={corrections[clean.team] || clean.team}
+        title={clean.team}
         side={<Teams />}
-        body={<TeamData name={clean.team} drivers={teamDrivers} />}
+        body={
+          <TeamData
+            name={corrections[clean.team] || clean.team}
+            drivers={teamDrivers}
+          />
+        }
       />
     );
   }

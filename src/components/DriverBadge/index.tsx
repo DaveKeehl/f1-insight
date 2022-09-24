@@ -13,7 +13,7 @@ export const DriverBadge = ({
 }: IDriverBadge) => {
   return (
     <div
-      className={`${className} flex items-center gap-[10px] rounded-full border-[2px] border-brand-blue-200 bg-brand-blue-300 px-[18px] py-[10px]`.trim()}
+      className={`${className} flex w-fit items-center gap-[10px] rounded-full border-[2px] border-brand-blue-200 bg-brand-blue-300 px-[18px] py-[10px]`.trim()}
     >
       <p className="text-xl">{permanentNumber}</p>
       <Image

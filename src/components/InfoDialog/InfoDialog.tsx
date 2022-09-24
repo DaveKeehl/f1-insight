@@ -35,7 +35,7 @@ export const InfoDialog = ({ data }: IInfoDialog) => {
       </button>
       {open && (
         <div
-          className={`${classes} flex flex-col gap-4 rounded-3xl p-7 shadow-info-dialog`}
+          className={`${classes} flex max-h-96 flex-col gap-4 overflow-auto rounded-3xl px-7 py-5 shadow-info-dialog`}
         >
           {data.map((item) => (
             <DialogEntry key={uuidv4()} {...item} />
