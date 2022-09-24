@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from "uuid";
+
 import { DriverCard } from "../Card";
 import { Cards } from "./Cards";
 
@@ -12,6 +14,7 @@ export const Drivers = () => {
       data={drivers}
       renderCard={(driver) => (
         <DriverCard
+          // key={uuidv4()}
           driverNumber={Number.parseInt(driver.permanentNumber)}
           name={driver.givenName}
           lastname={driver.familyName}

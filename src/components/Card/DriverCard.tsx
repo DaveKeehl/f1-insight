@@ -1,5 +1,4 @@
 import Image from "next/future/image";
-import { useRouter } from "next/router";
 
 import { Card } from "./Card";
 
@@ -16,43 +15,38 @@ const Backdrop = () => {
 };
 
 export const DriverCard = ({ driverNumber, name, lastname }: IDriverCard) => {
-  const router = useRouter();
-  const { asPath } = router;
-
   const clean = {
     name: name.toLowerCase(),
     lastname: lastname.toLowerCase().replace(/\s/g, "-")
   };
 
-  const selected =
-    decodeURI(asPath).split("/").at(-1) === `${clean.name}-${clean.lastname}`;
-  const border = selected ? "border border-[6px] border-brand-white-100" : "";
-  const shadow = selected ? "shadow-brand-white" : "";
-
   const imagePath = `/drivers/side/${clean.name}-${clean.lastname}.png`;
 
   return (
-    <Card href={`/drivers/${clean.name}-${clean.lastname}`}>
-      <div
-        className={`relative flex h-36 w-64 flex-none flex-col justify-between overflow-hidden rounded-2xl bg-gradient-to-tr from-brand-white-300 to-brand-white-200 p-4 text-brand-white-100 transition-all hover:cursor-pointer ${border} ${shadow}`}
-      >
-        <h1 className="z-20 text-xl font-medium drop-shadow-card-text-sm">
-          {driverNumber}
-        </h1>
-        <div className="z-20 drop-shadow-card-text-md">
-          <h1 className="text-xl font-medium">{name}</h1>
-          <h1 className="text-xl font-medium uppercase">{lastname}</h1>
-        </div>
-        <Backdrop />
-        <Image
-          src={imagePath}
-          alt=""
-          className="absolute top-0 -right-7 aspect-square w-48"
-          width={412}
-          height={412}
-          priority={true}
-        />
+    <Card
+      href={`/drivers/${clean.name}-${clean.lastname}`}
+      selected={(asPath) =>
+        decodeURI(asPath).split("/").at(-1) ===
+        `${clean.name}-${clean.lastname}`
+      }
+      className="justify-between bg-gradient-to-tr from-brand-white-300 to-brand-white-200 p-4"
+    >
+      <h1 className="z-20 text-xl font-medium drop-shadow-card-text-sm">
+        {driverNumber}
+      </h1>
+      <div className="z-20 drop-shadow-card-text-md">
+        <h1 className="text-xl font-medium">{name}</h1>
+        <h1 className="text-xl font-medium uppercase">{lastname}</h1>
       </div>
+      <Backdrop />
+      <Image
+        src={imagePath}
+        alt={`${name} ${lastname}`}
+        className="absolute top-0 -right-7 aspect-square w-48"
+        width={412}
+        height={412}
+        priority={true}
+      />
     </Card>
   );
 };
