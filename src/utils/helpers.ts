@@ -1,5 +1,5 @@
 import { sub } from "date-fns";
-import { IDriverWithTeam } from "./types/driver";
+import { IDriver, IDriverWithTeam } from "./types/driver";
 import { DriverStanding } from "./types/standings";
 
 export const getDriversWithTeam = (driverStandings: DriverStanding[]) => {
@@ -16,6 +16,18 @@ export const getDriversWithTeam = (driverStandings: DriverStanding[]) => {
       team: corrections[team] || team
     } as IDriverWithTeam;
   });
+};
+
+export const getTeamDrivers = (
+  driverStandings: DriverStanding[],
+  drivers: IDriver[],
+  team: string
+) => {
+  return getDriversWithTeam(driverStandings)
+    .filter((driver) => driver.team === team)
+    .map((driver) => {
+      return drivers.find((d) => d.driverId === driver.driverId) as IDriver;
+    });
 };
 
 export const getPrettyDate = (date: string) => {

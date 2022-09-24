@@ -18,7 +18,7 @@ import {
   verstappenQualifyingResults,
   verstappenRaceResults
 } from "@utils/mock";
-import { getDriversWithTeam } from "@utils/helpers";
+import { getTeamDrivers } from "@utils/helpers";
 import { IDriver } from "@utils/types/driver";
 
 interface ITeam {
@@ -43,21 +43,23 @@ const DriverIdentity = ({ driver }: IDriverIdentity) => (
   </div>
 );
 
-const Drivers = ({ drivers }: { drivers: IDriver[] }) => (
-  <div className="relative flex h-[525px] w-[788px]">
-    {drivers.map((driver) => {
-      return (
-        <div key={uuidv4()} className="relative">
-          <DriverIdentity driver={driver} />
-          <DriverImage
-            givenName={driver.givenName}
-            familyName={driver.familyName}
-          />
-        </div>
-      );
-    })}
-  </div>
-);
+const Drivers = ({ drivers }: { drivers: IDriver[] }) => {
+  return (
+    <div className={`relative flex h-[525px] w-[920px]`}>
+      {drivers.map((driver) => {
+        return (
+          <div key={driver.driverId} className="relative">
+            <DriverIdentity driver={driver} />
+            <DriverImage
+              givenName={driver.givenName}
+              familyName={driver.familyName}
+            />
+          </div>
+        );
+      })}
+    </div>
+  );
+};
 
 const TeamData = ({ name, drivers }: ITeam) => {
   const clean = {
@@ -106,8 +108,6 @@ const TeamPage: NextPage = () => {
         .join(" ")
     };
 
-    console.log({ team: clean.team });
-
     const corrections: { [key: string]: string } = {
       Alphatauri: "AlphaTauri",
       Mclaren: "McLaren",
@@ -115,13 +115,11 @@ const TeamPage: NextPage = () => {
       "Alpine F1 Team": "Alpine"
     };
 
-    const teamDrivers = getDriversWithTeam(driverStandings)
-      .filter(
-        (driver) => driver.team === (corrections[clean.team] || clean.team)
-      )
-      .map((driver) => {
-        return drivers.find((d) => d.driverId === driver.driverId) as IDriver;
-      });
+    const teamDrivers = getTeamDrivers(
+      driverStandings,
+      drivers,
+      corrections[clean.team] || clean.team
+    );
 
     return (
       <PageLayout

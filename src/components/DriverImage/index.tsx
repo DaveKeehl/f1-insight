@@ -6,11 +6,15 @@ interface IDriverImage {
 }
 
 export const DriverImage = ({ givenName, familyName }: IDriverImage) => {
+  const clean = {
+    familyName: familyName.split(" ").join("-")
+  };
+
   return (
     <>
-      <div className="absolute bottom-0 left-0 h-1/2 w-full bg-gradient-to-b from-transparent to-brand-blue-400" />
+      <div className="absolute bottom-0 left-0 h-2/3 w-full bg-gradient-to-b from-transparent to-brand-blue-400" />
       <Image
-        src={`/drivers/front/${givenName}-${familyName}.jpeg`}
+        src={`/drivers/front/${givenName}-${clean.familyName}.jpeg`}
         alt={`${givenName} ${familyName}`}
         width={1920}
         height={1920}
