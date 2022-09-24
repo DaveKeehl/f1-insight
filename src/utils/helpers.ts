@@ -35,8 +35,7 @@ export const getPrettyDate = (date: string) => {
     month: "short"
   });
 
-  return (date =
-    startMonth === endMonth
-      ? `${startDate.getDate()} - ${endDate.getDate()} ${endMonth}`
-      : `${startDate.getDate()} ${startMonth} - ${endDate.getDate()} ${endMonth}`);
+  return startMonth === endMonth
+    ? `${startDate.getDate()} - ${endDate.getDate()} ${endMonth}`
+    : `${startDate.getDate()} ${startMonth} - ${endDate.getDate()} ${endMonth}`;
 };
