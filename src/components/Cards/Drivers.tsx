@@ -1,4 +1,5 @@
-import { DriverCard } from "../DriverCard";
+import { DriverCard } from "../Card";
+import { Cards } from "./Cards";
 
 import { getDriversWithTeam } from "@utils/helpers";
 import { driverStandings } from "@utils/mock";
@@ -7,15 +8,15 @@ export const Drivers = () => {
   const drivers = getDriversWithTeam(driverStandings);
 
   return (
-    <aside className="flex flex-col gap-3 overflow-scroll bg-brand-blue-300 p-5">
-      {drivers.map((driver) => (
+    <Cards
+      data={drivers}
+      renderCard={(driver) => (
         <DriverCard
-          key={driver.driverId}
           driverNumber={Number.parseInt(driver.permanentNumber)}
           name={driver.givenName}
           lastname={driver.familyName}
         />
-      ))}
-    </aside>
+      )}
+    />
   );
 };

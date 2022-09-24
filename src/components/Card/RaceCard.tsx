@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { capitalize } from "lodash";
 
 import { Label } from "@components/Label";
+import { Card } from "./Card";
 
 interface IRaceCard {
   round: number;
@@ -42,22 +43,20 @@ export const RaceCard = ({ round, circuitId, country, date }: IRaceCard) => {
   const imagePath = `/races/${clean.round}-${clean.country}.jpeg`;
 
   return (
-    <Link href={`/races/${round}`}>
-      <a>
-        <div
-          className={`relative flex h-36 w-64 flex-none flex-col items-center justify-center gap-2 overflow-hidden rounded-2xl p-5 text-center text-brand-white-100 transition-all hover:cursor-pointer ${border} ${shadow}`.trim()}
-        >
-          <div className="z-20 drop-shadow-card-text-md">
-            <h1 className="text-[22px] font-medium">
-              {corrections[country] || country}
-            </h1>
-            <h2 className="text-sm font-medium uppercase">{clean.circuitId}</h2>
-          </div>
-          <Label text={date} className="z-20" />
-          <Backdrop />
-          <Image src={imagePath} alt="" className="object-cover" fill />
+    <Card href={`/races/${round}`}>
+      <div
+        className={`relative flex h-36 w-64 flex-none flex-col items-center justify-center gap-2 overflow-hidden rounded-2xl p-5 text-center text-brand-white-100 transition-all hover:cursor-pointer ${border} ${shadow}`.trim()}
+      >
+        <div className="z-20 drop-shadow-card-text-md">
+          <h1 className="text-[22px] font-medium">
+            {corrections[country] || country}
+          </h1>
+          <h2 className="text-sm font-medium uppercase">{clean.circuitId}</h2>
         </div>
-      </a>
-    </Link>
+        <Label text={date} className="z-20" />
+        <Backdrop />
+        <Image src={imagePath} alt="" className="object-cover" fill />
+      </div>
+    </Card>
   );
 };

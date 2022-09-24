@@ -3,8 +3,8 @@ import type { NextPage } from "next";
 
 import { PageLayout } from "@layouts/PageLayout";
 
-import { DriverStandingsTable } from "@components/Table/DriverStandingsTable";
-import { ConstructorStandingsTable } from "@components/Table/ConstructorStandingsTable";
+import { DriverStandingsTable } from "@components/Table";
+import { ConstructorStandingsTable } from "@components/Table";
 
 import { driverStandings, constructorStandings } from "@utils/mock";
 

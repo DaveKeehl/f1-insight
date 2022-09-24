@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 
 import { AppLayout } from "@layouts/AppLayout";
 
-import { Races } from "@components/Races";
+import { Races } from "@components/Cards";
 import { RequiredAction } from "@components/RequiredAction";
 
 const RacesPage: NextPage = () => {

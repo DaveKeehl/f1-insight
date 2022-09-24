@@ -6,10 +6,10 @@ import { capitalize } from "lodash";
 import { PageLayout } from "@layouts/PageLayout";
 import { ActorLayout } from "@layouts/ActorLayout";
 
-import { Teams } from "@components/Teams";
+import { Teams } from "@components/Cards";
 import { LineChart } from "@components/LineChart";
 import { DriverBadge } from "@components/DriverBadge";
-import { InfoDialog } from "@components/InfoDialog";
+import { TeamInfoDialog } from "@components/InfoDialog";
 import { DriverImage } from "@components/DriverImage";
 
 import {
@@ -67,7 +67,7 @@ const TeamData = ({ name, drivers }: ITeam) => {
   return (
     <ActorLayout
       team={clean.name}
-      infoDialog={<InfoDialog />}
+      infoDialog={<TeamInfoDialog />}
       drivers={<Drivers drivers={drivers} />}
       chart={
         <LineChart

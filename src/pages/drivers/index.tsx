@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 
 import { AppLayout } from "@layouts/AppLayout";
 
-import { Drivers } from "@components/Drivers";
+import { Drivers } from "@components/Cards";
 import { RequiredAction } from "@components/RequiredAction";
 
 const DriversPage: NextPage = () => {

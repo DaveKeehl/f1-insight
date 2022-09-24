@@ -1,6 +1,7 @@
 import Image from "next/future/image";
-import Link from "next/link";
 import { useRouter } from "next/router";
+
+import { Card } from "./Card";
 
 interface IDriverCard {
   driverNumber: number;
@@ -31,7 +32,7 @@ export const DriverCard = ({ driverNumber, name, lastname }: IDriverCard) => {
   const imagePath = `/drivers/side/${clean.name}-${clean.lastname}.png`;
 
   return (
-    <Link href={`/drivers/${clean.name}-${clean.lastname}`}>
+    <Card href={`/drivers/${clean.name}-${clean.lastname}`}>
       <div
         className={`relative flex h-36 w-64 flex-none flex-col justify-between overflow-hidden rounded-2xl bg-gradient-to-tr from-brand-white-300 to-brand-white-200 p-4 text-brand-white-100 transition-all hover:cursor-pointer ${border} ${shadow}`}
       >
@@ -52,6 +53,6 @@ export const DriverCard = ({ driverNumber, name, lastname }: IDriverCard) => {
           priority={true}
         />
       </div>
-    </Link>
+    </Card>
   );
 };

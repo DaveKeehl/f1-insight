@@ -5,7 +5,7 @@ import { capitalize } from "lodash";
 import { PageLayout } from "@layouts/PageLayout";
 import { ActorLayout } from "@layouts/ActorLayout";
 
-import { Drivers } from "@components/Drivers";
+import { Drivers } from "@components/Cards";
 import { DriverBadge } from "@components/DriverBadge";
 import { LineChart } from "@components/LineChart";
 
@@ -15,7 +15,7 @@ import {
   verstappenRaceResults
 } from "@utils/mock";
 import { getDriversWithTeam } from "@utils/helpers";
-import { InfoDialog } from "@components/InfoDialog";
+import { DriverInfoDialog } from "@components/InfoDialog";
 import { DriverImage } from "@components/DriverImage";
 import { IDriverWithTeam } from "@utils/types/driver";
 
@@ -43,7 +43,7 @@ const DriverData = (props: IDriverWithTeam) => {
   return (
     <ActorLayout
       team={clean.team}
-      infoDialog={<InfoDialog />}
+      infoDialog={<DriverInfoDialog />}
       drivers={<Driver {...props} />}
       chart={
         <LineChart

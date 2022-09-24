@@ -4,9 +4,9 @@ import { useRouter } from "next/router";
 
 import { PageLayout } from "@layouts/PageLayout";
 
-import { Races } from "@components/Races";
-import { RaceResultsTable } from "@components/Table/RaceResultsTable";
-import { QualifyingResultsTable } from "@components/Table/QualifyingResultsTable";
+import { Races } from "@components/Cards";
+import { RaceResultsTable } from "@components/Table";
+import { QualifyingResultsTable } from "@components/Table";
 
 import { raceResult, qualifyingResult } from "@utils/mock";
 import { getPrettyDate } from "@utils/helpers";

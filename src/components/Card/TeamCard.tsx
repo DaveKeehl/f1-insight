@@ -1,6 +1,7 @@
 import Image from "next/future/image";
-import Link from "next/link";
 import { useRouter } from "next/router";
+
+import { Card } from "./Card";
 
 interface ITeamCard {
   name: string;
@@ -27,24 +28,22 @@ export const TeamCard = ({ name }: ITeamCard) => {
   const imagePath = `/teams/${clean.name}.png`;
 
   return (
-    <Link href={`/teams/${clean.name}`}>
-      <a>
-        <div
-          className={`relative flex h-36 w-64 flex-none flex-col items-center overflow-hidden rounded-2xl bg-gradient-to-tr from-brand-white-300 to-brand-white-200 px-4 py-10 text-brand-white-100 transition-all hover:cursor-pointer ${border} ${shadow}`}
-        >
-          <h1 className="z-20 text-center text-2xl font-medium drop-shadow-card-text-md">
-            {name}
-          </h1>
-          <Backdrop />
-          <Image
-            src={imagePath}
-            alt=""
-            className="absolute bottom-0 left-0 object-contain"
-            width={1316}
-            height={391}
-          />
-        </div>
-      </a>
-    </Link>
+    <Card href={`/teams/${clean.name}`}>
+      <div
+        className={`relative flex h-36 w-64 flex-none flex-col items-center overflow-hidden rounded-2xl bg-gradient-to-tr from-brand-white-300 to-brand-white-200 px-4 py-10 text-brand-white-100 transition-all hover:cursor-pointer ${border} ${shadow}`}
+      >
+        <h1 className="z-20 text-center text-2xl font-medium drop-shadow-card-text-md">
+          {name}
+        </h1>
+        <Backdrop />
+        <Image
+          src={imagePath}
+          alt=""
+          className="absolute bottom-0 left-0 object-contain"
+          width={1316}
+          height={391}
+        />
+      </div>
+    </Card>
   );
 };
