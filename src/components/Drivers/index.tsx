@@ -1,6 +1,7 @@
-import { getDriversWithTeam } from "../../utils/helpers";
 import { DriverCard } from "../DriverCard";
-import { driverStandings } from "../../utils/mock";
+
+import { getDriversWithTeam } from "@utils/helpers";
+import { driverStandings } from "@utils/mock";
 
 export const Drivers = () => {
   const drivers = getDriversWithTeam(driverStandings);

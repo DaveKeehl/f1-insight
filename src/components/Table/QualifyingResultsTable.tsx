@@ -1,7 +1,7 @@
 import { Table } from "./Table";
-
-import { DriverQualifyingResult } from "../../utils/types/race";
 import { Row } from "../Row";
+
+import { DriverQualifyingResult } from "@utils/types/race";
 
 interface IQualifyingResultsTable {
   data: DriverQualifyingResult[];

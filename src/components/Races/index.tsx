@@ -1,8 +1,7 @@
-import { sub } from "date-fns";
-
 import { RaceCard } from "../RaceCard";
-import { races } from "../../utils/mock";
-import { getPrettyDate } from "../../utils/helpers";
+
+import { races } from "@utils/mock";
+import { getPrettyDate } from "@utils/helpers";
 
 export const Races = () => {
   return (

@@ -17,7 +17,7 @@ export const TeamCard = ({ name }: ITeamCard) => {
   const { asPath } = router;
 
   const clean = {
-    name: name.toLowerCase().replace(/\s/g, "-"),
+    name: name.toLowerCase().replace(/\s/g, "-")
   };
 
   const selected = asPath.split("/").at(-1) === clean.name;
@@ -42,7 +42,6 @@ export const TeamCard = ({ name }: ITeamCard) => {
             className="absolute bottom-0 left-0 object-contain"
             width={1316}
             height={391}
-            // fill
           />
         </div>
       </a>

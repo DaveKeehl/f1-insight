@@ -1,4 +1,4 @@
-import { background, glow } from "../../utils/mappings";
+import { background, glow } from "@utils/mappings";
 
 interface IRow {
   position: string;

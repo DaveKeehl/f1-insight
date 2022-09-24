@@ -1,15 +1,15 @@
 import type { NextPage } from "next";
 
 import { AppLayout } from "@layouts/AppLayout";
-import { Races } from "../../components/Races";
+
+import { Races } from "@components/Races";
+import { RequiredAction } from "@components/RequiredAction";
 
 const RacesPage: NextPage = () => {
   return (
     <AppLayout>
       <Races />
-      <div className="flex flex-auto flex-col items-center justify-center bg-brand-blue-400 text-brand-white-100">
-        <h1 className="text-3xl font-medium">Please choose a race</h1>
-      </div>
+      <RequiredAction message="Please choose a race" />
     </AppLayout>
   );
 };

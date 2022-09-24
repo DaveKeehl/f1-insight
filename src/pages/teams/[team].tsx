@@ -50,8 +50,8 @@ const Drivers = ({ drivers }: { drivers: IDriver[] }) => (
         <div key={uuidv4()} className="relative">
           <DriverIdentity driver={driver} />
           <DriverImage
-            givenName={driver.givenName as string}
-            familyName={driver.familyName as string}
+            givenName={driver.givenName}
+            familyName={driver.familyName}
           />
         </div>
       );

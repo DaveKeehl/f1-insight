@@ -1,8 +1,6 @@
-import { useRef } from "react";
 import Image from "next/future/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useIntersectionObserver } from "usehooks-ts";
 
 interface IDriverCard {
   driverNumber: number;
@@ -17,11 +15,6 @@ const Backdrop = () => {
 };
 
 export const DriverCard = ({ driverNumber, name, lastname }: IDriverCard) => {
-  // const ref = useRef<HTMLDivElement | null>(null);
-  // const entry = useIntersectionObserver(ref, {});
-  // const isVisible = !!entry?.isIntersecting;
-  // console.log(isVisible);
-
   const router = useRouter();
   const { asPath } = router;
 
@@ -40,7 +33,6 @@ export const DriverCard = ({ driverNumber, name, lastname }: IDriverCard) => {
   return (
     <Link href={`/drivers/${clean.name}-${clean.lastname}`}>
       <div
-        // ref={ref}
         className={`relative flex h-36 w-64 flex-none flex-col justify-between overflow-hidden rounded-2xl bg-gradient-to-tr from-brand-white-300 to-brand-white-200 p-4 text-brand-white-100 transition-all hover:cursor-pointer ${border} ${shadow}`}
       >
         <h1 className="z-20 text-xl font-medium drop-shadow-card-text-sm">

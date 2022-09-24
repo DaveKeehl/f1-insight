@@ -1,22 +1,22 @@
 import { useState } from "react";
 import { List, X } from "phosphor-react";
 
+const DialogEntry = ({ title, text }: { title: string; text: string }) => {
+  return (
+    <div className="flex flex-col gap-1">
+      <h3 className="text-base font-medium">{title}</h3>
+      <p className="text-sm text-brand-white-100 opacity-80">{text}</p>
+    </div>
+  );
+};
+
 export const InfoDialog = () => {
   const [open, setOpen] = useState(false);
-
-  const handleClick = () => setOpen((prev) => !prev);
 
   const classes =
     "rounded-xl border-2 border-brand-white-100/10 bg-brand-white-100/5 p-2 backdrop-blur-2xl";
 
-  const DialogEntry = ({ title, text }: { title: string; text: string }) => {
-    return (
-      <div className="flex flex-col gap-1">
-        <h3 className="text-base font-medium">{title}</h3>
-        <p className="text-sm text-brand-white-100 opacity-80">{text}</p>
-      </div>
-    );
-  };
+  const handleClick = () => setOpen((prev) => !prev);
 
   return (
     <div className="absolute top-6 right-6 flex flex-col items-end gap-3">

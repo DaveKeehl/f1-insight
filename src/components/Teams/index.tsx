@@ -1,5 +1,6 @@
 import { TeamCard } from "../TeamCard";
-import { constructors } from "../../utils/mock";
+
+import { constructors } from "@utils/mock";
 
 export const Teams = () => {
   return (

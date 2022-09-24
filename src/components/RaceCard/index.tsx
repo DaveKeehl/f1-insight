@@ -1,7 +1,9 @@
-import Image from "next/future/image";
-import { capitalize } from "lodash";
 import Link from "next/link";
+import Image from "next/future/image";
 import { useRouter } from "next/router";
+import { capitalize } from "lodash";
+
+import { Label } from "@components/Label";
 
 interface IRaceCard {
   round: number;
@@ -10,21 +12,6 @@ interface IRaceCard {
   year: string;
   date: string;
 }
-
-interface ILabel {
-  text: string;
-  className?: string;
-}
-
-const Label = ({ text, className }: ILabel) => {
-  return (
-    <div
-      className={`${className} rounded-full border border-brand-blue-300 bg-brand-blue-400 px-[10px] py-1 text-xs uppercase`.trim()}
-    >
-      {text}
-    </div>
-  );
-};
 
 const Backdrop = () => {
   return <div className="absolute z-10 h-full w-full bg-brand-blue-400/60" />;
@@ -41,7 +28,7 @@ export const RaceCard = ({ round, circuitId, country, date }: IRaceCard) => {
   const corrections: { [key: string]: string } = {
     UK: "Great Britain",
     UAE: "Abu Dhabi",
-    USA: "United States",
+    USA: "United States"
   };
 
   const clean = {
@@ -50,9 +37,7 @@ export const RaceCard = ({ round, circuitId, country, date }: IRaceCard) => {
       .split("_")
       .map((e) => capitalize(e))
       .join(" "),
-    country: (corrections[country] || country)
-      .toLowerCase()
-      .replace(/\s/g, "-"),
+    country: (corrections[country] || country).toLowerCase().replace(/\s/g, "-")
   };
   const imagePath = `/races/${clean.round}-${clean.country}.jpeg`;
 

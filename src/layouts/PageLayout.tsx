@@ -2,6 +2,7 @@ import Image from "next/future/image";
 import { v4 as uuidv4 } from "uuid";
 
 import { AppLayout } from "./AppLayout";
+
 import { IPill, Pill } from "@components/Pill";
 
 interface IPageLayout {

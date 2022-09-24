@@ -1,4 +1,5 @@
 import { ResponsiveLine } from "@nivo/line";
+import { ColorSchemeId } from "../../../node_modules/@nivo/colors/dist/types/schemes";
 
 interface ILineChart {
   data: {
@@ -12,7 +13,7 @@ interface ILineChart {
 }
 
 export const LineChart = ({ data, team }: ILineChart) => {
-  const scheme: { [key: string]: any } = {
+  const scheme: { [key: string]: { scheme: ColorSchemeId; size: number } } = {
     "Red Bull": { scheme: "paired", size: 9 },
     Alpine: { scheme: "paired", size: 9 },
     AlphaTauri: { scheme: "paired", size: 9 },
@@ -90,14 +91,12 @@ export const LineChart = ({ data, team }: ILineChart) => {
         }
       }}
       sliceTooltip={({ slice }) => {
-        const reversedSlices = slice.points.reverse();
-
         return (
           <div className=" flex flex-col gap-1 rounded-lg border border-brand-white-100/10 bg-brand-blue-200 px-5 py-3 shadow-xl">
             <p className="text-base font-medium">
               {slice.points[0]?.data.xFormatted}
             </p>
-            {reversedSlices.map((point) => (
+            {[...slice.points].reverse().map((point) => (
               <p className="text-sm" key={point.id}>
                 {point.serieId.toString()}: {point.data.yFormatted}
               </p>

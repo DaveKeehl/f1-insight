@@ -2,8 +2,6 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { ChartLine, FlagCheckered, Trophy, User, Users } from "phosphor-react";
 
-import { Tooltip } from "../Tooltip";
-
 type ButtonIcon = "ChartLine" | "FlagCheckered" | "Trophy" | "User" | "Users";
 
 interface IButton {
@@ -33,7 +31,7 @@ const Icon = ({ name }: IIcon) => {
   return icons[name];
 };
 
-export const Button = ({ icon, href, text }: IButton) => {
+export const Button = ({ icon, href }: IButton) => {
   const router = useRouter();
   const { asPath } = router;
 
@@ -48,8 +46,6 @@ export const Button = ({ icon, href, text }: IButton) => {
         >
           <Icon name={icon} />
         </button>
-        {/* <Tooltip text={text}>
-        </Tooltip> */}
       </a>
     </Link>
   );
