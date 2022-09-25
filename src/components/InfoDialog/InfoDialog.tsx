@@ -26,6 +26,10 @@ export const InfoDialog = ({ data }: IInfoDialog) => {
   const classes =
     "rounded-xl border-2 border-brand-white-100/10 bg-brand-white-100/5 p-2 backdrop-blur-2xl";
 
+  const visibility = open
+    ? "opacity-1 translate-y-[0px]"
+    : "opacity-0 translate-y-[-10px] pointer-events-none";
+
   const handleClick = () => setOpen((prev) => !prev);
 
   return (
@@ -33,15 +37,13 @@ export const InfoDialog = ({ data }: IInfoDialog) => {
       <button className={classes} onClick={handleClick}>
         {open ? <X size={24} /> : <List size={24} />}
       </button>
-      {open && (
-        <div
-          className={`${classes} flex max-h-96 flex-col gap-4 overflow-auto rounded-3xl px-7 py-5 shadow-info-dialog`}
-        >
-          {data.map((item) => (
-            <DialogEntry key={uuidv4()} {...item} />
-          ))}
-        </div>
-      )}
+      <div
+        className={`${classes} ${visibility} flex max-h-96 flex-col gap-4 overflow-auto rounded-3xl px-7 py-5 shadow-info-dialog transition-all duration-300`}
+      >
+        {data.map((item) => (
+          <DialogEntry key={uuidv4()} {...item} />
+        ))}
+      </div>
     </div>
   );
 };

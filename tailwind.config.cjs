@@ -62,21 +62,32 @@ module.exports = {
       dropShadow: {
         "card-text-sm": "0 2px 4px rgb(6 6 9 / 0.25)",
         "card-text-md": "0 2px 4px rgb(6 6 9 / 0.65)"
-      }
-    },
-    animation: {
-      "fade-in": "fade-in 3s linear"
-    },
-    keyframes: {
-      "fade-in": {
-        "0%": {
-          opacity: "0",
-          transform: "translateY(-20px)"
+      },
+      keyframes: {
+        "fade-in": {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(-10px)"
+          },
+          "100%": {
+            opacity: "1",
+            transform: "none"
+          }
         },
-        "100%": {
-          opacity: "1",
-          transform: "none"
+        "fade-out": {
+          "0%": {
+            opacity: "1",
+            transform: "none"
+          },
+          "100%": {
+            opacity: "0",
+            transform: "translateY(-10px)"
+          }
         }
+      },
+      animation: {
+        "fade-in": "fade-in 0.3s ease-out",
+        "fade-out": "fade-out 0.3 ease-out"
       }
     }
   },
