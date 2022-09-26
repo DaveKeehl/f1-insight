@@ -13,7 +13,12 @@ import { RaceResultsTable } from "@components/Table";
 import { QualifyingResultsTable } from "@components/Table";
 
 import { getPrettyDate } from "@utils/helpers";
-import { getQualifyingResult, getRaceResult, getRaces } from "@utils/services";
+import {
+  getDriverRaceResults,
+  getQualifyingResult,
+  getRaceResult,
+  getRaces
+} from "@utils/services";
 import { QualifyingResult, RaceResult, RaceSchedule } from "@utils/types/race";
 
 export default function RacePage({
@@ -105,10 +110,11 @@ export async function getStaticProps(
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const races = await getRaces();
+  const driverRaceResults = await getDriverRaceResults("max_verstappen");
+  // const races = await getRaces();
 
   return {
-    paths: races.map((race) => ({
+    paths: driverRaceResults.map((race) => ({
       params: {
         round: race.round
       }

@@ -6,9 +6,6 @@ import {
   getDrivers,
   getDriverStandings
 } from "@utils/services";
-import { DriverSchema } from "@utils/types/driver";
-import { ConstructorSchema } from "@utils/types/constructor";
-import { DriverStandingSchema } from "@utils/types/standings";
 
 export const driversRouter = createRouter()
   .query("get-drivers", {

@@ -4,7 +4,6 @@ import type {
   GetStaticPropsResult,
   InferGetStaticPropsType
 } from "next";
-import { capitalize } from "lodash";
 
 import { PageLayout } from "@layouts/PageLayout";
 import { ActorLayout } from "@layouts/ActorLayout";
@@ -167,8 +166,6 @@ export async function getStaticProps(
     drivers,
     corrections[teamData.name] || teamData.name
   );
-
-  console.log(driverRaceResults);
 
   return {
     props: {
