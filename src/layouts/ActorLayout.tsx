@@ -35,8 +35,7 @@ export const ActorLayout = ({
         <div className="relative z-30">{infoDialog}</div>
         <div className="relative overflow-hidden rounded-[35px]">
           {drivers}
-          <div className="h-80 w-full bg-brand-blue-400">{chart}</div>
-          {chart}
+          <div className="h-96 w-full bg-brand-blue-400">{chart}</div>
         </div>
       </div>
       <GradientBackground team={clean.team} />

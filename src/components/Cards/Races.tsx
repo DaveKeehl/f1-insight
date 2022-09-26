@@ -1,10 +1,14 @@
 import { RaceCard } from "../Card";
 import { Cards } from "./Cards";
 
-import { races } from "@utils/mock";
 import { getPrettyDate } from "@utils/helpers";
+import { RaceSchedule } from "@utils/types/race";
 
-export const Races = () => {
+interface IRaces {
+  races: RaceSchedule[];
+}
+
+export const Races = ({ races }: IRaces) => {
   return (
     <Cards
       data={races}

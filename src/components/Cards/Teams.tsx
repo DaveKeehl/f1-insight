@@ -1,12 +1,16 @@
 import { TeamCard } from "../Card";
 import { Cards } from "./Cards";
 
-import { constructors } from "@utils/mock";
+import { Constructor } from "@utils/types/constructor";
 
-export const Teams = () => {
+interface ITeams {
+  teams: Constructor[];
+}
+
+export const Teams = ({ teams }: ITeams) => {
   return (
     <Cards
-      data={constructors}
+      data={teams}
       keyExtractor={(team) => team.name}
       renderCard={(constructor) => <TeamCard name={constructor.name} />}
     />

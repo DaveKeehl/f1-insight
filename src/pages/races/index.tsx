@@ -1,17 +1,34 @@
-import type { NextPage } from "next";
+import { GetStaticPropsResult, InferGetStaticPropsType } from "next";
 
 import { AppLayout } from "@layouts/AppLayout";
 
 import { Races } from "@components/Cards";
 import { RequiredAction } from "@components/RequiredAction";
+import { getRaces } from "@utils/services";
+import { RaceSchedule } from "@utils/types/race";
 
-const RacesPage: NextPage = () => {
+export default function RacesPage({
+  races
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <AppLayout>
-      <Races />
+      <Races races={races} />
       <RequiredAction message="Please choose a race" />
     </AppLayout>
   );
-};
+}
 
-export default RacesPage;
+export async function getStaticProps(): Promise<
+  GetStaticPropsResult<{
+    races: RaceSchedule[];
+  }>
+> {
+  const races = await getRaces();
+
+  return {
+    props: {
+      races
+    },
+    revalidate: 60
+  };
+}

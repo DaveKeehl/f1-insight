@@ -8,7 +8,7 @@ export const background: { [key: string]: string } = {
   mclaren: "bg-teams-mclaren",
   mercedes: "bg-teams-mercedes",
   redbull: "bg-teams-redbull",
-  williams: "bg-teams-williams",
+  williams: "bg-teams-williams"
 };
 
 export const glow: { [key: string]: string } = {
@@ -21,7 +21,7 @@ export const glow: { [key: string]: string } = {
   mclaren: "shadow-glow-mclaren",
   mercedes: "shadow-glow-mercedes",
   redbull: "shadow-glow-redbull",
-  williams: "shadow-glow-williams",
+  williams: "shadow-glow-williams"
 };
 
 export const shadow: { [key: string]: string } = {
@@ -34,7 +34,7 @@ export const shadow: { [key: string]: string } = {
   mclaren: "shadow-mclaren",
   mercedes: "shadow-mercedes",
   redbull: "shadow-redbull",
-  williams: "shadow-williams",
+  williams: "shadow-williams"
 };
 
 export const gradient: { [key: string]: string } = {
@@ -47,5 +47,10 @@ export const gradient: { [key: string]: string } = {
   mclaren: "from-[#452003] via-teams-mclaren to-[#452003]",
   mercedes: "from-[#0F332C] via-teams-mercedes to-[#0F332C]",
   redbull: "from-[#0F2038] via-teams-redbull to-[#0F2038]",
-  williams: "from-[#0B343D] via-teams-williams to-[#0B343D]",
+  williams: "from-[#0B343D] via-teams-williams to-[#0B343D]"
+};
+
+export const corrections: { [key: string]: string } = {
+  "Haas F1 Team": "Haas",
+  "Alpine F1 Team": "Alpine"
 };

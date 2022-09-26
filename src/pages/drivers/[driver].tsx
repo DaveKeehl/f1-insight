@@ -1,5 +1,9 @@
-import type { NextPage } from "next";
-import { useRouter } from "next/router";
+import type {
+  GetStaticPaths,
+  GetStaticPropsContext,
+  GetStaticPropsResult,
+  InferGetStaticPropsType
+} from "next";
 
 import { PageLayout } from "@layouts/PageLayout";
 import { ActorLayout } from "@layouts/ActorLayout";
@@ -7,16 +11,17 @@ import { ActorLayout } from "@layouts/ActorLayout";
 import { Drivers } from "@components/Cards";
 import { DriverBadge } from "@components/DriverBadge";
 import { LineChart } from "@components/LineChart";
-
-import {
-  driverStandings,
-  verstappenQualifyingResults,
-  verstappenRaceResults
-} from "@utils/mock";
-import { getDriversWithTeam } from "@utils/helpers";
 import { DriverInfoDialog } from "@components/InfoDialog";
 import { DriverImage } from "@components/DriverImage";
+
+import { getDriversWithTeam } from "@utils/helpers";
 import { IDriverWithTeam } from "@utils/types/driver";
+import {
+  getDriverQualifyingResults,
+  getDriverRaceResults,
+  getDriverStandings
+} from "@utils/services";
+import { QualifyingResult, RaceResult } from "@utils/types/race";
 
 const Driver = ({
   givenName,
@@ -34,70 +39,135 @@ const Driver = ({
   </div>
 );
 
-const DriverData = (props: IDriverWithTeam) => {
+const DriverData = ({
+  driverWithTeam,
+  raceResults,
+  qualifyingResults
+}: {
+  driverWithTeam: IDriverWithTeam;
+  raceResults: RaceResult[];
+  qualifyingResults: QualifyingResult[];
+}) => {
   const clean = {
-    team: props.team.toLowerCase().replace(/\s/g, "")
+    team: driverWithTeam.team.toLowerCase().replace(/\s/g, "")
   };
 
   return (
     <ActorLayout
       team={clean.team}
       infoDialog={<DriverInfoDialog />}
-      drivers={<Driver {...props} />}
+      drivers={<Driver {...driverWithTeam} />}
       chart={
         <LineChart
           data={[
             {
               id: "Race",
-              data: verstappenRaceResults.map((race) => ({
+              data: raceResults.map((race) => ({
                 x: `${race.round} - ${race.Circuit.Location.country}`,
                 y: Number.parseInt(race.Results[0]?.position || "0")
               }))
             },
             {
               id: "Qualifying",
-              data: verstappenQualifyingResults.map((race) => ({
+              data: qualifyingResults.map((race) => ({
                 x: `${race.round} - ${race.Circuit.Location.country}`,
                 y: Number.parseInt(race.QualifyingResults[0]?.position || "0")
               }))
             }
           ]}
-          team={props.team}
+          team={driverWithTeam.team}
+          minY={1}
+          maxY="auto"
+          legendX="Race"
+          legendY="Position"
         />
       }
     />
   );
 };
 
-const DriverPage: NextPage = () => {
-  const router = useRouter();
-  const { driver } = router.query;
-
-  if (driver) {
-    const givenName = (driver as string).split("-")[0];
-    const familyName = (driver as string).split("-").slice(1).join(" ");
-
-    const drivers = getDriversWithTeam(driverStandings);
-
-    const driverData = drivers.find(
-      (driver) =>
-        givenName === driver.givenName.toLowerCase() &&
-        familyName === driver.familyName.toLowerCase()
-    );
-
-    if (givenName && familyName && driverData) {
-      return (
-        <PageLayout
-          side={<Drivers />}
-          title={`${driverData.givenName} ${driverData.familyName}`}
-          subtitle={driverData.team}
-          body={<DriverData {...driverData} />}
+export default function DriverPage({
+  drivers,
+  driverData,
+  qualifyingResults,
+  raceResults
+}: InferGetStaticPropsType<typeof getStaticProps>) {
+  return (
+    <PageLayout
+      side={<Drivers drivers={drivers} />}
+      title={`${driverData.givenName} ${driverData.familyName}`}
+      subtitle={driverData.team}
+      body={
+        <DriverData
+          driverWithTeam={driverData}
+          raceResults={raceResults}
+          qualifyingResults={qualifyingResults}
         />
-      );
-    }
+      }
+    />
+  );
+}
+
+export async function getStaticProps(
+  context: GetStaticPropsContext<{ driver: string }>
+): Promise<
+  GetStaticPropsResult<{
+    drivers: IDriverWithTeam[];
+    driverData: IDriverWithTeam;
+    raceResults: RaceResult[];
+    qualifyingResults: QualifyingResult[];
+  }>
+> {
+  const driverStandings = await getDriverStandings();
+  const drivers = getDriversWithTeam(driverStandings);
+
+  const driver = context.params?.driver as string;
+  const givenName = driver.split("-")[0];
+  const familyName = driver.split("-").slice(1).join(" ");
+
+  const driverData = drivers.find(
+    (driver) =>
+      givenName === driver.givenName.toLowerCase() &&
+      familyName === driver.familyName.toLowerCase()
+  );
+
+  if (!driverData) {
+    return {
+      notFound: true
+    };
   }
 
-  return <div className="h-screen w-screen bg-brand-blue-400" />;
-};
+  const raceResults = await getDriverRaceResults(driverData.driverId);
+  const qualifyingResults = await getDriverQualifyingResults(
+    driverData.driverId
+  );
 
-export default DriverPage;
+  return {
+    props: {
+      drivers,
+      driverData,
+      raceResults,
+      qualifyingResults
+    },
+    revalidate: 1
+  };
+}
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const driverStandings = await getDriverStandings();
+  const drivers = getDriversWithTeam(driverStandings);
+
+  return {
+    paths: drivers.map((driver) => {
+      const givenName = driver.givenName.toLowerCase();
+      const familyName = driver.familyName.toLowerCase();
+
+      return {
+        params: {
+          driver: `${givenName}-${familyName.split(" ").join("-")}`
+        }
+      };
+    }),
+    fallback: false
+  };
+};

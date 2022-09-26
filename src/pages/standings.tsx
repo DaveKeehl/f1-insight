@@ -1,5 +1,5 @@
 import { useState } from "react";
-import type { NextPage } from "next";
+import type { GetStaticPropsResult, InferGetStaticPropsType } from "next";
 
 import { PageLayout } from "@layouts/PageLayout";
 
@@ -8,9 +8,13 @@ import {
   ConstructorStandingsTable
 } from "@components/Table";
 
-import { driverStandings, constructorStandings } from "@utils/mock";
+import { getConstructorStandings, getDriverStandings } from "@utils/services";
+import { ConstructorStanding, DriverStanding } from "@utils/types/standings";
 
-const StandingsPage: NextPage = () => {
+export default function StandingsPage({
+  driverStandings,
+  constructorStandings
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   const [mode, setMode] = useState<"drivers" | "constructors">("drivers");
 
   const table =
@@ -40,6 +44,22 @@ const StandingsPage: NextPage = () => {
       body={table}
     />
   );
-};
+}
 
-export default StandingsPage;
+export async function getStaticProps(): Promise<
+  GetStaticPropsResult<{
+    driverStandings: DriverStanding[];
+    constructorStandings: ConstructorStanding[];
+  }>
+> {
+  const driverStandings = await getDriverStandings();
+  const constructorStandings = await getConstructorStandings();
+
+  return {
+    props: {
+      driverStandings,
+      constructorStandings
+    },
+    revalidate: 60
+  };
+}

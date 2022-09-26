@@ -1,5 +1,6 @@
-import { Constructor } from "./constructor";
-import { Driver } from "./driver";
+import { z } from "zod";
+import { Constructor, ConstructorSchema } from "./constructor";
+import { DriverSchema, IDriver } from "./driver";
 
 interface Standing {
   position: string;
@@ -8,11 +9,27 @@ interface Standing {
   wins: string;
 }
 
+const StandingSchema = z.object({
+  position: z.string(),
+  positionText: z.string(),
+  points: z.string(),
+  wins: z.string()
+});
+
 export interface DriverStanding extends Standing {
-  Driver: Driver;
+  Driver: IDriver;
   Constructors: Constructor[];
 }
+
+export const DriverStandingSchema = StandingSchema.extend({
+  Driver: DriverSchema,
+  Constructors: ConstructorSchema.array()
+});
 
 export interface ConstructorStanding extends Standing {
   Constructor: Constructor;
 }
+
+export const ConstructorStandingSchema = StandingSchema.extend({
+  Constructor: ConstructorSchema
+});

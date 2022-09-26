@@ -1,6 +1,10 @@
 import { useState } from "react";
-import type { NextPage } from "next";
-import { useRouter } from "next/router";
+import type {
+  GetStaticPaths,
+  GetStaticPropsContext,
+  GetStaticPropsResult,
+  InferGetStaticPropsType
+} from "next";
 
 import { PageLayout } from "@layouts/PageLayout";
 
@@ -8,68 +12,107 @@ import { Races } from "@components/Cards";
 import { RaceResultsTable } from "@components/Table";
 import { QualifyingResultsTable } from "@components/Table";
 
-import { raceResult, qualifyingResult } from "@utils/mock";
 import { getPrettyDate } from "@utils/helpers";
+import { getQualifyingResult, getRaceResult, getRaces } from "@utils/services";
+import { QualifyingResult, RaceResult, RaceSchedule } from "@utils/types/race";
 
-const RacePage: NextPage = () => {
+export default function RacePage({
+  raceResult,
+  qualifyingResult,
+  races
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   const [mode, setMode] = useState<"race" | "qualifying">("race");
   // const [view, setView] = useState<"table" | "chart">("table");
 
-  const router = useRouter();
-  const { round } = router.query; // use round to fetch data
+  const { Circuit, date, Results: RaceResults } = raceResult;
+  const { QualifyingResults } = qualifyingResult;
 
-  if (raceResult[0] && qualifyingResult[0]) {
-    const { Circuit, date, Results: RaceResults } = raceResult[0];
-    const { QualifyingResults } = qualifyingResult[0];
+  const clean = {
+    circuitId: Circuit.circuitId.replace(/_/g, " ")
+  };
 
-    const clean = {
-      circuitId: Circuit.circuitId.replace(/_/g, " ")
-    };
-
-    const table =
-      mode === "race" ? (
-        <RaceResultsTable data={RaceResults} />
-      ) : (
-        <QualifyingResultsTable data={QualifyingResults} />
-      );
-
-    return (
-      <PageLayout
-        side={<Races />}
-        title={Circuit.Location.country}
-        subtitle={`@${clean.circuitId}   //   ${getPrettyDate(date)}`}
-        buttons={[
-          [
-            {
-              text: "qualifying",
-              selected: mode === "qualifying",
-              onClick: () => setMode("qualifying")
-            },
-            {
-              text: "race",
-              selected: mode === "race",
-              onClick: () => setMode("race")
-            }
-          ]
-          // [
-          //   {
-          //     text: "table view",
-          //     selected: view === "table",
-          //     onClick: () => setView("table")
-          //   },
-          //   {
-          //     text: "chart view",
-          //     selected: view === "chart",
-          //     onClick: () => setView("chart")
-          //   }
-          // ]
-        ]}
-        body={table}
-      />
+  const table =
+    mode === "race" ? (
+      <RaceResultsTable data={RaceResults} />
+    ) : (
+      <QualifyingResultsTable data={QualifyingResults} />
     );
+
+  return (
+    <PageLayout
+      side={<Races races={races} />}
+      title={Circuit.Location.country}
+      subtitle={`@${clean.circuitId}   //   ${getPrettyDate(date)}`}
+      buttons={[
+        [
+          {
+            text: "qualifying",
+            selected: mode === "qualifying",
+            onClick: () => setMode("qualifying")
+          },
+          {
+            text: "race",
+            selected: mode === "race",
+            onClick: () => setMode("race")
+          }
+        ]
+        // [
+        //   {
+        //     text: "table view",
+        //     selected: view === "table",
+        //     onClick: () => setView("table")
+        //   },
+        //   {
+        //     text: "chart view",
+        //     selected: view === "chart",
+        //     onClick: () => setView("chart")
+        //   }
+        // ]
+      ]}
+      body={table}
+    />
+  );
+}
+
+export async function getStaticProps(
+  context: GetStaticPropsContext<{ round: string }>
+): Promise<
+  GetStaticPropsResult<{
+    raceResult: RaceResult;
+    qualifyingResult: QualifyingResult;
+    races: RaceSchedule[];
+  }>
+> {
+  const round = Number.parseInt(context.params?.round as string);
+  const races = await getRaces();
+
+  if (round < 1 || round > races.length) {
+    return {
+      notFound: true
+    };
   }
 
-  return <div className="h-screen w-screen bg-brand-blue-400" />;
-};
+  const raceResult = await getRaceResult(round);
+  const qualifyingResult = await getQualifyingResult(round);
 
-export default RacePage;
+  return {
+    props: {
+      raceResult,
+      qualifyingResult,
+      races
+    }
+  };
+}
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const races = await getRaces();
+
+  return {
+    paths: races.map((race) => ({
+      params: {
+        round: race.round
+      }
+    })),
+    fallback: false
+  };
+};

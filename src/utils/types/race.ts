@@ -1,6 +1,6 @@
 import { Circuit } from "./circuit";
 import { Constructor } from "./constructor";
-import { Driver } from "./driver";
+import { IDriver } from "./driver";
 
 interface Race {
   season: string;
@@ -23,7 +23,7 @@ export interface RaceSchedule extends Race {
 interface DriverResult {
   number: string;
   position: string;
-  Driver: Driver;
+  Driver: IDriver;
   Constructor: Constructor;
 }
 

@@ -1,12 +1,13 @@
 import { DriverCard } from "../Card";
 import { Cards } from "./Cards";
 
-import { getDriversWithTeam } from "@utils/helpers";
-import { driverStandings } from "@utils/mock";
+import { IDriverWithTeam } from "@utils/types/driver";
 
-export const Drivers = () => {
-  const drivers = getDriversWithTeam(driverStandings);
+interface IDrivers {
+  drivers: IDriverWithTeam[];
+}
 
+export const Drivers = ({ drivers }: IDrivers) => {
   return (
     <Cards
       data={drivers}

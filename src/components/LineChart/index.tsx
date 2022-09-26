@@ -10,9 +10,20 @@ interface ILineChart {
     }[];
   }[];
   team: string;
+  minY: number;
+  maxY: number | "auto";
+  legendX: string;
+  legendY: string;
 }
 
-export const LineChart = ({ data, team }: ILineChart) => {
+export const LineChart = ({
+  data,
+  team,
+  minY,
+  maxY,
+  legendX,
+  legendY
+}: ILineChart) => {
   const scheme: { [key: string]: { scheme: ColorSchemeId; size: number } } = {
     "Red Bull": { scheme: "paired", size: 9 },
     Alpine: { scheme: "paired", size: 9 },
@@ -29,13 +40,13 @@ export const LineChart = ({ data, team }: ILineChart) => {
   return (
     <ResponsiveLine
       data={data}
-      margin={{ top: 20, right: 30, bottom: 110, left: 70 }}
+      margin={{ top: 40, right: 30, bottom: 110, left: 70 }}
       colors={scheme[team]}
       xScale={{ type: "point" }}
       yScale={{
         type: "linear",
-        min: 1,
-        max: "auto",
+        min: minY,
+        max: maxY,
         stacked: false,
         reverse: true
       }}
@@ -43,7 +54,7 @@ export const LineChart = ({ data, team }: ILineChart) => {
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
-        legend: "Position",
+        legend: legendY,
         legendOffset: -45,
         legendPosition: "middle"
       }}
@@ -51,8 +62,8 @@ export const LineChart = ({ data, team }: ILineChart) => {
         tickSize: 5,
         tickPadding: 5,
         tickRotation: -40,
-        legend: "Race",
-        legendOffset: 85,
+        legend: legendX,
+        legendOffset: 80,
         legendPosition: "middle"
       }}
       pointSize={7}
@@ -106,11 +117,11 @@ export const LineChart = ({ data, team }: ILineChart) => {
       }}
       legends={[
         {
-          anchor: "bottom-right",
-          direction: "column",
+          anchor: "top",
+          direction: "row",
           justify: false,
           translateX: 0,
-          translateY: -20,
+          translateY: -45,
           itemsSpacing: 0,
           itemDirection: "left-to-right",
           itemWidth: 80,
