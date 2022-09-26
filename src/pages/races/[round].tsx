@@ -89,13 +89,8 @@ export async function getStaticProps(
   }>
 > {
   const round = Number.parseInt(context.params?.round as string);
-  const races = await getRaces();
-
-  if (round < 1 || round > races.length) {
-    return {
-      notFound: true
-    };
-  }
+  const driverRaceResults = await getDriverRaceResults("max_verstappen");
+  const races = (await getRaces()).slice(0, driverRaceResults.length);
 
   const raceResult = await getRaceResult(round);
   const qualifyingResult = await getQualifyingResult(round);

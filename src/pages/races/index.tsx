@@ -4,7 +4,7 @@ import { AppLayout } from "@layouts/AppLayout";
 
 import { Races } from "@components/Cards";
 import { RequiredAction } from "@components/RequiredAction";
-import { getRaces } from "@utils/services";
+import { getDriverRaceResults, getRaces } from "@utils/services";
 import { RaceSchedule } from "@utils/types/race";
 
 export default function RacesPage({
@@ -23,7 +23,8 @@ export async function getStaticProps(): Promise<
     races: RaceSchedule[];
   }>
 > {
-  const races = await getRaces();
+  const driverRaceResults = await getDriverRaceResults("max_verstappen");
+  const races = (await getRaces()).slice(0, driverRaceResults.length);
 
   return {
     props: {
