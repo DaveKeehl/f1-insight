@@ -22,6 +22,7 @@ import {
   getDriverStandings
 } from "@utils/services";
 import { QualifyingResult, RaceResult } from "@utils/types/race";
+import { DRIVER_THAT_NEVER_MISSED_A_RACE } from "@utils/constants";
 
 const Driver = ({
   givenName,
@@ -42,11 +43,13 @@ const Driver = ({
 const DriverData = ({
   driverWithTeam,
   raceResults,
-  qualifyingResults
+  qualifyingResults,
+  races
 }: {
   driverWithTeam: IDriverWithTeam;
   raceResults: RaceResult[];
   qualifyingResults: QualifyingResult[];
+  races: { round: string; country: string }[];
 }) => {
   const clean = {
     team: driverWithTeam.team.toLowerCase().replace(/\s/g, "")
@@ -62,22 +65,39 @@ const DriverData = ({
           data={[
             {
               id: "Race",
-              data: raceResults.map((race) => ({
-                x: `${race.round} - ${race.Circuit.Location.country}`,
-                y: Number.parseInt(race.Results[0]?.position || "0")
-              }))
+              data: races.map((race) => {
+                const correspondingRaceResult = raceResults.find(
+                  (raceResult) => raceResult.round === race.round
+                );
+                return {
+                  x: `${race.round} - ${race.country}`,
+                  y:
+                    Number.parseInt(
+                      correspondingRaceResult?.Results[0]?.position as string
+                    ) || null
+                };
+              })
             },
             {
               id: "Qualifying",
-              data: qualifyingResults.map((race) => ({
-                x: `${race.round} - ${race.Circuit.Location.country}`,
-                y: Number.parseInt(race.QualifyingResults[0]?.position || "0")
-              }))
+              data: races.map((race) => {
+                const correspondingQualifyingResult = qualifyingResults.find(
+                  (raceResult) => raceResult.round === race.round
+                );
+                return {
+                  x: `${race.round} - ${race.country}`,
+                  y:
+                    Number.parseInt(
+                      correspondingQualifyingResult?.QualifyingResults[0]
+                        ?.position as string
+                    ) || null
+                };
+              })
             }
           ]}
           team={driverWithTeam.team}
           minY={1}
-          maxY="auto"
+          maxY={20}
           legendX="Race"
           legendY="Position"
         />
@@ -90,7 +110,8 @@ export default function DriverPage({
   drivers,
   driverData,
   qualifyingResults,
-  raceResults
+  raceResults,
+  races
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <PageLayout
@@ -102,6 +123,7 @@ export default function DriverPage({
           driverWithTeam={driverData}
           raceResults={raceResults}
           qualifyingResults={qualifyingResults}
+          races={races}
         />
       }
     />
@@ -116,6 +138,7 @@ export async function getStaticProps(
     driverData: IDriverWithTeam;
     raceResults: RaceResult[];
     qualifyingResults: QualifyingResult[];
+    races: { round: string; country: string }[];
   }>
 > {
   const driverStandings = await getDriverStandings();
@@ -147,7 +170,13 @@ export async function getStaticProps(
       drivers,
       driverData,
       raceResults,
-      qualifyingResults
+      qualifyingResults,
+      races: (await getDriverRaceResults(DRIVER_THAT_NEVER_MISSED_A_RACE)).map(
+        (raceResult) => ({
+          round: raceResult.round,
+          country: raceResult.Circuit.Location.country
+        })
+      )
     },
     revalidate: 1
   };

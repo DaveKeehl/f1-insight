@@ -6,7 +6,7 @@ interface ILineChart {
     id: string;
     data: {
       x: string;
-      y: number;
+      y: number | null;
     }[];
   }[];
   team: string;
