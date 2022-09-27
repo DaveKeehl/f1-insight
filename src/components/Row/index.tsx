@@ -1,4 +1,4 @@
-import { background, glow } from "@utils/mappings";
+import { background, teamsCorrections, glow } from "@utils/mappings";
 
 interface IRow {
   position: string;
@@ -9,14 +9,9 @@ interface IRow {
 }
 
 export const Row = ({ position, name, team, detail, value }: IRow) => {
-  const corrections: { [key: string]: string } = {
-    "Haas F1 Team": "haas",
-    "Alpine F1 Team": "alpine"
-  };
-
   const clean = {
-    team: Object.keys(corrections).includes(team)
-      ? corrections[team]
+    team: Object.keys(teamsCorrections).includes(team)
+      ? teamsCorrections[team]?.toLowerCase()
       : team.toLowerCase().replace(/\s/g, "")
   };
 

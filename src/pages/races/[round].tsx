@@ -20,6 +20,7 @@ import {
   getRaces
 } from "@utils/services";
 import { QualifyingResult, RaceResult, RaceSchedule } from "@utils/types/race";
+import { DRIVER_THAT_NEVER_MISSED_A_RACE } from "@utils/constants";
 
 export default function RacePage({
   raceResult,
@@ -89,7 +90,9 @@ export async function getStaticProps(
   }>
 > {
   const round = Number.parseInt(context.params?.round as string);
-  const driverRaceResults = await getDriverRaceResults("max_verstappen");
+  const driverRaceResults = await getDriverRaceResults(
+    DRIVER_THAT_NEVER_MISSED_A_RACE
+  );
   const races = (await getRaces()).slice(0, driverRaceResults.length);
 
   const raceResult = await getRaceResult(round);
@@ -105,7 +108,9 @@ export async function getStaticProps(
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const driverRaceResults = await getDriverRaceResults("max_verstappen");
+  const driverRaceResults = await getDriverRaceResults(
+    DRIVER_THAT_NEVER_MISSED_A_RACE
+  );
   // const races = await getRaces();
 
   return {

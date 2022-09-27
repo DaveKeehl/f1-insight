@@ -50,7 +50,13 @@ export const gradient: { [key: string]: string } = {
   williams: "from-[#0B343D] via-teams-williams to-[#0B343D]"
 };
 
-export const corrections: { [key: string]: string } = {
+export const teamsCorrections: { [key: string]: string } = {
   "Haas F1 Team": "Haas",
   "Alpine F1 Team": "Alpine"
+};
+
+export const countriesCorrections: { [key: string]: string } = {
+  UK: "Great Britain",
+  UAE: "Abu Dhabi",
+  USA: "United States"
 };

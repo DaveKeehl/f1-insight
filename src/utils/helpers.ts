@@ -1,5 +1,5 @@
 import { sub } from "date-fns";
-import { corrections } from "./mappings";
+import { teamsCorrections } from "./mappings";
 import { DriverWithTeamSchema, IDriver } from "./types/driver";
 import { DriverStanding } from "./types/standings";
 
@@ -9,7 +9,7 @@ export const getDriversWithTeam = (driverStandings: DriverStanding[]) => {
 
     return DriverWithTeamSchema.parse({
       ...driverStandings.Driver,
-      team: corrections[team] || team
+      team: teamsCorrections[team] || team
     });
   });
 };

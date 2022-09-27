@@ -4,6 +4,7 @@ import { capitalize } from "lodash";
 
 import { Label } from "@components/Label";
 import { Card } from "./Card";
+import { countriesCorrections } from "@utils/mappings";
 
 interface IRaceCard {
   round: number;
@@ -20,19 +21,15 @@ const Backdrop = () => {
 export const RaceCard = ({ round, circuitId, country, date }: IRaceCard) => {
   const [hover, setHover] = useState(false);
 
-  const corrections: { [key: string]: string } = {
-    UK: "Great Britain",
-    UAE: "Abu Dhabi",
-    USA: "United States"
-  };
-
   const clean = {
     round: String(round).padStart(2, "0"),
     circuitId: circuitId
       .split("_")
       .map((e) => capitalize(e))
       .join(" "),
-    country: (corrections[country] || country).toLowerCase().replace(/\s/g, "-")
+    country: (countriesCorrections[country] || country)
+      .toLowerCase()
+      .replace(/\s/g, "-")
   };
   const imagePath = `/races/${clean.round}-${clean.country}.jpeg`;
 
@@ -48,7 +45,7 @@ export const RaceCard = ({ round, circuitId, country, date }: IRaceCard) => {
     >
       <div className="z-20 drop-shadow-card-text-md">
         <h1 className="text-[22px] font-medium">
-          {corrections[country] || country}
+          {countriesCorrections[country] || country}
         </h1>
         <h2 className="text-sm font-medium uppercase">{clean.circuitId}</h2>
       </div>

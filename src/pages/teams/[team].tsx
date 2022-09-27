@@ -24,8 +24,9 @@ import {
   getTeams
 } from "@utils/services";
 import { Constructor } from "@utils/types/constructor";
-import { corrections } from "@utils/mappings";
+import { teamsCorrections } from "@utils/mappings";
 import { ConstructorStanding } from "@utils/types/standings";
+import { DRIVER_THAT_NEVER_MISSED_A_RACE } from "@utils/constants";
 
 interface ITeam {
   name: string;
@@ -108,7 +109,7 @@ export default function TeamPage({
   teamDrivers,
   races
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  const name = corrections[team.name] || team.name;
+  const name = teamsCorrections[team.name] || team.name;
 
   return (
     <PageLayout
@@ -150,7 +151,9 @@ export async function getStaticProps(
     };
   }
 
-  const driverRaceResults = await getDriverRaceResults("max_verstappen");
+  const driverRaceResults = await getDriverRaceResults(
+    DRIVER_THAT_NEVER_MISSED_A_RACE
+  );
 
   const teamStandings = await Promise.all(
     Array.from({ length: driverRaceResults.length }, (_, i) => i + 1).map(
@@ -164,7 +167,7 @@ export async function getStaticProps(
   const teamDrivers = getTeamDrivers(
     driverStandings,
     drivers,
-    corrections[teamData.name] || teamData.name
+    teamsCorrections[teamData.name] || teamData.name
   );
 
   return {
