@@ -28,6 +28,7 @@ export const RaceResultsTable = ({ data }: IRaceResultsTable) => (
           name={`${Driver.givenName} ${Driver.familyName}`}
           team={Constructor.name}
           value={value}
+          detail={Constructor.name}
         />
       );
     }}

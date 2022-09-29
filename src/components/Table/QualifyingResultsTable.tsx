@@ -23,6 +23,7 @@ export const QualifyingResultsTable = ({ data }: IQualifyingResultsTable) => (
           name={`${Driver.givenName} ${Driver.familyName}`}
           team={Constructor.name}
           value={`${Q3 || Q2 || Q1} (${finalSession})`}
+          detail={Constructor.name}
         />
       );
     }}
