@@ -10,9 +10,9 @@ import { ActorLayout } from "@layouts/ActorLayout";
 
 import { Drivers } from "@components/Cards";
 import { DriverBadge } from "@components/DriverBadge";
-import { LineChart } from "@components/LineChart";
 import { DriverInfoDialog } from "@components/InfoDialog";
 import { DriverImage } from "@components/DriverImage";
+import { DriverLineChart } from "@components/LineChart";
 
 import { getDriversWithTeam } from "@utils/helpers";
 import { IDriverWithTeam } from "@utils/types/driver";
@@ -62,45 +62,11 @@ const DriverData = ({
       infoDialog={<DriverInfoDialog />}
       drivers={<Driver {...driverWithTeam} />}
       chart={
-        <LineChart
-          data={[
-            {
-              id: "Race",
-              data: races.map((race) => {
-                const correspondingRaceResult = raceResults.find(
-                  (raceResult) => raceResult.round === race.round
-                );
-                return {
-                  x: `${race.round} - ${race.country}`,
-                  y:
-                    Number.parseInt(
-                      correspondingRaceResult?.Results[0]?.position as string
-                    ) || null
-                };
-              })
-            },
-            {
-              id: "Qualifying",
-              data: races.map((race) => {
-                const correspondingQualifyingResult = qualifyingResults.find(
-                  (raceResult) => raceResult.round === race.round
-                );
-                return {
-                  x: `${race.round} - ${race.country}`,
-                  y:
-                    Number.parseInt(
-                      correspondingQualifyingResult?.QualifyingResults[0]
-                        ?.position as string
-                    ) || null
-                };
-              })
-            }
-          ]}
-          team={driverWithTeam.team}
-          minY={1}
-          maxY={20}
-          legendX="Race"
-          legendY="Position"
+        <DriverLineChart
+          races={races}
+          raceResults={raceResults}
+          qualifyingResults={qualifyingResults}
+          driverWithTeam={driverWithTeam}
         />
       }
     />

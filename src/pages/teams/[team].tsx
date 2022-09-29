@@ -9,10 +9,10 @@ import { PageLayout } from "@layouts/PageLayout";
 import { ActorLayout } from "@layouts/ActorLayout";
 
 import { Teams } from "@components/Cards";
-import { LineChart } from "@components/LineChart";
 import { DriverBadge } from "@components/DriverBadge";
 import { TeamInfoDialog } from "@components/InfoDialog";
 import { DriverImage } from "@components/DriverImage";
+import { TeamLineChart } from "@components/LineChart";
 
 import { getTeamDrivers } from "@utils/helpers";
 import { IDriver } from "@utils/types/driver";
@@ -83,24 +83,7 @@ const TeamData = ({ name, drivers, standings, races }: ITeam) => {
       team={clean.name}
       infoDialog={<TeamInfoDialog />}
       drivers={<Drivers drivers={drivers} />}
-      chart={
-        <LineChart
-          data={[
-            {
-              id: "Rank",
-              data: standings.map((standing, idx) => ({
-                x: `${races[idx]?.round} - ${races[idx]?.country}`,
-                y: Number.parseInt(standing.position)
-              }))
-            }
-          ]}
-          team={name}
-          minY={1}
-          maxY={10}
-          legendX="Race"
-          legendY="Rank"
-        />
-      }
+      chart={<TeamLineChart team={name} standings={standings} races={races} />}
     />
   );
 };
