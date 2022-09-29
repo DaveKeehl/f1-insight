@@ -17,12 +17,10 @@ export default function StandingsPage({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const [mode, setMode] = useState<"drivers" | "constructors">("drivers");
 
-  const table =
-    mode === "drivers" ? (
-      <DriverStandingsTable data={driverStandings} />
-    ) : (
-      <ConstructorStandingsTable data={constructorStandings} />
-    );
+  const table = {
+    drivers: <DriverStandingsTable data={driverStandings} />,
+    constructors: <ConstructorStandingsTable data={constructorStandings} />
+  };
 
   return (
     <PageLayout
@@ -41,7 +39,7 @@ export default function StandingsPage({
           }
         ]
       ]}
-      body={table}
+      body={table[mode]}
     />
   );
 }

@@ -8,6 +8,12 @@ interface IRow {
   detail?: string;
 }
 
+const GlowBlock = ({ team }: { team: string }) => {
+  return (
+    <div className={`bg-te h-4 w-[6px] ${background[team]} ${glow[team]}`} />
+  );
+};
+
 export const Row = ({ position, name, team, detail, value }: IRow) => {
   const clean = {
     team: Object.keys(teamsCorrections).includes(team)
@@ -19,11 +25,7 @@ export const Row = ({ position, name, team, detail, value }: IRow) => {
     <div className="mb-[10px] flex w-full justify-between rounded-lg border border-brand-blue-200 bg-brand-blue-300 px-7 py-3 text-sm">
       <div className="flex items-center gap-4">
         <p className="w-5">{position}</p>
-        <div
-          className={`bg-te h-4 w-[6px] ${background[clean.team || ""]} ${
-            glow[clean.team || ""]
-          }`}
-        />
+        <GlowBlock team={clean.team || ""} />
         <div className="flex items-end gap-2">
           <p>
             {name.split(" ")[0]}{" "}
