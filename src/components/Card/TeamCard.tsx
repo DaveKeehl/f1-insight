@@ -42,6 +42,7 @@ export const TeamCard = ({ name }: ITeamCard) => {
         className={`absolute bottom-0 left-0 object-contain transition-transform ${hoverEffect}`.trim()}
         width={1316}
         height={391}
+        priority={true}
       />
     </Card>
   );

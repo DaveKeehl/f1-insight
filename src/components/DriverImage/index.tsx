@@ -19,6 +19,7 @@ export const DriverImage = ({ givenName, familyName }: IDriverImage) => {
         width={1920}
         height={1920}
         className="h-full w-full flex-none object-cover object-top"
+        priority={true}
       />
     </>
   );

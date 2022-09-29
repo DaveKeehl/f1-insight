@@ -55,6 +55,8 @@ export const RaceCard = ({ round, circuitId, country, date }: IRaceCard) => {
         src={imagePath}
         alt={`${circuitId}, ${country}, ${date}}`}
         className={`object-cover transition-transform ${hoverEffect}`}
+        sizes="256px"
+        priority={true}
         fill
       />
     </Card>
