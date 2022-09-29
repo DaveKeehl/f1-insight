@@ -1,6 +1,7 @@
 import { gradient, shadow } from "@utils/mappings";
 
 interface IActorLayout {
+  actor: "driver" | "team";
   team: string;
   infoDialog: React.ReactNode;
   drivers: React.ReactNode;
@@ -16,6 +17,7 @@ const GradientBackground = ({ team }: { team: string }) => {
 };
 
 export const ActorLayout = ({
+  actor,
   team,
   infoDialog,
   drivers,
@@ -25,9 +27,11 @@ export const ActorLayout = ({
     team: team.toLowerCase().replace(/\s/g, "")
   };
 
+  const maxWidth = actor === "driver" ? "max-w-[788px]" : "max-w-[920px]";
+
   return (
     <div
-      className={`relative flex-none overflow-hidden rounded-[40px] ${
+      className={`relative w-full ${maxWidth} flex-none overflow-hidden rounded-[40px] ${
         shadow[clean.team]
       }`}
     >
@@ -35,7 +39,9 @@ export const ActorLayout = ({
         <div className="relative z-30">{infoDialog}</div>
         <div className="relative overflow-hidden rounded-[35px]">
           {drivers}
-          <div className="h-96 w-full bg-brand-blue-400">{chart}</div>
+          <div className="w-full bg-brand-blue-400 md:h-72 lg:h-[350px] xl:h-96">
+            {chart}
+          </div>
         </div>
       </div>
       <GradientBackground team={clean.team} />

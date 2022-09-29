@@ -54,7 +54,9 @@ const DriverIdentity = ({ driver }: IDriverIdentity) => (
 
 const Drivers = ({ drivers }: { drivers: IDriver[] }) => {
   return (
-    <div className={`relative flex h-[525px] w-[920px]`}>
+    <div
+      className={`relative flex sm:h-[300px] md:h-[360px] lg:h-[480px] xl:h-[525px]`}
+    >
       {drivers.map((driver) => {
         return (
           <div key={driver.driverId} className="relative">
@@ -77,6 +79,7 @@ const TeamData = ({ name, drivers, standings, races }: ITeam) => {
 
   return (
     <ActorLayout
+      actor="team"
       team={clean.name}
       infoDialog={<TeamInfoDialog />}
       drivers={<Drivers drivers={drivers} />}

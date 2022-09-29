@@ -30,7 +30,7 @@ const Driver = ({
   permanentNumber,
   nationality
 }: IDriverWithTeam) => (
-  <div className="relative h-[525px] w-[788px]">
+  <div className="relative md:h-[360px] lg:h-[480px] xl:h-[525px]">
     <DriverBadge
       permanentNumber={permanentNumber}
       nationality={nationality}
@@ -57,6 +57,7 @@ const DriverData = ({
 
   return (
     <ActorLayout
+      actor="driver"
       team={clean.team}
       infoDialog={<DriverInfoDialog />}
       drivers={<Driver {...driverWithTeam} />}
