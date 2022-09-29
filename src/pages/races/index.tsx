@@ -4,7 +4,7 @@ import { AppLayout } from "@layouts/AppLayout";
 
 import { Races } from "@components/Cards";
 import { RequiredAction } from "@components/RequiredAction";
-import { getDriverRaceResults, getRaces } from "@utils/services";
+import { getDriverRaceResults, getRacesSchedule } from "@utils/services";
 import { RaceSchedule } from "@utils/types/race";
 import { DRIVER_THAT_NEVER_MISSED_A_RACE } from "@utils/constants";
 
@@ -27,7 +27,7 @@ export async function getStaticProps(): Promise<
   const driverRaceResults = await getDriverRaceResults(
     DRIVER_THAT_NEVER_MISSED_A_RACE
   );
-  const races = (await getRaces()).slice(0, driverRaceResults.length);
+  const races = (await getRacesSchedule()).slice(0, driverRaceResults.length);
 
   return {
     props: {

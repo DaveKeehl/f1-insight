@@ -54,6 +54,10 @@ export interface QualifyingResult extends Race {
   QualifyingResults: DriverQualifyingResult[];
 }
 
+export interface SprintResult extends Race {
+  SprintResults: DriverRaceResult[];
+}
+
 interface Session {
   date: string;
   time: string;

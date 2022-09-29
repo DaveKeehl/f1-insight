@@ -1,6 +1,11 @@
 import { Constructor } from "./types/constructor";
 import { IDriver } from "./types/driver";
-import { QualifyingResult, RaceResult, RaceSchedule } from "./types/race";
+import {
+  QualifyingResult,
+  RaceResult,
+  RaceSchedule,
+  SprintResult
+} from "./types/race";
 import { ConstructorStanding, DriverStanding } from "./types/standings";
 
 export const getDrivers = async () => {
@@ -35,9 +40,14 @@ export const getRoundConstructorStandings = async (
     .ConstructorStandings[0] as ConstructorStanding;
 };
 
-export const getRaces = async () => {
+export const getRacesSchedule = async () => {
   const res = await fetch("https://ergast.com/api/f1/current.json");
   return (await res.json()).MRData.RaceTable.Races as RaceSchedule[];
+};
+
+export const getRaceSchedule = async (round: number) => {
+  const res = await fetch(`https://ergast.com/api/f1/current/${round}.json`);
+  return (await res.json()).MRData.RaceTable.Races[0] as RaceSchedule;
 };
 
 export const getTeams = async () => {
@@ -60,6 +70,13 @@ export const getQualifyingResult = async (round: number) => {
     `https://ergast.com/api/f1/current/${round}/qualifying.json`
   );
   return (await res.json()).MRData.RaceTable.Races[0] as QualifyingResult;
+};
+
+export const getSprintResult = async (round: number) => {
+  const res = await fetch(
+    `https://ergast.com/api/f1/current/${round}/sprint.json`
+  );
+  return (await res.json()).MRData.RaceTable.Races[0] as SprintResult;
 };
 
 export const getDriverRaceResults = async (driverId: string) => {

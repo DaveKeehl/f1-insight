@@ -9,25 +9,36 @@ import type {
 import { PageLayout } from "@layouts/PageLayout";
 
 import { Races } from "@components/Cards";
-import { RaceResultsTable } from "@components/Table";
-import { QualifyingResultsTable } from "@components/Table";
+import {
+  RaceResultsTable,
+  QualifyingResultsTable,
+  SprintResultsTable
+} from "@components/Table";
 
 import { getPrettyDate } from "@utils/helpers";
 import {
   getDriverRaceResults,
   getQualifyingResult,
   getRaceResult,
-  getRaces
+  getRaceSchedule,
+  getRacesSchedule,
+  getSprintResult
 } from "@utils/services";
-import { QualifyingResult, RaceResult, RaceSchedule } from "@utils/types/race";
+import {
+  QualifyingResult,
+  RaceResult,
+  RaceSchedule,
+  SprintResult
+} from "@utils/types/race";
 import { DRIVER_THAT_NEVER_MISSED_A_RACE } from "@utils/constants";
 
 export default function RacePage({
   raceResult,
   qualifyingResult,
+  sprintResult,
   races
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  const [mode, setMode] = useState<"race" | "qualifying">("race");
+  const [mode, setMode] = useState<"race" | "qualifying" | "sprint">("race");
   // const [view, setView] = useState<"table" | "chart">("table");
 
   const { Circuit, date, Results: RaceResults } = raceResult;
@@ -37,12 +48,11 @@ export default function RacePage({
     circuitId: Circuit.circuitId.replace(/_/g, " ")
   };
 
-  const table =
-    mode === "race" ? (
-      <RaceResultsTable data={RaceResults} />
-    ) : (
-      <QualifyingResultsTable data={QualifyingResults} />
-    );
+  const table = {
+    race: <RaceResultsTable data={RaceResults} />,
+    qualifying: <QualifyingResultsTable data={QualifyingResults} />,
+    sprint: <SprintResultsTable data={sprintResult?.SprintResults} />
+  };
 
   return (
     <PageLayout
@@ -55,6 +65,12 @@ export default function RacePage({
             text: "qualifying",
             selected: mode === "qualifying",
             onClick: () => setMode("qualifying")
+          },
+          {
+            text: "sprint",
+            selected: mode === "sprint",
+            onClick: () => setMode("sprint"),
+            hidden: sprintResult === null
           },
           {
             text: "race",
@@ -75,7 +91,7 @@ export default function RacePage({
         //   }
         // ]
       ]}
-      body={table}
+      body={table[mode]}
     />
   );
 }
@@ -86,6 +102,7 @@ export async function getStaticProps(
   GetStaticPropsResult<{
     raceResult: RaceResult;
     qualifyingResult: QualifyingResult;
+    sprintResult: SprintResult | null;
     races: RaceSchedule[];
   }>
 > {
@@ -93,15 +110,20 @@ export async function getStaticProps(
   const driverRaceResults = await getDriverRaceResults(
     DRIVER_THAT_NEVER_MISSED_A_RACE
   );
-  const races = (await getRaces()).slice(0, driverRaceResults.length);
+  const races = (await getRacesSchedule()).slice(0, driverRaceResults.length);
+  const raceSchedule = await getRaceSchedule(round);
 
   const raceResult = await getRaceResult(round);
   const qualifyingResult = await getQualifyingResult(round);
+  const sprintResult = raceSchedule.Sprint
+    ? await getSprintResult(round)
+    : null;
 
   return {
     props: {
       raceResult,
       qualifyingResult,
+      sprintResult,
       races
     }
   };

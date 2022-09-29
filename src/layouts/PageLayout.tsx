@@ -21,9 +21,11 @@ const Menu = ({ buttonGroups }: { buttonGroups: IPill[][] }) => {
       {buttonGroups.map((buttonGroup, idx) => (
         <>
           <div key={uuidv4()} className="flex gap-[10px]">
-            {buttonGroup.map((button) => (
-              <Pill key={uuidv4()} {...button} />
-            ))}
+            {buttonGroup
+              .filter((button) => !button.hidden)
+              .map((button) => (
+                <Pill key={uuidv4()} {...button} />
+              ))}
           </div>
           {idx < buttonGroups.length - 1 && <Divider />}
         </>
