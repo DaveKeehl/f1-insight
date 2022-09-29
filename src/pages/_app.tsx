@@ -1,4 +1,5 @@
 // src/pages/_app.tsx
+import { useEffect, useState } from "react";
 import Head from "next/head";
 import type { AppType } from "next/dist/shared/lib/utils";
 import { httpBatchLink } from "@trpc/client/links/httpBatchLink";
@@ -11,10 +12,43 @@ import type { AppRouter } from "../server/router";
 import "../styles/globals.css";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
+  const [protocol, setProtocol] = useState<string>("");
+  const [hostname, setHostname] = useState<string>("");
+  const [port, setPort] = useState<string>("");
+
+  useEffect(() => {
+    setProtocol(window.location.protocol);
+    setHostname(window.location.hostname);
+    setPort(window.location.port);
+  }, []);
+
+  const title = "F1 Insights";
+  const finalPort = port && `: ${port}`;
+  const metaDescription =
+    "A web application to gather insights into the current Formula 1 season";
+
   return (
     <>
       <Head>
-        <title>F1 Insights</title>
+        <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+        <title>{title}</title>
+        <meta name="description" content={metaDescription} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={metaDescription} />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content={`${protocol}${hostname}${finalPort}`}
+        />
+        <meta property="og:image" content={"/ogImage.png"} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={metaDescription} />
+
         <link
           rel="apple-touch-icon"
           sizes="180x180"
