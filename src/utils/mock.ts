@@ -3,6 +3,10 @@ import { IDriver } from "./types/driver";
 import { QualifyingResult, RaceResult, RaceSchedule } from "./types/race";
 import { ConstructorStanding, DriverStanding } from "./types/standings";
 
+// https://ergast.com/api/f1/drivers/max_verstappen/results/1
+// https://ergast.com/api/f1/drivers/max_verstappen/results/2
+// https://ergast.com/api/f1/drivers/max_verstappen/results/3
+
 // https://ergast.com/api/f1/current/drivers.json
 export const drivers: IDriver[] = [
   {
