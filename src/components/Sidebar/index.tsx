@@ -5,8 +5,8 @@ import { Button } from "../Button";
 
 export const Sidebar = () => {
   return (
-    <aside className="flex h-screen w-16 flex-col items-center justify-between bg-brand-red-200 px-3 py-6">
-      <div className="flex flex-col items-center gap-16">
+    <aside className="flex flex-row items-center justify-between bg-brand-red-200 px-6 py-3 md:h-screen md:w-16 md:flex-col md:px-3 md:py-6">
+      <div className="flex flex-row items-center gap-16 md:flex-col">
         <Link href="/">
           <a>
             <Image
@@ -18,7 +18,7 @@ export const Sidebar = () => {
             />
           </a>
         </Link>
-        <div className="flex w-fit flex-col items-center gap-4">
+        <div className="flex w-fit flex-row items-center gap-4 md:flex-col">
           {/* <Button icon="ChartLine" /> */}
           <Button icon="FlagCheckered" text="Races" href="/races" />
           <Button icon="User" text="Drivers" href="/drivers" />

@@ -6,7 +6,7 @@ interface ILayout {
 
 export const AppLayout = ({ children }: ILayout) => {
   return (
-    <main className="flex h-screen w-screen overflow-hidden">
+    <main className="flex h-screen w-screen flex-col overflow-hidden md:flex-row">
       <Sidebar />
       {children}
     </main>
