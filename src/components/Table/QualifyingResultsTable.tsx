@@ -2,6 +2,7 @@ import { Table } from "./Table";
 import { Row } from "../Row";
 
 import { DriverQualifyingResult } from "@utils/types/race";
+import { teamsCorrections } from "@utils/mappings";
 
 interface IQualifyingResultsTable {
   data: DriverQualifyingResult[];
@@ -23,7 +24,7 @@ export const QualifyingResultsTable = ({ data }: IQualifyingResultsTable) => (
           name={`${Driver.givenName} ${Driver.familyName}`}
           team={Constructor.name}
           value={`${Q3 || Q2 || Q1} (${finalSession})`}
-          detail={Constructor.name}
+          detail={teamsCorrections[Constructor.name] || Constructor.name}
         />
       );
     }}

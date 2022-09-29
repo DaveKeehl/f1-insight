@@ -2,6 +2,7 @@ import { Table } from "./Table";
 import { Row } from "../Row";
 
 import { DriverRaceResult } from "@utils/types/race";
+import { teamsCorrections } from "@utils/mappings";
 
 interface IRaceResultsTable {
   data: DriverRaceResult[];
@@ -28,7 +29,7 @@ export const RaceResultsTable = ({ data }: IRaceResultsTable) => (
           name={`${Driver.givenName} ${Driver.familyName}`}
           team={Constructor.name}
           value={value}
-          detail={Constructor.name}
+          detail={teamsCorrections[Constructor.name] || Constructor.name}
         />
       );
     }}

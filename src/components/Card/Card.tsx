@@ -36,7 +36,7 @@ export const Card = ({
 
   return (
     <Link href={href}>
-      <a>
+      <a className="flex h-fit">
         <div
           className={`relative flex h-36 w-64 flex-none flex-col overflow-hidden rounded-2xl text-brand-white-100 transition-all hover:cursor-pointer ${className} ${border} ${shadow}`.trim()}
           onMouseEnter={handleMouseEnter}

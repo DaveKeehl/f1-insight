@@ -65,7 +65,7 @@ export const PageLayout = ({
   return (
     <AppLayout>
       {side}
-      <div className="flex flex-auto flex-col items-center gap-10 overflow-scroll bg-brand-blue-400 px-4 py-12 text-brand-white-100 md:px-14">
+      <div className="flex flex-auto flex-col items-center gap-10 bg-brand-blue-400 px-4 py-12 text-brand-white-100 md:overflow-scroll md:px-14">
         <Image src="/f1_logo.svg" alt="" width={120} height={30} />
         <PageContext title={title} subtitle={subtitle} />
         {buttons && <Menu buttonGroups={buttons} />}

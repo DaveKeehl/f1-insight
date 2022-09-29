@@ -27,21 +27,24 @@ export const ActorLayout = ({
     team: team.toLowerCase().replace(/\s/g, "")
   };
 
-  const maxWidth = actor === "driver" ? "max-w-[788px]" : "max-w-[920px]";
+  const maxWidth = {
+    driver: "max-w-[798px]",
+    team: "max-w-[920px]"
+  };
+
+  // md:h-72 lg:h-[350px] xl:h-96
 
   return (
     <div
-      className={`relative w-full ${maxWidth} flex-none overflow-hidden rounded-[40px] ${
-        shadow[clean.team]
-      }`}
+      className={`relative w-full ${
+        maxWidth[actor]
+      } flex-none overflow-hidden rounded-[40px] ${shadow[clean.team]}`}
     >
       <div className="relative z-10 p-[5px]">
         <div className="relative z-30">{infoDialog}</div>
         <div className="relative overflow-hidden rounded-[35px]">
           {drivers}
-          <div className="w-full bg-brand-blue-400 md:h-72 lg:h-[350px] xl:h-96">
-            {chart}
-          </div>
+          <div className="h-[350px] w-full bg-brand-blue-400">{chart}</div>
         </div>
       </div>
       <GradientBackground team={clean.team} />

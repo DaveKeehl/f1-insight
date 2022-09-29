@@ -30,7 +30,7 @@ const Driver = ({
   permanentNumber,
   nationality
 }: IDriverWithTeam) => (
-  <div className="relative md:h-[360px] lg:h-[480px] xl:h-[525px]">
+  <div className="relative h-96 md:h-80 lg:h-[480px] xl:h-[525px]">
     <DriverBadge
       permanentNumber={permanentNumber}
       nationality={nationality}
