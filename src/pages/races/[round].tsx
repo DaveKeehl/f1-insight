@@ -80,12 +80,12 @@ export default function RacePage({
         ]
         // [
         //   {
-        //     text: "table view",
+        //     text: "table",
         //     selected: view === "table",
         //     onClick: () => setView("table")
         //   },
         //   {
-        //     text: "chart view",
+        //     text: "chart",
         //     selected: view === "chart",
         //     onClick: () => setView("chart")
         //   }
