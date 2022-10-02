@@ -3,9 +3,16 @@ import { IDriver } from "./types/driver";
 import { QualifyingResult, RaceResult, RaceSchedule } from "./types/race";
 import { ConstructorStanding, DriverStanding } from "./types/standings";
 
+// TODO: To get the number of podiums
 // https://ergast.com/api/f1/drivers/max_verstappen/results/1
 // https://ergast.com/api/f1/drivers/max_verstappen/results/2
 // https://ergast.com/api/f1/drivers/max_verstappen/results/3
+
+// TODO: To get the number of winds
+// https://ergast.com/api/f1/drivers/max_verstappen/results/1
+
+// TODO: To get the positions at each lap
+// https://ergast.com/api/f1/current/17/laps/40
 
 // https://ergast.com/api/f1/current/drivers.json
 export const drivers: IDriver[] = [
