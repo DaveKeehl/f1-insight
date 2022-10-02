@@ -33,7 +33,7 @@ export const Sidebar = () => {
             alt=""
             width={26}
             height={26}
-            className="hover:cursor-pointer"
+            className="transition-opacity hover:cursor-pointer hover:opacity-70"
           />
         </a>
       </Link>
