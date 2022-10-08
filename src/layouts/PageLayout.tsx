@@ -6,6 +6,7 @@ import { AppLayout } from "./AppLayout";
 import { IPill, Pill } from "@components/Pill";
 
 interface IPageLayout {
+  headTitle: string;
   title: string;
   subtitle?: string;
   buttons?: IPill[][];
@@ -56,6 +57,7 @@ const PageContext = ({
 };
 
 export const PageLayout = ({
+  headTitle,
   title,
   subtitle,
   side,
@@ -63,7 +65,7 @@ export const PageLayout = ({
   buttons
 }: IPageLayout) => {
   return (
-    <AppLayout>
+    <AppLayout headTitle={headTitle}>
       {side}
       <div className="flex flex-auto flex-col items-center gap-10 bg-brand-blue-400 px-4 pt-12 pb-32 text-brand-white-100 md:overflow-scroll lg:px-14">
         <Image src="/f1_logo.svg" alt="" width={120} height={30} />

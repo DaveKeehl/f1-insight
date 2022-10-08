@@ -82,6 +82,7 @@ export default function DriverPage({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <PageLayout
+      headTitle={`F1 Insights - ${driverData.givenName} ${driverData.familyName}`}
       side={<Drivers drivers={drivers} />}
       title={`${driverData.givenName} ${driverData.familyName}`}
       subtitle={driverData.team}

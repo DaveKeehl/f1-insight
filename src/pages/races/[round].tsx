@@ -36,7 +36,8 @@ export default function RacePage({
   raceResult,
   qualifyingResult,
   sprintResult,
-  races
+  races,
+  round
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const [mode, setMode] = useState<"race" | "qualifying" | "sprint">("race");
   // const [view, setView] = useState<"table" | "chart">("table");
@@ -56,6 +57,7 @@ export default function RacePage({
 
   return (
     <PageLayout
+      headTitle={`F1 Insights - ${Circuit.Location.country} (Round ${round})`}
       side={<Races races={races} />}
       title={Circuit.Location.country}
       subtitle={`@${clean.circuitId}   //   ${getPrettyDate(date)}`}
@@ -104,6 +106,7 @@ export async function getStaticProps(
     qualifyingResult: QualifyingResult;
     sprintResult: SprintResult | null;
     races: RaceSchedule[];
+    round: number;
   }>
 > {
   const round = Number.parseInt(context.params?.round as string);
@@ -124,7 +127,8 @@ export async function getStaticProps(
       raceResult,
       qualifyingResult,
       sprintResult,
-      races
+      races,
+      round
     }
   };
 }
