@@ -23,3 +23,16 @@
 body {
   font-family: "Formula1", -apple-system, sans-serif;
 }
+
+.row {
+  container-type: inline-size;
+  container-name: row;
+}
+
+@container row (max-width: 450px) {
+  .row-name {
+    flex-direction: column;
+    align-items: baseline;
+    gap: 0.25rem;
+  }
+}

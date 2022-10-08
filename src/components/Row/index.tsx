@@ -22,11 +22,11 @@ export const Row = ({ position, name, team, detail, value }: IRow) => {
   };
 
   return (
-    <div className="mb-[10px] flex w-full items-center justify-between rounded-lg border border-brand-blue-200 bg-brand-blue-300 px-7 py-3 text-sm">
+    <div className="row mb-[10px] flex w-full items-center justify-between rounded-lg border border-brand-blue-200 bg-brand-blue-300 px-7 py-3 text-sm">
       <div className="flex items-center gap-4">
         <p className="w-5">{position}</p>
         <GlowBlock team={clean.team || ""} />
-        <div className="flex items-end gap-2">
+        <div className="row-name flex items-end gap-2">
           <p>
             {name.split(" ")[0]}{" "}
             <span className="font-medium">
@@ -38,7 +38,7 @@ export const Row = ({ position, name, team, detail, value }: IRow) => {
           )}
         </div>
       </div>
-      <p>{value}</p>
+      <p className="text-right">{value}</p>
     </div>
   );
 };
