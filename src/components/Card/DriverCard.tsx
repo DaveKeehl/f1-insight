@@ -46,7 +46,7 @@ export const DriverCard = ({
         {permanentNumber}
       </h1>
       <div className="pointer-events-none z-20 drop-shadow-card-text-md">
-        <h1 className="text-xl font-medium">{givenName}</h1>
+        <h1 className="text-xl">{givenName}</h1>
         <h1 className="text-xl font-medium uppercase">{familyName}</h1>
       </div>
       <Backdrop />
