@@ -146,7 +146,7 @@ export async function getStaticProps(
         })
       )
     },
-    revalidate: 1
+    revalidate: 60
   };
 }
 

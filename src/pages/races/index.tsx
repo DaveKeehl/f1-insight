@@ -32,7 +32,6 @@ export async function getStaticProps(): Promise<
   return {
     props: {
       races
-    },
-    revalidate: 60
+    }
   };
 }

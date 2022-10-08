@@ -137,7 +137,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const driverRaceResults = await getDriverRaceResults(
     DRIVER_THAT_NEVER_MISSED_A_RACE
   );
-  // const races = await getRaces();
 
   return {
     paths: driverRaceResults.map((race) => ({

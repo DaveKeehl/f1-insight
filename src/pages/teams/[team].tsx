@@ -168,7 +168,7 @@ export async function getStaticProps(
         country: raceResult.Circuit.Location.country
       }))
     },
-    revalidate: 1
+    revalidate: 60
   };
 }
 
