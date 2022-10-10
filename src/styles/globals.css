@@ -29,7 +29,7 @@ body {
   container-name: row;
 }
 
-@container row (max-width: 450px) {
+@container row (max-width: 400px) {
   .row-name {
     flex-direction: column;
     align-items: baseline;

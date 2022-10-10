@@ -16,12 +16,11 @@ export const RaceResultsTable = ({ data }: IRaceResultsTable) => (
       const { status, Time, positionText, position, Driver, Constructor } =
         result;
 
-      const lowGridDriversValue = status.startsWith("+")
-        ? status
-        : `${positionText} (${status})`;
+      // const lowGridDriversValue = status.startsWith("+")
+      //   ? status
+      //   : `${positionText} (${status})`;
 
-      const value =
-        status === "Finished" ? (Time?.time as string) : lowGridDriversValue;
+      const value = status === "Finished" ? (Time?.time as string) : "DNF";
 
       return (
         <Row

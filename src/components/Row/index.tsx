@@ -34,7 +34,9 @@ export const Row = ({ position, name, team, detail, value }: IRow) => {
             </span>
           </p>
           {detail && (
-            <p className="text-xs text-brand-blue-100 opacity-70">{detail}</p>
+            <p className="text-xs text-brand-blue-100 opacity-70 mb-[1px]">
+              {detail}
+            </p>
           )}
         </div>
       </div>
