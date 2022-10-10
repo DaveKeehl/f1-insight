@@ -17,10 +17,9 @@ export const DriverStandingsTable = ({ data }: IDriverStandingsTable) => (
       const { position, Driver, Constructors, points } = result;
       const team = (Constructors[0] as Constructor).name;
 
-      console.log({ team, corrected: teamsCorrections[team] || team });
-
       return (
         <Row
+          target="driver"
           position={position}
           name={`${Driver.givenName} ${Driver.familyName}`}
           team={teamsCorrections[team] || team}

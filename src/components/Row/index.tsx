@@ -5,6 +5,7 @@ interface IRow {
   name: string;
   team: string;
   value: string;
+  target: "driver" | "team";
   detail?: string;
 }
 
@@ -14,7 +15,7 @@ const GlowBlock = ({ team }: { team: string }) => {
   );
 };
 
-export const Row = ({ position, name, team, detail, value }: IRow) => {
+export const Row = ({ position, name, team, detail, value, target }: IRow) => {
   const clean = {
     team: Object.keys(teamsCorrections).includes(team)
       ? teamsCorrections[team]?.toLowerCase()
@@ -27,12 +28,16 @@ export const Row = ({ position, name, team, detail, value }: IRow) => {
         <p className="w-5">{position}</p>
         <GlowBlock team={clean.team || ""} />
         <div className="row-name flex items-end gap-2">
-          <p>
-            {name.split(" ")[0]}{" "}
-            <span className="font-medium">
-              {name.split(" ").slice(1).join(" ")}
-            </span>
-          </p>
+          {target === "driver" ? (
+            <p>
+              {name.split(" ")[0]}{" "}
+              <span className="font-medium">
+                {name.split(" ").slice(1).join(" ")}
+              </span>
+            </p>
+          ) : (
+            <p>{name}</p>
+          )}
           {detail && (
             <p className="text-xs text-brand-blue-100 opacity-70 mb-[1px]">
               {detail}

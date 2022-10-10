@@ -20,6 +20,7 @@ export const QualifyingResultsTable = ({ data }: IQualifyingResultsTable) => (
 
       return (
         <Row
+          target="driver"
           position={position}
           name={`${Driver.givenName} ${Driver.familyName}`}
           team={Constructor.name}

@@ -15,15 +15,18 @@ export const SprintResultsTable = ({ data }: ISprintResultsTable) => (
       const { status, Time, positionText, position, Driver, Constructor } =
         result;
 
-      const lowGridDriversValue = status.startsWith("+")
-        ? status
-        : `${positionText} (${status})`;
+      // const lowGridDriversValue = status.startsWith("+")
+      //   ? status
+      //   : `${positionText} (${status})`;
+
+      const lowGridDriversValue = status.startsWith("+") ? status : "DNF";
 
       const value =
         status === "Finished" ? (Time?.time as string) : lowGridDriversValue;
 
       return (
         <Row
+          target="driver"
           position={position}
           name={`${Driver.givenName} ${Driver.familyName}`}
           team={Constructor.name}

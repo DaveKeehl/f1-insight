@@ -18,6 +18,7 @@ export const ConstructorStandingsTable = ({
 
       return (
         <Row
+          target="team"
           position={position}
           name={Constructor.name}
           team={Constructor.name}
