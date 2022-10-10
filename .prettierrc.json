@@ -1,3 +1,11 @@
 {
-  "trailingComma": "none"
+  "trailingComma": "none",
+  "importOrder": [
+    "^@layouts/(.*)$",
+    "^@components/(.*)$",
+    "^@utils/(.*)$",
+    "^[./]"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
 }

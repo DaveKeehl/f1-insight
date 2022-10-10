@@ -1,7 +1,7 @@
+import { IDriverWithTeam } from "@utils/types/driver";
+
 import { DriverCard } from "../Card";
 import { Cards } from "./Cards";
-
-import { IDriverWithTeam } from "@utils/types/driver";
 
 interface IDrivers {
   drivers: IDriverWithTeam[];

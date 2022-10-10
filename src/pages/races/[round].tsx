@@ -1,20 +1,21 @@
-import { useState } from "react";
 import type {
   GetStaticPaths,
   GetStaticPropsContext,
   GetStaticPropsResult,
   InferGetStaticPropsType
 } from "next";
+import { useState } from "react";
 
 import { PageLayout } from "@layouts/PageLayout";
 
 import { Races } from "@components/Cards";
 import {
-  RaceResultsTable,
   QualifyingResultsTable,
+  RaceResultsTable,
   SprintResultsTable
 } from "@components/Table";
 
+import { DRIVER_THAT_NEVER_MISSED_A_RACE } from "@utils/constants";
 import { getPrettyDate } from "@utils/helpers";
 import {
   getDriverRaceResults,
@@ -30,7 +31,6 @@ import {
   RaceSchedule,
   SprintResult
 } from "@utils/types/race";
-import { DRIVER_THAT_NEVER_MISSED_A_RACE } from "@utils/constants";
 
 export default function RacePage({
   raceResult,

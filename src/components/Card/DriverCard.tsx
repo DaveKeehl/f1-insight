@@ -1,5 +1,5 @@
-import { useState } from "react";
 import Image from "next/future/image";
+import { useState } from "react";
 
 import { Card } from "./Card";
 

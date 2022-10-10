@@ -5,24 +5,24 @@ import type {
   InferGetStaticPropsType
 } from "next";
 
-import { PageLayout } from "@layouts/PageLayout";
 import { ActorLayout } from "@layouts/ActorLayout";
+import { PageLayout } from "@layouts/PageLayout";
 
 import { Drivers } from "@components/Cards";
 import { DriverBadge } from "@components/DriverBadge";
-import { DriverInfoDialog } from "@components/InfoDialog";
 import { DriverImage } from "@components/DriverImage";
+import { DriverInfoDialog } from "@components/InfoDialog";
 import { DriverLineChart } from "@components/LineChart";
 
+import { DRIVER_THAT_NEVER_MISSED_A_RACE } from "@utils/constants";
 import { getDriversWithTeam } from "@utils/helpers";
-import { IDriverWithTeam } from "@utils/types/driver";
 import {
   getDriverQualifyingResults,
   getDriverRaceResults,
   getDriverStandings
 } from "@utils/services";
+import { IDriverWithTeam } from "@utils/types/driver";
 import { QualifyingResult, RaceResult } from "@utils/types/race";
-import { DRIVER_THAT_NEVER_MISSED_A_RACE } from "@utils/constants";
 
 const Driver = ({
   givenName,

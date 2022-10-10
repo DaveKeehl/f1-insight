@@ -4,9 +4,10 @@ import { AppLayout } from "@layouts/AppLayout";
 
 import { Races } from "@components/Cards";
 import { RequiredAction } from "@components/RequiredAction";
+
+import { DRIVER_THAT_NEVER_MISSED_A_RACE } from "@utils/constants";
 import { getDriverRaceResults, getRacesSchedule } from "@utils/services";
 import { RaceSchedule } from "@utils/types/race";
-import { DRIVER_THAT_NEVER_MISSED_A_RACE } from "@utils/constants";
 
 export default function RacesPage({
   races

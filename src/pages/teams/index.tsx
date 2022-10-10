@@ -4,6 +4,7 @@ import { AppLayout } from "@layouts/AppLayout";
 
 import { Teams } from "@components/Cards";
 import { RequiredAction } from "@components/RequiredAction";
+
 import { getTeams } from "@utils/services";
 import { Constructor } from "@utils/types/constructor";
 

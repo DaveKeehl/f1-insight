@@ -1,9 +1,9 @@
-import { Table } from "./Table";
-import { Row } from "../Row";
-
+import { teamsCorrections } from "@utils/mappings";
 import { Constructor } from "@utils/types/constructor";
 import { DriverStanding } from "@utils/types/standings";
-import { teamsCorrections } from "@utils/mappings";
+
+import { Row } from "../Row";
+import { Table } from "./Table";
 
 interface IDriverStandingsTable {
   data: DriverStanding[];

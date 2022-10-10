@@ -5,28 +5,28 @@ import type {
   InferGetStaticPropsType
 } from "next";
 
-import { PageLayout } from "@layouts/PageLayout";
 import { ActorLayout } from "@layouts/ActorLayout";
+import { PageLayout } from "@layouts/PageLayout";
 
 import { Teams } from "@components/Cards";
 import { DriverBadge } from "@components/DriverBadge";
-import { TeamInfoDialog } from "@components/InfoDialog";
 import { DriverImage } from "@components/DriverImage";
+import { TeamInfoDialog } from "@components/InfoDialog";
 import { TeamLineChart } from "@components/LineChart";
 
+import { DRIVER_THAT_NEVER_MISSED_A_RACE } from "@utils/constants";
 import { getTeamDrivers } from "@utils/helpers";
-import { IDriver } from "@utils/types/driver";
+import { teamsCorrections } from "@utils/mappings";
 import {
   getDriverRaceResults,
-  getDrivers,
   getDriverStandings,
+  getDrivers,
   getRoundConstructorStandings,
   getTeams
 } from "@utils/services";
 import { Constructor } from "@utils/types/constructor";
-import { teamsCorrections } from "@utils/mappings";
+import { IDriver } from "@utils/types/driver";
 import { ConstructorStanding } from "@utils/types/standings";
-import { DRIVER_THAT_NEVER_MISSED_A_RACE } from "@utils/constants";
 
 interface ITeam {
   name: string;

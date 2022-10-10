@@ -1,5 +1,5 @@
-import { Sidebar } from "@components/Sidebar";
 import { SEO } from "@components/SEO";
+import { Sidebar } from "@components/Sidebar";
 
 interface ILayout {
   headTitle: string;

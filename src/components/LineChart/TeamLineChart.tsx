@@ -1,6 +1,6 @@
-import { LineChart } from ".";
-
 import { ConstructorStanding } from "@utils/types/standings";
+
+import { LineChart } from ".";
 
 interface ITeamLineChart {
   team: string;

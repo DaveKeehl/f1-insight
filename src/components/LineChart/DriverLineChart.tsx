@@ -1,7 +1,7 @@
-import { LineChart } from ".";
-
-import { QualifyingResult, RaceResult } from "@utils/types/race";
 import { IDriverWithTeam } from "@utils/types/driver";
+import { QualifyingResult, RaceResult } from "@utils/types/race";
+
+import { LineChart } from ".";
 
 interface IDriverLineChart {
   races: { round: string; country: string }[];

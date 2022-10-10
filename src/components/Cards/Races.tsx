@@ -1,8 +1,8 @@
-import { RaceCard } from "../Card";
-import { Cards } from "./Cards";
-
 import { getPrettyDate } from "@utils/helpers";
 import { RaceSchedule } from "@utils/types/race";
+
+import { RaceCard } from "../Card";
+import { Cards } from "./Cards";
 
 interface IRaces {
   races: RaceSchedule[];

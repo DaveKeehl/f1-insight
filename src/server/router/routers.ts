@@ -1,11 +1,13 @@
-import { createRouter } from "./context";
 import { z } from "zod";
+
 import { getDriversWithTeam } from "@utils/helpers";
 import {
   getConstructorStandings,
-  getDrivers,
-  getDriverStandings
+  getDriverStandings,
+  getDrivers
 } from "@utils/services";
+
+import { createRouter } from "./context";
 
 export const driversRouter = createRouter()
   .query("get-drivers", {

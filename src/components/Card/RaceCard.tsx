@@ -1,9 +1,10 @@
-import { useState } from "react";
-import Image from "next/future/image";
 import { capitalize } from "lodash";
+import Image from "next/future/image";
+import { useState } from "react";
 
+import { Card } from "@components/Card/Card";
 import { Label } from "@components/Label";
-import { Card } from "./Card";
+
 import { countriesCorrections } from "@utils/mappings";
 
 interface IRaceCard {

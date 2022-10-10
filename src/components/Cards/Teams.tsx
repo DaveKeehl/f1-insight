@@ -1,7 +1,7 @@
+import { Constructor } from "@utils/types/constructor";
+
 import { TeamCard } from "../Card";
 import { Cards } from "./Cards";
-
-import { Constructor } from "@utils/types/constructor";
 
 interface ITeams {
   teams: Constructor[];

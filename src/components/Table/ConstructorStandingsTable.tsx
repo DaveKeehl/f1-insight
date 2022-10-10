@@ -1,7 +1,7 @@
-import { Table } from "./Table";
-import { Row } from "../Row";
-
 import { ConstructorStanding } from "@utils/types/standings";
+
+import { Row } from "../Row";
+import { Table } from "./Table";
 
 interface IConstructorStandingsTable {
   data: ConstructorStanding[];

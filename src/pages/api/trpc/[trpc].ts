@@ -1,9 +1,10 @@
 // src/pages/api/trpc/[trpc].ts
-import { createNextApiHandler } from "@trpc/server/adapters/next";
-import { env } from "../../../env/server.mjs";
-import { appRouter, AppRouter } from "../../../server/router";
-import { createContext } from "../../../server/router/context";
 import { inferProcedureOutput } from "@trpc/server";
+import { createNextApiHandler } from "@trpc/server/adapters/next";
+
+import { env } from "../../../env/server.mjs";
+import { AppRouter, appRouter } from "../../../server/router";
+import { createContext } from "../../../server/router/context";
 
 // export API handler
 export default createNextApiHandler({

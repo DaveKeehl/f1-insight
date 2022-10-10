@@ -1,8 +1,8 @@
-import { Table } from "./Table";
-import { Row } from "../Row";
-
-import { DriverQualifyingResult } from "@utils/types/race";
 import { teamsCorrections } from "@utils/mappings";
+import { DriverQualifyingResult } from "@utils/types/race";
+
+import { Row } from "../Row";
+import { Table } from "./Table";
 
 interface IQualifyingResultsTable {
   data: DriverQualifyingResult[];

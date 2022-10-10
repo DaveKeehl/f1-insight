@@ -1,11 +1,11 @@
-import { useState } from "react";
 import type { GetStaticPropsResult, InferGetStaticPropsType } from "next";
+import { useState } from "react";
 
 import { PageLayout } from "@layouts/PageLayout";
 
 import {
-  DriverStandingsTable,
-  ConstructorStandingsTable
+  ConstructorStandingsTable,
+  DriverStandingsTable
 } from "@components/Table";
 
 import { getConstructorStandings, getDriverStandings } from "@utils/services";
