@@ -10,7 +10,7 @@ export const AppLayout = ({ headTitle, children }: ILayout) => {
   return (
     <>
       <SEO title={headTitle} />
-      <main className="flex h-screen w-screen flex-col md:flex-row md:overflow-hidden">
+      <main className="flex h-screen w-screen flex-col-reverse md:flex-row md:overflow-hidden">
         <Sidebar />
         {children}
       </main>

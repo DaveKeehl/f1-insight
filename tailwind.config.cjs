@@ -3,6 +3,9 @@ module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      screens: {
+        xs: "450px"
+      },
       colors: {
         brand: {
           white: {
@@ -57,7 +60,8 @@ module.exports = {
         "glow-williams": "0 0 15px rgb(54 190 220 / 0.4)",
         "info-dialog": "0 8px 28px rgb(0 0 0 / 0.3)",
         "brand-red": "0 0 15px rgb(225 6 1 / 0.5)",
-        "brand-white": "0 0 26px rgb(255 255 255 / 0.3)"
+        "brand-white": "0 0 26px rgb(255 255 255 / 0.2)",
+        cards: "0 0 50px black"
       },
       dropShadow: {
         "card-text-sm": "0 2px 4px rgb(6 6 9 / 0.25)",
