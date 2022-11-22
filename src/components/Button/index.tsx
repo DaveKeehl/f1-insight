@@ -40,13 +40,11 @@ export const Button = ({ icon, href }: IButton) => {
 
   return (
     <Link href={href}>
-      <a>
-        <button
-          className={`rounded-lg ${background} p-[6px] transition hover:bg-brand-red-100/50 active:bg-brand-red-100`}
-        >
-          <Icon name={icon} />
-        </button>
-      </a>
+      <button
+        className={`rounded-lg ${background} p-[6px] transition hover:bg-brand-red-100/50 active:bg-brand-red-100`}
+      >
+        <Icon name={icon} />
+      </button>
     </Link>
   );
 };
