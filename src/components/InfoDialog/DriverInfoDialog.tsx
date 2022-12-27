@@ -1,34 +1,22 @@
+import { capitalize } from "lodash";
+
+import { IDriverCareerInfo } from "@utils/types/driver";
+
 import { InfoDialog } from "./InfoDialog";
 
-export const DriverInfoDialog = () => {
+interface IDriverInfoDialog {
+  data: IDriverCareerInfo;
+}
+
+export const DriverInfoDialog = ({ data }: IDriverInfoDialog) => {
   return (
     <InfoDialog
-      data={[
-        {
-          title: "Podiums",
-          value: "20"
-        },
-        {
-          title: "Points",
-          value: "779"
-        },
-        {
-          title: "Grands Prix entered",
-          value: "97"
-        },
-        {
-          title: "World Championships",
-          value: "0"
-        },
-        {
-          title: "Highest race finish",
-          value: "1 (x5)"
-        },
-        {
-          title: "Highest grid position",
-          value: "1"
-        }
-      ]}
+      data={Object.entries(data).map(([key, value]) => {
+        return {
+          title: capitalize(key.split(/(?=[A-Z])/).join(" ")),
+          value
+        };
+      })}
     />
   );
 };
