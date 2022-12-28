@@ -177,7 +177,7 @@ export async function getStaticProps(
       driverWikiData["Born"]
         ?.split(")")
         .at(-1)
-        ?.replace(/\[\d*\]/g, "") || "",
+        ?.replace(/\[[\w\d]*\]/g, "") || "",
     grandsPrix: +(driverWikiData["Entries"]?.split(" ")[0] || 0),
     points: +(driverWikiData["Career points"] || 0),
     podiums: +(driverWikiData["Podiums"] || 0),
