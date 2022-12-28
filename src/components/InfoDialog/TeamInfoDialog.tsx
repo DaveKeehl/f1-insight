@@ -1,50 +1,22 @@
+import { capitalize } from "lodash";
+
+import { ITeamCareerInfo } from "@utils/types/constructor";
+
 import { InfoDialog } from "./InfoDialog";
 
-export const TeamInfoDialog = () => {
+interface ITeamInfoDialog {
+  data: ITeamCareerInfo;
+}
+
+export const TeamInfoDialog = ({ data }: ITeamInfoDialog) => {
   return (
     <InfoDialog
-      data={[
-        {
-          title: "Base",
-          value: "Milton Keynes, United Kingdom"
-        },
-        {
-          title: "Team Chief",
-          value: "Christian Horner"
-        },
-        {
-          title: "Technical Chief",
-          value: "Pierre Waché"
-        },
-        {
-          title: "Chassis",
-          value: "RB18"
-        },
-        {
-          title: "Power Unit",
-          value: "Red Bull Powertrains"
-        },
-        {
-          title: "First Team Entry",
-          value: "1997"
-        },
-        {
-          title: "World Championships",
-          value: "4"
-        },
-        {
-          title: "Highest Race Finish",
-          value: "1 (x87)"
-        },
-        {
-          title: "Pole Positions",
-          value: "78"
-        },
-        {
-          title: "Fastest Laps",
-          value: "84"
-        }
-      ]}
+      data={Object.entries(data).map(([key, value]) => {
+        return {
+          title: capitalize(key.split(/(?=[A-Z])/).join(" ")),
+          value
+        };
+      })}
     />
   );
 };
