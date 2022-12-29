@@ -48,3 +48,8 @@ export const getPrettyDate = (date: string) => {
     ? `${startDate.getDate()} - ${endDate.getDate()} ${endMonth}`
     : `${startDate.getDate()} ${startMonth} - ${endDate.getDate()} ${endMonth}`;
 };
+
+export const removeRef = (text?: string) => {
+  if (text) return text.replace(/\[\w*\]/g, "");
+  return "";
+};

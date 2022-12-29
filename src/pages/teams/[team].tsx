@@ -18,6 +18,7 @@ import { TeamLineChart } from "@components/LineChart";
 import { DRIVER_THAT_NEVER_MISSED_A_RACE } from "@utils/constants";
 import { getTeamDrivers } from "@utils/helpers";
 import { teamsCorrections } from "@utils/mappings";
+import { collectTeamCareerInfoData, getTeamWikiData } from "@utils/scraping";
 import {
   getDriverRaceResults,
   getDriverStandings,
@@ -168,96 +169,7 @@ export async function getStaticProps(
     teamsCorrections[teamData.name] || teamData.name
   );
 
-  const teamBioHtmlResponse = await fetch(teamData.url);
-  const teamBioHtml = await teamBioHtmlResponse.text();
-  const $ = cheerio.load(teamBioHtml);
-
-  const $table = $(".infobox:first-of-type");
-  const $trs = $table.find("tr");
-
-  const entries = $trs
-    .filter((_, tr) => {
-      const $tr = $(tr);
-      return $tr.find("th").length === 1 && $tr.find("td").length === 1;
-    })
-    .map((_, tr) => {
-      const $tr = $(tr);
-      const $th = $tr.find("th");
-      const $td = $tr.find("td");
-      const headerText = $th.text().trim();
-      const dataText = $td.text().trim();
-      return [[headerText, dataText] as const];
-    })
-    .toArray();
-
-  const teamWikiData = Object.fromEntries(entries);
-
-  const teamCareerInfo: ITeamCareerInfo = {
-    fullName: teamWikiData["Full name"]?.replace(/\[[\w\d]*\]/g, "") || "",
-    nationality: teamData.nationality,
-    base:
-      teamWikiData["Base"]
-        ?.replace(/\[[\w\d]*\]/g, "")
-        ?.split("\n")[0]
-        ?.replace(/\(/g, " (")
-        ?.replace(/\)/g, "), ") || "",
-    teamPrincipal:
-      teamWikiData["Team principal(s)"]
-        ?.replace(/\(/g, " (")
-        ?.replace(/\)/g, ")\n")
-        ?.trim()
-        ?.split("\n")
-        ?.filter((entry) => {
-          const role = entry.slice(0, -1).split(" (")[1];
-          if (
-            role === undefined ||
-            role === "Team Principal" ||
-            role === "Team Principal & CEO"
-          )
-            return true;
-        })
-        ?.join("")
-        ?.replace("(Team Principal)", "")
-        ?.replace(/\[[\w\d]*\]/g, "")
-        ?.trim() || "[WIP]",
-    technicalDirector:
-      (
-        teamWikiData["Technical director"] ||
-        teamWikiData["Technical Directors"]
-      )
-        ?.replace(/\[[\w\d]*\]/g, "")
-        ?.replace(/\)/g, "),")
-        ?.split(",")
-        ?.map((e) => e.trim())
-        ?.join(", ") || "",
-    chassis: teamWikiData["Chassis"]?.replace(/\[[\w\d]*\]/g, "") || "",
-    engine: teamWikiData["Engine"]?.replace(/\[[\w\d]*\]/g, "") || "",
-    tyres: teamWikiData["Tyres"] || "",
-    firstEntry: teamWikiData["First entry"] || "",
-    lastEntry: teamWikiData["Last entry"] || "",
-    racesEntered: +(
-      teamWikiData["Races entered"]
-        ?.replace(/\[[\w\d]*\]/g, "")
-        ?.split(" ")[0] || 0
-    ),
-    constructorsChampionships: +(
-      teamWikiData["Constructors'Championships"]?.split(" ")[0] || 0
-    ),
-    driversChampionships: +(
-      teamWikiData["Drivers'Championships"]?.split(" ")[0] || 0
-    ),
-    raceVictories: +(
-      teamWikiData["Race victories"]?.replace(/\[[\w\d]*\]/g, "") || 0
-    ),
-    podiums: +(teamWikiData["Podiums"]?.replace(/\[[\w\d]*\]/g, "") || 0),
-    points: +(
-      teamWikiData["Points"]?.replace(/\[[\w\d]*\]/g, "")?.split(" ")[0] || 0
-    ),
-    polePositions: +(teamWikiData["Pole positions"] || 0),
-    fastestLaps: +(
-      teamWikiData["Fastest laps"]?.replace(/\[[\w\d]*\]/g, "") || 0
-    )
-  };
+  const teamWikiData = await getTeamWikiData(teamData.url);
 
   return {
     props: {
@@ -269,7 +181,7 @@ export async function getStaticProps(
         round: raceResult.round,
         country: raceResult.Circuit.Location.country
       })),
-      teamCareerInfo
+      teamCareerInfo: collectTeamCareerInfoData(teamData, teamWikiData)
     },
     revalidate: 60
   };

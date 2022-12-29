@@ -18,6 +18,10 @@ import { DriverLineChart } from "@components/LineChart";
 import { DRIVER_THAT_NEVER_MISSED_A_RACE } from "@utils/constants";
 import { getDriversWithTeam } from "@utils/helpers";
 import {
+  collectDriverCareerInfoData,
+  getDriverWikiData
+} from "@utils/scraping";
+import {
   getDriverQualifyingResults,
   getDriverRaceResults,
   getDriverStandings
@@ -139,53 +143,7 @@ export async function getStaticProps(
     driverData.driverId
   );
 
-  const driverBioHtmlResponse = await fetch(driverData.url);
-  const driverBioHtml = await driverBioHtmlResponse.text();
-  const $ = cheerio.load(driverBioHtml);
-
-  const $table = $(".infobox");
-  const $trs = $table.find("tr");
-
-  const entries: [string, string][] = [];
-  let isF1 = true;
-
-  $trs.each((_, tr) => {
-    const $tr = $(tr);
-
-    const isValid = $tr.find("th").length === 1 && $tr.find("td").length === 1;
-
-    const $th = $tr.find("th");
-    const $td = $tr.find("td");
-    const headerText = $th.text().trim();
-    const dataText = $td.text().trim();
-
-    if ($th.hasClass("infobox-header")) {
-      isF1 = headerText === "Formula One World Championship career";
-    }
-
-    if (isF1 && isValid) {
-      entries.push([headerText, dataText]);
-    }
-  });
-
-  const driverWikiData = Object.fromEntries(entries);
-
-  const driverCareerInfo: IDriverCareerInfo = {
-    nationality: driverData.nationality,
-    dateOfBirth: new Date(driverData.dateOfBirth).toLocaleDateString("en-GB"),
-    placeOfBirth:
-      driverWikiData["Born"]
-        ?.split(")")
-        .at(-1)
-        ?.replace(/\[[\w\d]*\]/g, "") || "",
-    grandsPrix: +(driverWikiData["Entries"]?.split(" ")[0] || 0),
-    points: +(driverWikiData["Career points"] || 0),
-    podiums: +(driverWikiData["Podiums"] || 0),
-    polePositions: +(driverWikiData["Pole positions"] || 0),
-    wins: +(driverWikiData["Wins"] || 0),
-    fastestLaps: +(driverWikiData["Fastest laps"] || 0),
-    worldChampionships: +(driverWikiData["Championships"]?.split(" ")[0] || 0)
-  };
+  const driverWikiData = await getDriverWikiData(driverData.url);
 
   return {
     props: {
@@ -199,7 +157,7 @@ export async function getStaticProps(
           country: raceResult.Circuit.Location.country
         })
       ),
-      driverCareerInfo
+      driverCareerInfo: collectDriverCareerInfoData(driverData, driverWikiData)
     },
     revalidate: 60
   };
