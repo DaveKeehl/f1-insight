@@ -13,7 +13,7 @@ export const Cards = <T,>({ data, renderCard, keyExtractor }: ICards<T>) => {
 
   const padding = visible ? "py-5 md:px-5" : "py-0 md:px-0 md:py-5";
   const width = visible
-    ? "h-[185px] md:h-fit md:w-[294px]"
+    ? "h-[185px] md:h-auto md:w-[294px]"
     : "h-0 md:w-0 md:h-fit";
 
   return (
