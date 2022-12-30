@@ -11,10 +11,10 @@ interface ICards<T> {
 export const Cards = <T,>({ data, renderCard, keyExtractor }: ICards<T>) => {
   const visible = useAtomValue(cardsVisible);
 
-  const padding = !visible ? "py-0 md:px-0 md:py-5" : "py-5 md:px-5";
-  const width = !visible
-    ? "h-0 md:w-0 md:h-fit"
-    : "h-[185px] md:h-fit md:w-[294px]";
+  const padding = visible ? "py-5 md:px-5" : "py-0 md:px-0 md:py-5";
+  const width = visible
+    ? "h-[185px] md:h-fit md:w-[294px]"
+    : "h-0 md:w-0 md:h-fit";
 
   return (
     <aside

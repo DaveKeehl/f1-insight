@@ -1,11 +1,8 @@
-import { useAtom } from "jotai";
 import Image from "next/image";
-import { CaretLeft } from "phosphor-react";
 import { v4 as uuidv4 } from "uuid";
 
+import { CardsTrigger } from "@components/CardsTrigger";
 import { IPill, Pill } from "@components/Pill";
-
-import { cardsVisible } from "@utils/atoms";
 
 import { AppLayout } from "./AppLayout";
 
@@ -68,26 +65,11 @@ export const PageLayout = ({
   body,
   buttons
 }: IPageLayout) => {
-  const [visible, setVisible] = useAtom(cardsVisible);
-
-  const handleClick = () => setVisible((prev) => !prev);
-
-  const bottom = visible ? "bottom-[266px]" : "bottom-[82px]";
-
-  const arrowRotation = !visible
-    ? "rotate-90 md:rotate-180"
-    : "-rotate-90 md:rotate-0";
-
   return (
     <AppLayout headTitle={headTitle}>
       {side}
       <div className="relative flex flex-auto flex-col items-center gap-10 bg-brand-blue-400 px-4 pt-12 pb-8 md:pb-16 text-brand-white-100 overflow-scroll lg:px-14">
-        <div
-          className={`fixed md:absolute z-20 w-10 h-10 bg-brand-blue-300 border border-brand-blue-200 ${bottom} md:top-4 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-4 rounded-full grid place-items-center hover:cursor-pointer hover:bg-brand-blue-200 transition-all duration-500 ${arrowRotation}`}
-          onClick={handleClick}
-        >
-          <CaretLeft size={22} weight="bold" />
-        </div>
+        <CardsTrigger />
         <Image
           src="/f1_logo.svg"
           alt="Formula 1 logo"
