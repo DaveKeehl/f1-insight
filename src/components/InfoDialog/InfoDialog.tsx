@@ -38,7 +38,7 @@ export const InfoDialog = ({ data }: IInfoDialog) => {
         {open ? <X size={24} /> : <List size={24} />}
       </button>
       <div
-        className={`${classes} ${visibility} flex max-h-96 flex-col gap-4 overflow-auto rounded-3xl px-7 py-5 shadow-info-dialog transition-all duration-300 max-w-xs`}
+        className={`${classes} ${visibility} flex max-h-96 flex-col gap-4 overflow-auto rounded-3xl px-7 py-5 shadow-info-dialog transition-all duration-300 max-w-xs no-scrollbar`}
       >
         {data.map((item) => (
           <DialogEntry key={uuidv4()} {...item} />

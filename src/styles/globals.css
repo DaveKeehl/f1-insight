@@ -20,8 +20,21 @@
   font-weight: 600;
 }
 
-body {
-  font-family: "Formula1", -apple-system, sans-serif;
+@layer base {
+  body {
+    font-family: "Formula1", -apple-system, sans-serif;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .row {
