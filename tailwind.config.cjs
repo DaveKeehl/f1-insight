@@ -67,6 +67,9 @@ module.exports = {
         "card-text-sm": "0 2px 4px rgb(6 6 9 / 0.25)",
         "card-text-md": "0 2px 4px rgb(6 6 9 / 0.65)"
       },
+      transitionProperty: {
+        cards: "height, width, padding-inline"
+      },
       keyframes: {
         "fade-in": {
           "0%": {

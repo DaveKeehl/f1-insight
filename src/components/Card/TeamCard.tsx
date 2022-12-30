@@ -28,7 +28,7 @@ export const TeamCard = ({ name }: ITeamCard) => {
     <Card
       href={`/teams/${clean.name}`}
       selected={(asPath) => asPath.split("/").at(-1) === clean.name}
-      className="items-center bg-gradient-to-tr from-brand-white-300 to-brand-white-200 px-4 py-10"
+      className="relative items-center bg-gradient-to-tr from-brand-white-300 to-brand-white-200 px-4 py-10"
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
