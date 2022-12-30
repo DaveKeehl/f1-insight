@@ -13,6 +13,7 @@ interface IPageLayout {
   buttons?: IPill[][];
   side?: React.ReactNode;
   body: React.ReactNode;
+  showTrigger?: boolean;
 }
 
 const Divider = ({ className = "" }: { className?: string }) => (
@@ -63,13 +64,14 @@ export const PageLayout = ({
   subtitle,
   side,
   body,
-  buttons
+  buttons,
+  showTrigger = true
 }: IPageLayout) => {
   return (
     <AppLayout headTitle={headTitle}>
       {side}
       <div className="relative flex flex-auto flex-col items-center gap-10 bg-brand-blue-400 px-4 pt-12 pb-8 md:pb-16 text-brand-white-100 overflow-scroll lg:px-14">
-        <CardsTrigger />
+        {showTrigger && <CardsTrigger />}
         <Image
           src="/f1_logo.svg"
           alt="Formula 1 logo"

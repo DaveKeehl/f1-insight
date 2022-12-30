@@ -41,6 +41,7 @@ export default function StandingsPage({
         ]
       ]}
       body={table[mode]}
+      showTrigger={false}
     />
   );
 }
