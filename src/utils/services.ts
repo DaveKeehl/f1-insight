@@ -9,11 +9,13 @@ import {
 import { ConstructorStanding, DriverStanding } from "./types/standings";
 
 export const getDrivers = async () => {
+  console.log("getDrivers", new Date().toUTCString());
   const res = await fetch("https://ergast.com/api/f1/current/drivers.json");
   return (await res.json()).MRData.DriverTable.Drivers as IDriver[];
 };
 
 export const getDriverStandings = async () => {
+  console.log("getDriverStandings", new Date().toUTCString());
   const res = await fetch(
     "https://ergast.com/api/f1/current/driverStandings.json"
   );
@@ -22,6 +24,7 @@ export const getDriverStandings = async () => {
 };
 
 export const getConstructorStandings = async () => {
+  console.log("getConstructorStandings", new Date().toUTCString());
   const res = await fetch(
     "https://ergast.com/api/f1/current/constructorStandings.json"
   );
@@ -33,6 +36,7 @@ export const getRoundConstructorStandings = async (
   round: number,
   team: string
 ) => {
+  console.log("getRoundConstructorStandings", new Date().toUTCString());
   const res = await fetch(
     `https://ergast.com/api/f1/current/${round}/constructors/${team}/constructorStandings.json`
   );
@@ -41,16 +45,19 @@ export const getRoundConstructorStandings = async (
 };
 
 export const getRacesSchedule = async () => {
+  console.log("getRacesSchedule", new Date().toUTCString());
   const res = await fetch("https://ergast.com/api/f1/current.json");
   return (await res.json()).MRData.RaceTable.Races as RaceSchedule[];
 };
 
 export const getRaceSchedule = async (round: number) => {
+  console.log("getRaceSchedule", new Date().toUTCString());
   const res = await fetch(`https://ergast.com/api/f1/current/${round}.json`);
   return (await res.json()).MRData.RaceTable.Races[0] as RaceSchedule;
 };
 
 export const getTeams = async () => {
+  console.log("getTeams", new Date().toUTCString());
   const res = await fetch(
     "https://ergast.com/api/f1/current/constructors.json"
   );
@@ -59,6 +66,7 @@ export const getTeams = async () => {
 };
 
 export const getRaceResult = async (round: number) => {
+  console.log("getRaceResult", new Date().toUTCString());
   const res = await fetch(
     `https://ergast.com/api/f1/current/${round}/results.json`
   );
@@ -66,6 +74,7 @@ export const getRaceResult = async (round: number) => {
 };
 
 export const getQualifyingResult = async (round: number) => {
+  console.log("getQualifyingResult", new Date().toUTCString());
   const res = await fetch(
     `https://ergast.com/api/f1/current/${round}/qualifying.json`
   );
@@ -73,6 +82,7 @@ export const getQualifyingResult = async (round: number) => {
 };
 
 export const getSprintResult = async (round: number) => {
+  console.log("getSprintResult", new Date().toUTCString());
   const res = await fetch(
     `https://ergast.com/api/f1/current/${round}/sprint.json`
   );
@@ -80,6 +90,7 @@ export const getSprintResult = async (round: number) => {
 };
 
 export const getDriverRaceResults = async (driverId: string) => {
+  console.log("getDriverRaceResults", new Date().toUTCString());
   const res = await fetch(
     `https://ergast.com/api/f1/current/drivers/${driverId}/results.json?limit=30`
   );
@@ -87,6 +98,7 @@ export const getDriverRaceResults = async (driverId: string) => {
 };
 
 export const getDriverQualifyingResults = async (driverId: string) => {
+  console.log("getDriverQualifyingResults", new Date().toUTCString());
   const res = await fetch(
     `https://ergast.com/api/f1/current/drivers/${driverId}/qualifying.json`
   );

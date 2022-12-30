@@ -51,6 +51,8 @@ export async function getStaticProps(): Promise<
     constructorStandings: ConstructorStanding[];
   }>
 > {
+  console.log("--------------");
+
   const driverStandings = await getDriverStandings();
   const constructorStandings = await getConstructorStandings();
 

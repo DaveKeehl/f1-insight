@@ -137,6 +137,8 @@ export async function getStaticProps(
     teamCareerInfo: ITeamCareerInfo;
   }>
 > {
+  console.log("--------------");
+
   const team = context.params?.team as string;
   const teams = await getTeams();
 
@@ -188,6 +190,8 @@ export async function getStaticProps(
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
+  console.log("--------------");
+
   const teams = await getTeams();
 
   return {
