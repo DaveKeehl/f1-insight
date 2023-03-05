@@ -13,7 +13,7 @@ export default function RacesPage({
   races
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <AppLayout headTitle="F1 Insights - Races">
+    <AppLayout headTitle="Races">
       <Races races={races} />
       <RequiredAction message="Please choose a race" />
     </AppLayout>

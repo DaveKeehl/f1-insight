@@ -109,7 +109,7 @@ export default function TeamPage({
 
   return (
     <PageLayout
-      headTitle={`F1 Insights - ${name}`}
+      headTitle={name}
       title={name}
       side={<Teams teams={teams} />}
       body={

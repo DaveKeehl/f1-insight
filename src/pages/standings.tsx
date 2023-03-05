@@ -24,7 +24,7 @@ export default function StandingsPage({
 
   return (
     <PageLayout
-      headTitle="F1 Insights - Standings"
+      headTitle="Standings"
       title="Standings"
       buttons={[
         [

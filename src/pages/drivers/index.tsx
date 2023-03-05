@@ -13,7 +13,7 @@ export default function DriversPage({
   drivers
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <AppLayout headTitle="F1 Insights - Drivers">
+    <AppLayout headTitle="Drivers">
       <Drivers drivers={drivers} />
       <RequiredAction message="Please choose a driver" />
     </AppLayout>
