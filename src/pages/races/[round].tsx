@@ -57,7 +57,7 @@ export default function RacePage({
 
   return (
     <PageLayout
-      headTitle={`F1 Insights - ${Circuit.Location.country} (Round ${round})`}
+      headTitle={`${Circuit.Location.country} (Round ${round})`}
       side={<Races races={races} />}
       title={Circuit.Location.country}
       subtitle={`@${clean.circuitId}   //   ${getPrettyDate(date)}`}

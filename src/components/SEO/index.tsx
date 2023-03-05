@@ -18,7 +18,7 @@ export const SEO = ({ title }: ISEO) => {
 
   const finalPort = port && `: ${port}`;
   const metaDescription =
-    "A web application to gather insights into the current Formula 1 season";
+    "A web application to gather insight into the current Formula 1 season";
 
   return (
     <Head>
@@ -27,7 +27,7 @@ export const SEO = ({ title }: ISEO) => {
         name="viewport"
         content="width=device-width, initial-scale=1, shrink-to-fit=no"
       />
-      <title>{title}</title>
+      <title>F1 Insight - {title}</title>
       <meta name="description" content={metaDescription} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={metaDescription} />

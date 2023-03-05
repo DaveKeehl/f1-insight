@@ -12,7 +12,7 @@ export default function RacesPage({
   teams
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <AppLayout headTitle="F1 Insights - Teams">
+    <AppLayout headTitle="Teams">
       <Teams teams={teams} />
       <RequiredAction message="Please choose a team" />
     </AppLayout>
