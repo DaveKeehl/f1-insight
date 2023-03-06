@@ -10,7 +10,7 @@ export const Sidebar = () => {
         <Link href="/">
           <Image
             src="/f1_logo.svg"
-            alt=""
+            alt="Formula 1 logo"
             width={48}
             height={12}
             className="hover:cursor-pointer hidden xs:block"
@@ -24,7 +24,7 @@ export const Sidebar = () => {
           <Button icon="Trophy" text="Standings" href="/standings" />
         </div>
       </div>
-      <Link href="https://github.com/DaveKeehl/f1-insights" target="_blank">
+      <Link href="https://github.com/DaveKeehl/f1-insight" target="_blank">
         <Image
           src="/github.svg"
           alt=""
