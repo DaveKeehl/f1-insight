@@ -24,8 +24,6 @@ export async function getStaticProps(): Promise<
     teams: Constructor[];
   }>
 > {
-  console.log("--------------");
-
   const teams = await getTeams();
 
   return {

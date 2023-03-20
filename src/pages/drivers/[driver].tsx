@@ -119,8 +119,6 @@ export async function getStaticProps(
     driverCareerInfo: IDriverCareerInfo;
   }>
 > {
-  console.log("--------------");
-
   const driverStandings = await getDriverStandings();
   const drivers = getDriversWithTeam(driverStandings);
 
@@ -166,8 +164,6 @@ export async function getStaticProps(
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  console.log("--------------");
-
   const driverStandings = await getDriverStandings();
   const drivers = getDriversWithTeam(driverStandings);
 

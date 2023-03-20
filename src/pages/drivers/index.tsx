@@ -25,8 +25,6 @@ export async function getStaticProps(): Promise<
     drivers: IDriverWithTeam[];
   }>
 > {
-  console.log("--------------");
-
   const driverStandings = await getDriverStandings();
   const drivers = getDriversWithTeam(driverStandings);
 
