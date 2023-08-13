@@ -36,7 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={inter.className}>
         <main className="flex h-screen w-screen flex-col-reverse md:flex-row md:overflow-hidden">
           <Sidebar />
-          {children}
+          <div className="flex flex-auto bg-brand-blue-400 text-white">{children}</div>
         </main>
       </body>
     </html>
