@@ -1,3 +1,9 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Races"
+};
+
 export default function RacesPage() {
-  return <main>races</main>;
+  return <div>races</div>;
 }

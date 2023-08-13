@@ -1,3 +1,3 @@
 export default function TeamPage({ params }: { params: { team: string } }) {
-  return <main>team: {params.team}</main>;
+  return <div>team: {params.team}</div>;
 }

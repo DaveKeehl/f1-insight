@@ -1,3 +1,3 @@
 export default function DriverPage({ params }: { params: { driver: string } }) {
-  return <main>driver: {params.driver}</main>;
+  return <div>driver: {params.driver}</div>;
 }

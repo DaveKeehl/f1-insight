@@ -1,3 +1,3 @@
 export default function RacePage({ params }: { params: { round: string } }) {
-  return <main>round: {params.round}</main>;
+  return <div>round: {params.round}</div>;
 }
