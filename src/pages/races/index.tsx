@@ -25,8 +25,6 @@ export async function getStaticProps(): Promise<
     races: RaceSchedule[];
   }>
 > {
-  console.log("--------------");
-
   const driverRaceResults = await getDriverRaceResults(
     DRIVER_THAT_NEVER_MISSED_A_RACE
   );

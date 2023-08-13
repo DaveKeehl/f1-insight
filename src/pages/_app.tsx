@@ -2,6 +2,7 @@
 import { httpBatchLink } from "@trpc/client/links/httpBatchLink";
 import { loggerLink } from "@trpc/client/links/loggerLink";
 import { withTRPC } from "@trpc/next";
+import { Analytics } from "@vercel/analytics/react";
 import type { AppType } from "next/dist/shared/lib/utils";
 import superjson from "superjson";
 
@@ -12,6 +13,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
   return (
     <>
       <Component {...pageProps} />
+      <Analytics />
     </>
   );
 };

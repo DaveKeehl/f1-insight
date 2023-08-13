@@ -109,8 +109,6 @@ export async function getStaticProps(
     round: number;
   }>
 > {
-  console.log("--------------");
-
   const round = Number.parseInt(context.params?.round as string);
   const driverRaceResults = await getDriverRaceResults(
     DRIVER_THAT_NEVER_MISSED_A_RACE
@@ -136,8 +134,6 @@ export async function getStaticProps(
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  console.log("--------------");
-
   const driverRaceResults = await getDriverRaceResults(
     DRIVER_THAT_NEVER_MISSED_A_RACE
   );
