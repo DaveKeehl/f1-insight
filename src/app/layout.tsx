@@ -9,10 +9,25 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    template: "F1 Insights - %s",
+    template: "F1 Insight - %s",
     default: "F1 Insight"
   },
-  description: "A web application to gather insight into the current Formula 1 season"
+  description: "A web application to gather insight into the current Formula 1 season",
+  openGraph: {
+    title: "F1 Insight",
+    description: "A web application to gather insight into the current Formula 1 season",
+    url: "https://f1-insight.com",
+    siteName: "F1 Insight",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 3480,
+        height: 1920
+      }
+    ],
+    locale: "en_US",
+    type: "website"
+  }
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
