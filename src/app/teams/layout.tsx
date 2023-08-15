@@ -2,7 +2,7 @@ import TeamCards from "@/components/TeamCards";
 
 export default function TeamLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex">
+    <div className="flex w-full">
       <TeamCards
         teams={[
           {

@@ -2,7 +2,7 @@ import RaceCards from "@/components/RaceCards";
 
 export default function RaceLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex">
+    <div className="flex w-full">
       <RaceCards
         races={[
           {
