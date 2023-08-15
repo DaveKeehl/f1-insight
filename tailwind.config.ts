@@ -42,6 +42,9 @@ const config: Config = {
           williams: "#36BEDC"
         }
       },
+      fontFamily: {
+        sans: ["var(--font-f1)", "var(--font-inter)"]
+      },
       boxShadow: {
         alfaromeo: "0 0 95px 24px rgb(201 45 75 / 0.15)",
         alphatauri: "0 0 95px 24px rgb(94 144 169 / 0.15)",

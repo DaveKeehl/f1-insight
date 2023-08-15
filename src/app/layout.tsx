@@ -1,11 +1,33 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 
 import Sidebar from "@/components/Sidebar";
 
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+
+const f1 = localFont({
+  src: [
+    {
+      path: "./fonts/Formula1-Regular.otf",
+      weight: "400",
+      style: "normal"
+    },
+    {
+      path: "./fonts/Formula1-Bold.otf",
+      weight: "500",
+      style: "normal"
+    },
+    {
+      path: "./fonts/Formula1-Wide.otf",
+      weight: "600",
+      style: "normal"
+    }
+  ],
+  variable: "--font-f1"
+});
 
 export const metadata: Metadata = {
   title: {
@@ -33,8 +55,8 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <main className="flex h-screen w-screen flex-col-reverse md:flex-row md:overflow-hidden">
+      <body className={`${inter.variable} ${f1.variable}`}>
+        <main className="flex h-screen w-screen flex-col-reverse md:flex-row md:overflow-hidden font-sans">
           <Sidebar />
           <div className="flex flex-auto bg-brand-blue-400 text-white">{children}</div>
         </main>
