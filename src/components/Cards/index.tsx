@@ -18,7 +18,7 @@ export default function Cards<T>({ data, renderCard, keyExtractor }: ICards<T>) 
 
   return (
     <aside
-      className={`flex snap-x snap-mandatory shrink-0 gap-3 overflow-scroll border-t-[1px] border-brand-blue-200 bg-brand-blue-300 p-5 md:flex-col md:border-r-[1px] z-[99] shadow-cards no-scrollbar transition-cards duration-500 ${padding} ${width}`}
+      className={`no-scrollbar z-[99] flex shrink-0 snap-x snap-mandatory gap-3 overflow-scroll border-t-[1px] border-brand-blue-200 bg-brand-blue-300 p-5 shadow-cards transition-cards duration-500 md:flex-col md:border-r-[1px] ${padding} ${width}`}
     >
       {data.map((card) => {
         return (

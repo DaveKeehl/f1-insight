@@ -11,7 +11,7 @@ interface ITeamCard {
 
 const Backdrop = () => {
   return (
-    <div className="absolute top-0 left-0 z-10 h-full w-full bg-gradient-to-tr from-brand-blue-400/50 to-transparent opacity-20" />
+    <div className="absolute left-0 top-0 z-10 h-full w-full bg-gradient-to-tr from-brand-blue-400/50 to-transparent opacity-20" />
   );
 };
 

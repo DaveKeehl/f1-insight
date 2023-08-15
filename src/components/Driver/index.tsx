@@ -14,7 +14,7 @@ export default function Driver({
       <DriverBadge
         permanentNumber={permanentNumber}
         nationality={nationality}
-        className="absolute top-6 left-6"
+        className="absolute left-6 top-6"
       />
       <DriverImage givenName={givenName} familyName={familyName} />
     </div>

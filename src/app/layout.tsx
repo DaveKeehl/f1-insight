@@ -56,7 +56,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={`${inter.variable} ${f1.variable}`}>
-        <main className="flex h-screen w-screen flex-col-reverse md:flex-row md:overflow-hidden font-sans">
+        <main className="flex h-screen w-screen flex-col-reverse font-sans md:flex-row md:overflow-hidden">
           <Sidebar />
           <div className="flex flex-auto bg-brand-blue-400 text-white">{children}</div>
         </main>

@@ -10,7 +10,7 @@ interface IActor {
 
 const GradientBackground = ({ team }: { team: string }) => {
   return (
-    <div className={`absolute top-0 left-0 h-full w-full bg-gradient-to-b ${gradient[team]}`} />
+    <div className={`absolute left-0 top-0 h-full w-full bg-gradient-to-b ${gradient[team]}`} />
   );
 };
 

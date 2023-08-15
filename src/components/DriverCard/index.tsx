@@ -13,7 +13,7 @@ interface IDriverCard {
 
 const Backdrop = () => {
   return (
-    <div className="pointer-events-none absolute top-0 left-0 z-10 h-full w-full bg-gradient-to-tr from-brand-blue-400/50 to-transparent opacity-20" />
+    <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-full bg-gradient-to-tr from-brand-blue-400/50 to-transparent opacity-20" />
   );
 };
 
@@ -50,7 +50,7 @@ export default function DriverCard({ givenName, familyName, permanentNumber }: I
       <Image
         src={imagePath}
         alt={`${givenName} ${familyName}`}
-        className={`absolute top-0 -right-7 aspect-square w-48 transition-transform ${hoverEffect}`.trim()}
+        className={`absolute -right-7 top-0 aspect-square w-48 transition-transform ${hoverEffect}`.trim()}
         width={412}
         height={412}
         priority={true}

@@ -35,12 +35,12 @@ export default function InfoDialog({ data }: IInfoDialog) {
   const handleClick = () => setOpen((prev) => !prev);
 
   return (
-    <div className="absolute top-6 right-6 flex flex-col items-end gap-3">
+    <div className="absolute right-6 top-6 flex flex-col items-end gap-3">
       <button className={classes} onClick={handleClick}>
         {open ? <X size={24} /> : <List size={24} />}
       </button>
       <div
-        className={`${classes} ${visibility} flex max-h-96 flex-col gap-4 overflow-auto rounded-3xl px-7 py-5 shadow-info-dialog transition-all duration-300 max-w-xs no-scrollbar`}
+        className={`${classes} ${visibility} no-scrollbar flex max-h-96 max-w-xs flex-col gap-4 overflow-auto rounded-3xl px-7 py-5 shadow-info-dialog transition-all duration-300`}
       >
         {data.map((item) => (
           <DialogEntry key={uuidv4()} {...item} />
