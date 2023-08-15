@@ -29,26 +29,47 @@ const f1 = localFont({
   variable: "--font-f1"
 });
 
+const title = "F1 Insight";
+const description = "A web application to gather insight into the current Formula 1 season";
+const ogImagePath = "/og-image.png";
+const url = "https://f1-insight.com";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(url),
   title: {
-    template: "F1 Insight - %s",
-    default: "F1 Insight"
+    template: `${title} - %s`,
+    default: title
   },
-  description: "A web application to gather insight into the current Formula 1 season",
+  description,
+  applicationName: title,
+  authors: [
+    {
+      name: "Davide Ciulla",
+      url: "https://davideciulla.com"
+    }
+  ],
   openGraph: {
-    title: "F1 Insight",
-    description: "A web application to gather insight into the current Formula 1 season",
-    url: "https://f1-insight.com",
-    siteName: "F1 Insight",
+    title: title,
+    description,
+    url,
+    siteName: title,
     images: [
       {
-        url: "/og-image.png",
+        url: ogImagePath,
         width: 3480,
         height: 1920
       }
     ],
     locale: "en_US",
     type: "website"
+  },
+  themeColor: "#060609",
+  manifest: "/manifest.json",
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: [ogImagePath]
   }
 };
 
