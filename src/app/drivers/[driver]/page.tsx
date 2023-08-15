@@ -1,8 +1,19 @@
 import Image from "next/image";
+import type { Metadata } from "next";
 
 import DriverData from "@/components/DriverData";
 
-export default function DriverPage({ params }: { params: { driver: string } }) {
+type Props = {
+  params: { driver: string };
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  return {
+    title: params.driver
+  };
+}
+
+export default function DriverPage({ params }: Props) {
   const team = "TEAM";
 
   return (
