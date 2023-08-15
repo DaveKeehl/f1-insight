@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { List, X } from "@phosphor-icons/react";
 import { v4 as uuidv4 } from "uuid";

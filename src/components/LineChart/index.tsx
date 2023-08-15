@@ -1,3 +1,5 @@
+"use client";
+
 import { ResponsiveLine } from "@nivo/line";
 
 import { ColorSchemeId } from "../../../node_modules/@nivo/colors/dist/types/schemes";

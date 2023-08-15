@@ -2,7 +2,7 @@ import DriverCards from "@/components/DriverCards";
 
 export default function DriverLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex">
+    <div className="flex w-full">
       <DriverCards
         drivers={[
           {
