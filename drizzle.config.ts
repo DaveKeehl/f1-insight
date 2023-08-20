@@ -3,12 +3,10 @@ import dotenv from "dotenv";
 dotenv.config({ path: ".env.local" });
 
 export default {
-  schema: "./src/db/*",
+  schema: "./src/db/**/schema.ts",
   out: "./drizzle",
+  driver: "mysql2",
   dbCredentials: {
-    host: process.env.DB_HOST ?? "",
-    port: Number(process.env.DB_PORT),
-    user: process.env.DB_USER ?? "",
-    database: process.env.DB_DATABASE ?? ""
+    connectionString: process.env.DB_URL ?? ""
   }
 } satisfies Config;
