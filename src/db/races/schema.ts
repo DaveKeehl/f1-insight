@@ -34,7 +34,7 @@ export const races = mysqlTable("races", {
   /**
    * Race date e.g. "1950-05-13"
    */
-  date: date("date").notNull().default(new Date("0000-00-00")),
+  date: date("date", { mode: "string" }).notNull().default("0000-00-00"),
   /**
    * Race start time e.g."13:00:00"
    */

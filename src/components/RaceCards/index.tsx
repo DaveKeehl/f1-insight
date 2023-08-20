@@ -1,25 +1,25 @@
 "use client";
 
-import { getPrettyDate } from "@/utils/helpers";
-import { RaceSchedule } from "@/utils/types/race";
-
 import RaceCard from "@/components/RaceCard";
 import Cards from "@/components/Cards";
 
+import { getAllCurrentRaces } from "@/db/races/queries";
+import { getPrettyDate } from "@/utils/helpers";
+
 interface IRaces {
-  races: RaceSchedule[];
+  races: Awaited<ReturnType<typeof getAllCurrentRaces>>;
 }
 
 export default function RaceCards({ races }: IRaces) {
   return (
     <Cards
       data={races}
-      keyExtractor={(race) => race.round}
+      keyExtractor={(race) => race.round.toString()}
       renderCard={(race) => (
         <RaceCard
-          round={Number.parseInt(race.round)}
-          circuitId={race.Circuit.circuitId}
-          country={race.Circuit.Location.country}
+          round={race.round}
+          circuitId={race.location ?? ""}
+          country={race.country ?? ""}
           year={race.date.split("-")[0] || ""}
           date={getPrettyDate(race.date)}
         />
