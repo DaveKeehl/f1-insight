@@ -21,6 +21,6 @@ export async function getAllCurrentRaces() {
     })
     .from(races)
     .leftJoin(circuits, eq(races.circuitId, circuits.circuitId))
-    .where(eq(races.year, 2023))
+    .where(eq(races.year, new Date().getFullYear()))
     .orderBy(races.round);
 }

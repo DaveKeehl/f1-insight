@@ -3,10 +3,10 @@
 import TeamCard from "@/components/TeamCard";
 import Cards from "@/components/Cards";
 
-import { Constructor } from "@/utils/types/constructor";
+import { getAllCurrentConstructors } from "@/db/constructors/queries";
 
 interface ITeams {
-  teams: Constructor[];
+  teams: Awaited<ReturnType<typeof getAllCurrentConstructors>>;
 }
 
 export default function TeamCards({ teams }: ITeams) {
