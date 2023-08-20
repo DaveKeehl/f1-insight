@@ -1,4 +1,5 @@
 import LineChart from "@/components/LineChart";
+import { getDriverWithConstructor } from "@/db/drivers/queries";
 
 import { IDriverWithTeam } from "@/utils/types/driver";
 import { QualifyingResult, RaceResult } from "@/utils/types/race";
@@ -7,7 +8,7 @@ interface IDriverLineChart {
   races: { round: string; country: string }[];
   raceResults: RaceResult[];
   qualifyingResults: QualifyingResult[];
-  driverWithTeam: IDriverWithTeam;
+  driverWithTeam: Awaited<ReturnType<typeof getDriverWithConstructor>>[number];
 }
 
 export default function DriverLineChart({
@@ -47,7 +48,7 @@ export default function DriverLineChart({
           })
         }
       ]}
-      team={driverWithTeam.team}
+      team={driverWithTeam.constructorName ?? ""}
       minY={1}
       maxY={20}
       legendX="Race"

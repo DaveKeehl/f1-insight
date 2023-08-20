@@ -1,26 +1,27 @@
-import { IDriverCareerInfo, IDriverWithTeam } from "@/utils/types/driver";
-import { QualifyingResult, RaceResult } from "@/utils/types/race";
-
 import Actor from "@/components/Actor";
 import DriverInfoDialog from "@/components/DriverInfoDialog";
 import DriverLineChart from "@/components/DriverLineChart";
 import Driver from "@/components/Driver";
 
+import { getDriverWithConstructor } from "@/db/drivers/queries";
+import { IDriverCareerInfo } from "@/utils/types/driver";
+import { QualifyingResult, RaceResult } from "@/utils/types/race";
+
 export default function DriverData({
-  driverWithTeam,
+  driver,
   raceResults,
   qualifyingResults,
   races,
   driverCareerInfo
 }: {
-  driverWithTeam: IDriverWithTeam;
+  driver: Awaited<ReturnType<typeof getDriverWithConstructor>>[number];
   raceResults: RaceResult[];
   qualifyingResults: QualifyingResult[];
   races: { round: string; country: string }[];
   driverCareerInfo: IDriverCareerInfo;
 }) {
   const clean = {
-    team: driverWithTeam.team.toLowerCase().replace(/\s/g, "")
+    team: driver.constructorName?.toLowerCase().replace(/\s/g, "") ?? ""
   };
 
   return (
@@ -28,13 +29,13 @@ export default function DriverData({
       actor="driver"
       team={clean.team}
       infoDialog={<DriverInfoDialog data={driverCareerInfo} />}
-      drivers={<Driver {...driverWithTeam} />}
+      drivers={<Driver {...driver} />}
       chart={
         <DriverLineChart
           races={races}
           raceResults={raceResults}
           qualifyingResults={qualifyingResults}
-          driverWithTeam={driverWithTeam}
+          driverWithTeam={driver}
         />
       }
     />

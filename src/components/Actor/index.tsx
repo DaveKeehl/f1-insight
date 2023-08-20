@@ -19,6 +19,8 @@ export default function Actor({ actor, team, infoDialog, drivers, chart }: IActo
     team: team.toLowerCase().replace(/\s/g, "")
   };
 
+  console.log({ team: clean.team });
+
   const maxWidth = {
     driver: "max-w-[798px]",
     team: "max-w-[920px]"
