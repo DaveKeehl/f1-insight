@@ -1,24 +1,23 @@
 "use client";
 
-import { IDriverWithTeam } from "@/utils/types/driver";
-
 import DriverCard from "@/components/DriverCard";
 import Cards from "@/components/Cards";
+import { getAllCurrentDrivers } from "@/db/drivers/queries";
 
 interface IDrivers {
-  drivers: IDriverWithTeam[];
+  drivers: Awaited<ReturnType<typeof getAllCurrentDrivers>>;
 }
 
 export default function DriverCards({ drivers }: IDrivers) {
   return (
     <Cards
       data={drivers}
-      keyExtractor={(driver) => driver.driverId}
+      keyExtractor={(driver) => driver.driverId.toString()}
       renderCard={(driver) => (
         <DriverCard
-          givenName={driver.givenName}
-          familyName={driver.familyName}
-          permanentNumber={driver.permanentNumber}
+          givenName={driver.forename}
+          familyName={driver.surname}
+          permanentNumber={driver.number?.toString() ?? ""}
         />
       )}
     />

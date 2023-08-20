@@ -1,4 +1,5 @@
 import RaceCards from "@/components/RaceCards";
+
 import { getAllCurrentRaces } from "@/db/races/queries";
 
 export default async function RaceLayout({ children }: { children: React.ReactNode }) {
