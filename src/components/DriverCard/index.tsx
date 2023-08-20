@@ -5,11 +5,7 @@ import { useState } from "react";
 
 import Card from "@/components/Card";
 
-interface IDriverCard {
-  givenName: string;
-  familyName: string;
-  permanentNumber: string;
-}
+import { getAllCurrentDrivers } from "@/db/drivers/queries";
 
 const Backdrop = () => {
   return (
@@ -17,39 +13,42 @@ const Backdrop = () => {
   );
 };
 
-export default function DriverCard({ givenName, familyName, permanentNumber }: IDriverCard) {
+export default function DriverCard({
+  forename,
+  surname,
+  driverRef,
+  number
+}: Awaited<ReturnType<typeof getAllCurrentDrivers>>[number]) {
   const [hover, setHover] = useState(false);
 
   const clean = {
-    givenName: givenName.toLowerCase(),
-    familyName: familyName.toLowerCase().replace(/\s/g, "-")
+    forename: forename.toLowerCase(),
+    surname: surname.toLowerCase().replace(/\s/g, "-")
   };
 
-  const imagePath = `/drivers/side/${clean.givenName}-${clean.familyName}.png`;
+  const imagePath = `/drivers/side/${clean.forename}-${clean.surname}.png`;
 
   const hoverEffect = hover && "scale-[105%]";
 
   return (
     <Card
-      href={`/drivers/${clean.givenName}-${clean.familyName}`}
-      selected={(asPath) =>
-        decodeURI(asPath).split("/").at(-1) === `${clean.givenName}-${clean.familyName}`
-      }
+      href={`/drivers/${driverRef}`}
+      selected={(asPath) => decodeURI(asPath).split("/").at(-1) === `${driverRef}`}
       className="justify-between bg-gradient-to-tr from-brand-white-300 to-brand-white-200 p-4"
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
       <h1 className="pointer-events-none z-20 text-xl font-medium drop-shadow-card-text-sm">
-        {permanentNumber}
+        {number}
       </h1>
       <div className="pointer-events-none z-20 drop-shadow-card-text-md">
-        <h1 className="text-xl">{givenName}</h1>
-        <h1 className="text-xl font-medium uppercase">{familyName}</h1>
+        <h1 className="text-xl">{forename}</h1>
+        <h1 className="text-xl font-medium uppercase">{surname}</h1>
       </div>
       <Backdrop />
       <Image
         src={imagePath}
-        alt={`${givenName} ${familyName}`}
+        alt={`${forename} ${surname}`}
         className={`absolute -right-7 top-0 aspect-square w-48 transition-transform ${hoverEffect}`.trim()}
         width={412}
         height={412}

@@ -13,13 +13,7 @@ export default function DriverCards({ drivers }: IDrivers) {
     <Cards
       data={drivers}
       keyExtractor={(driver) => driver.driverId.toString()}
-      renderCard={(driver) => (
-        <DriverCard
-          givenName={driver.forename}
-          familyName={driver.surname}
-          permanentNumber={driver.number?.toString() ?? ""}
-        />
-      )}
+      renderCard={(driver) => <DriverCard {...driver} />}
     />
   );
 }

@@ -1,3 +1,4 @@
+import { drizzle } from "drizzle-orm/mysql2";
 import mysql from "mysql2/promise";
 
 export const config: mysql.ConnectionOptions = {
@@ -6,3 +7,6 @@ export const config: mysql.ConnectionOptions = {
   user: process.env.DB_USER,
   database: process.env.DB_DATABASE
 };
+
+export const connection = mysql.createPool(config);
+export const db = drizzle(connection);
