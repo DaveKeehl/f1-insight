@@ -9,7 +9,7 @@ export const status = mysqlTable("status", {
   /**
    * Finishing status e.g. "Retired"
    */
-  status: varchar("status", { length: 255 }).notNull()
+  status: varchar("status", { length: 255 }).notNull().default("")
 });
 
 export type Status = InferModel<typeof status>;

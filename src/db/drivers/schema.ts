@@ -9,7 +9,7 @@ export const drivers = mysqlTable("drivers", {
   /**
    * Unique driver identifier
    */
-  driverRef: varchar("driverRef", { length: 255 }).notNull(),
+  driverRef: varchar("driverRef", { length: 255 }).notNull().default(""),
   /**
    * Permanent driver number
    */
@@ -21,11 +21,11 @@ export const drivers = mysqlTable("drivers", {
   /**
    * Driver forename
    */
-  forename: varchar("forename", { length: 255 }).notNull(),
+  forename: varchar("forename", { length: 255 }).notNull().default(""),
   /**
    * Driver surname
    */
-  surname: varchar("surname", { length: 255 }).notNull(),
+  surname: varchar("surname", { length: 255 }).notNull().default(""),
   /**
    * Driver date of birth
    */

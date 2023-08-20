@@ -9,11 +9,11 @@ export const circuits = mysqlTable("circuits", {
   /**
    * Unique circuit identifier
    */
-  circuitRef: varchar("circuitRef", { length: 255 }).notNull(),
+  circuitRef: varchar("circuitRef", { length: 255 }).notNull().default(""),
   /**
    * Circuit name
    */
-  name: varchar("name", { length: 255 }).notNull(),
+  name: varchar("name", { length: 255 }).notNull().default(""),
   /**
    * Location name
    */

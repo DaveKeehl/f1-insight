@@ -9,11 +9,11 @@ export const constructors = mysqlTable("constructors", {
   /**
    * Unique constructor identifier
    */
-  constructorRef: varchar("constructorRef", { length: 255 }).notNull(),
+  constructorRef: varchar("constructorRef", { length: 255 }).notNull().default(""),
   /**
    * Constructor name
    */
-  name: varchar("name", { length: 255 }).notNull().unique(),
+  name: varchar("name", { length: 255 }).notNull().default("").unique(),
   /**
    * Constructor nationality
    */
@@ -21,7 +21,7 @@ export const constructors = mysqlTable("constructors", {
   /**
    * Constructor Wikipedia page
    */
-  url: varchar("url", { length: 255 }).notNull()
+  url: varchar("url", { length: 255 }).notNull().default("")
 });
 
 export type Constructors = InferModel<typeof constructors>;

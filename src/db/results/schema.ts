@@ -47,7 +47,7 @@ export const results = mysqlTable("results", {
   /**
    * Driver position string e.g. "1" or "R"
    */
-  positionText: varchar("positionText", { length: 255 }).notNull(),
+  positionText: varchar("positionText", { length: 255 }).notNull().default(""),
   /**
    * Driver position for ordering purposes
    */

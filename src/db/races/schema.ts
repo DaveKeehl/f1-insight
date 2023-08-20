@@ -30,7 +30,7 @@ export const races = mysqlTable("races", {
   /**
    * Race name
    */
-  name: varchar("name", { length: 255 }).notNull(),
+  name: varchar("name", { length: 255 }).notNull().default(""),
   /**
    * Race date e.g. "1950-05-13"
    */

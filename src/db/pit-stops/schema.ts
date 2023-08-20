@@ -1,5 +1,5 @@
 import { InferModel } from "drizzle-orm";
-import { int, mysqlTable, primaryKey, time, varchar } from "drizzle-orm/mysql-core";
+import { index, int, mysqlTable, primaryKey, time, varchar } from "drizzle-orm/mysql-core";
 
 import { races } from "@/db/races/schema";
 import { drivers } from "@/db/drivers/schema";
@@ -42,6 +42,7 @@ export const pitStops = mysqlTable(
   },
   (table) => {
     return {
+      raceId: index("raceId").on(table.raceId),
       pk: primaryKey(table.raceId, table.driverId, table.stop)
     };
   }

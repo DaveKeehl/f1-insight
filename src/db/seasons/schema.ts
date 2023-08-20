@@ -9,7 +9,7 @@ export const seasons = mysqlTable("seasons", {
   /**
    * Season Wikipedia page
    */
-  url: varchar("url", { length: 255 }).notNull().unique()
+  url: varchar("url", { length: 255 }).notNull().default("").unique()
 });
 
 export type Seasons = InferModel<typeof seasons>;
