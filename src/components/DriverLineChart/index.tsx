@@ -1,13 +1,13 @@
 import LineChart from "@/components/LineChart";
-import { getDriverWithConstructor } from "@/db/drivers/queries";
 
-import { IDriverWithTeam } from "@/utils/types/driver";
-import { QualifyingResult, RaceResult } from "@/utils/types/race";
+import { getDriverWithConstructor } from "@/db/drivers/queries";
+import { getDriverQualifyingResults } from "@/db/qualifying/queries";
+import { getDriverRaceResults } from "@/db/results/queries";
 
 interface IDriverLineChart {
-  races: { round: string; country: string }[];
-  raceResults: RaceResult[];
-  qualifyingResults: QualifyingResult[];
+  races: { round: number; country: string }[];
+  raceResults: Awaited<ReturnType<typeof getDriverRaceResults>>;
+  qualifyingResults: Awaited<ReturnType<typeof getDriverQualifyingResults>>;
   driverWithTeam: Awaited<ReturnType<typeof getDriverWithConstructor>>[number];
 }
 
@@ -23,27 +23,22 @@ export default function DriverLineChart({
         {
           id: "Race",
           data: races.map((race) => {
-            const correspondingRaceResult = raceResults.find(
-              (raceResult) => raceResult.round === race.round
-            );
+            const result = raceResults.find((res) => res.round === race.round);
+
             return {
               x: `${race.round} - ${race.country}`,
-              y: Number.parseInt(correspondingRaceResult?.Results[0]?.position as string) || null
+              y: result?.positionOrder ?? null
             };
           })
         },
         {
           id: "Qualifying",
           data: races.map((race) => {
-            const correspondingQualifyingResult = qualifyingResults.find(
-              (raceResult) => raceResult.round === race.round
-            );
+            const result = qualifyingResults.find((res) => res.round === race.round);
+
             return {
               x: `${race.round} - ${race.country}`,
-              y:
-                Number.parseInt(
-                  correspondingQualifyingResult?.QualifyingResults[0]?.position as string
-                ) || null
+              y: result?.position ?? null
             };
           })
         }

@@ -4,7 +4,7 @@ import { db } from "@/db/config";
 import { races } from "@/db/races/schema";
 import { drivers } from "@/db/drivers/schema";
 import { results } from "@/db/results/schema";
-import { constructors } from "../constructors/schema";
+import { constructors } from "@/db/constructors/schema";
 
 export async function getAllCurrentDrivers() {
   return db

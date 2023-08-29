@@ -5,7 +5,8 @@ import Driver from "@/components/Driver";
 
 import { getDriverWithConstructor } from "@/db/drivers/queries";
 import { IDriverCareerInfo } from "@/utils/types/driver";
-import { QualifyingResult, RaceResult } from "@/utils/types/race";
+import { getDriverRaceResults } from "@/db/results/queries";
+import { getDriverQualifyingResults } from "@/db/qualifying/queries";
 
 export default function DriverData({
   driver,
@@ -15,9 +16,9 @@ export default function DriverData({
   driverCareerInfo
 }: {
   driver: Awaited<ReturnType<typeof getDriverWithConstructor>>[number];
-  raceResults: RaceResult[];
-  qualifyingResults: QualifyingResult[];
-  races: { round: string; country: string }[];
+  raceResults: Awaited<ReturnType<typeof getDriverRaceResults>>;
+  qualifyingResults: Awaited<ReturnType<typeof getDriverQualifyingResults>>;
+  races: { round: number; country: string }[];
   driverCareerInfo: IDriverCareerInfo;
 }) {
   const clean = {

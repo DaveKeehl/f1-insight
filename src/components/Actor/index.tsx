@@ -28,6 +28,19 @@ export default function Actor({ actor, team, infoDialog, drivers, chart }: IActo
 
   // md:h-72 lg:h-[350px] xl:h-96
 
+  // const shadow: { [key: string]: string } = {
+  //   alfaromeo: "shadow-alfaromeo",
+  //   alphatauri: "shadow-alphatauri",
+  //   alpine: "shadow-alpine",
+  //   astonmartin: "shadow-astonmartin",
+  //   ferrari: "shadow-ferrari",
+  //   haas: "shadow-haas",
+  //   mclaren: "shadow-mclaren",
+  //   mercedes: "shadow-mercedes",
+  //   redbull: "shadow-redbull",
+  //   williams: "shadow-williams"
+  // };
+
   return (
     <div
       className={`relative w-full ${maxWidth[actor]} flex-none overflow-hidden rounded-[40px] ${

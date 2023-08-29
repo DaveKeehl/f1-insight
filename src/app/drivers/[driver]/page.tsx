@@ -5,6 +5,8 @@ import DriverData from "@/components/DriverData";
 
 import { getDriverFullName, getDriverWithConstructor } from "@/db/drivers/queries";
 import { getAllCurrentRaces } from "@/db/races/queries";
+import { getDriverRaceResults } from "@/db/results/queries";
+import { getDriverQualifyingResults } from "@/db/qualifying/queries";
 
 type Props = {
   params: { driver: string };
@@ -21,6 +23,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function DriverPage({ params }: Props) {
   const driver = (await getDriverWithConstructor(params.driver))[0];
   const races = await getAllCurrentRaces();
+  const raceResults = await getDriverRaceResults(params.driver);
+  const qualifyingResults = await getDriverQualifyingResults(params.driver);
 
   return (
     <div className="relative flex w-full flex-col items-center gap-10 overflow-y-auto px-4 pb-8 pt-12 md:pb-16 lg:px-14">
@@ -35,9 +39,9 @@ export default async function DriverPage({ params }: Props) {
       </div>
       <DriverData
         driver={driver}
-        raceResults={[]}
-        qualifyingResults={[]}
-        races={races.map((race) => ({ round: race.round.toString(), country: race.country ?? "" }))}
+        raceResults={raceResults}
+        qualifyingResults={qualifyingResults}
+        races={races.map((race) => ({ round: race.round, country: race.country ?? "" }))}
         driverCareerInfo={{
           nationality: "NATIONALITY",
           dateOfBirth: "DOB",
