@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 
 import Table from "@/components/Table";
+import { getRaceResults } from "@/db/results/queries";
+import { getQualifyingResults } from "@/db/qualifying/queries";
 
 type Props = {
   params: { round: string };
@@ -15,8 +17,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function RacePage({ params }: Props) {
-  const round = params.round;
+export default async function RacePage({ params }: Props) {
+  const raceResults = await getRaceResults(+params.round);
+  const qualifyingResults = await getQualifyingResults(+params.round);
+
+  console.log({ raceResults, qualifyingResults });
 
   return (
     <div className="relative flex w-full flex-col items-center gap-10 overflow-y-auto px-4 pb-8 pt-12 md:pb-16 lg:px-14">
@@ -27,7 +32,7 @@ export default function RacePage({ params }: Props) {
           @BAHRAIN // 2 - 5 MAR
         </p>
       </div>
-      {/* <Table raceResult={null} qualifyingResult={null} sprintResult={null} /> */}
+      <Table raceResult={raceResults} qualifyingResult={qualifyingResults} sprintResult={null} />
     </div>
   );
 }

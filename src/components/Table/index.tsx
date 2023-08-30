@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { v4 as uuid } from "uuid";
 
@@ -6,7 +8,9 @@ import { RaceResultsTable } from "@/components/RaceResultsTable";
 import { QualifyingResultsTable } from "@/components/QualifyingResultsTable";
 import { SprintResultsTable } from "@/components/SprintResultsTable";
 
-import { QualifyingResult, RaceResult, SprintResult } from "@/utils/types/race";
+import { SprintResult } from "@/utils/types/race";
+import { getRaceResults } from "@/db/results/queries";
+import { getQualifyingResults } from "@/db/qualifying/queries";
 
 const Divider = ({ className = "" }: { className?: string }) => (
   <div className={`${className} h-3 w-px bg-brand-blue-200`.trim()} />
@@ -34,8 +38,8 @@ export default function Table({
   qualifyingResult,
   sprintResult
 }: {
-  raceResult: RaceResult;
-  qualifyingResult: QualifyingResult;
+  raceResult: Awaited<ReturnType<typeof getRaceResults>>;
+  qualifyingResult: Awaited<ReturnType<typeof getQualifyingResults>>;
   sprintResult: SprintResult | null;
 }) {
   const [mode, setMode] = useState<"race" | "qualifying" | "sprint">("race");
