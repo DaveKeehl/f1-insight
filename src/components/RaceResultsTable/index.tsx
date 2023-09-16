@@ -1,36 +1,31 @@
-import { teamsCorrections } from "@/utils/mappings";
-import { DriverRaceResult } from "@/utils/types/race";
-
 import { Row } from "@/components/Row";
 import { Table } from "@/components/GenericTable";
 
-interface IRaceResultsTable {
-  data: DriverRaceResult[];
-}
+import { getRaceResults } from "@/db/results/queries";
 
-export const RaceResultsTable = ({ data }: IRaceResultsTable) => (
+export const RaceResultsTable = ({
+  results
+}: {
+  results: Awaited<ReturnType<typeof getRaceResults>>;
+}) => (
   <Table
-    data={data}
+    data={results}
     breakpoint="2xl"
     renderItem={(result) => {
-      const { status, Time, positionText, position, Driver, Constructor } = result;
+      const lowGridDriversValue = result.status?.status.startsWith("+")
+        ? result.status?.status
+        : "DNF";
 
-      // const lowGridDriversValue = status.startsWith("+")
-      //   ? status
-      //   : `${positionText} (${status})`;
-
-      const lowGridDriversValue = status.startsWith("+") ? status : "DNF";
-
-      const value = status === "Finished" ? (Time?.time as string) : lowGridDriversValue;
+      const value = result.status?.status === "Finished" ? result.time : lowGridDriversValue;
 
       return (
         <Row
           target="driver"
-          position={position}
-          name={`${Driver.givenName} ${Driver.familyName}`}
-          team={Constructor.name}
-          value={value}
-          detail={teamsCorrections[Constructor.name] || Constructor.name}
+          position={result.positionOrder.toString()}
+          name={`${result.driverForename} ${result.driverSurname}`}
+          team={result.constructorName ?? ""}
+          value={value ?? ""}
+          detail={result.constructorName ?? ""}
         />
       );
     }}

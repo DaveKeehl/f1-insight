@@ -6,9 +6,7 @@ import { v4 as uuid } from "uuid";
 import { type IPill, Pill } from "@/components/Pill";
 import { RaceResultsTable } from "@/components/RaceResultsTable";
 import { QualifyingResultsTable } from "@/components/QualifyingResultsTable";
-import { SprintResultsTable } from "@/components/SprintResultsTable";
 
-import { SprintResult } from "@/utils/types/race";
 import { getRaceResults } from "@/db/results/queries";
 import { getQualifyingResults } from "@/db/qualifying/queries";
 
@@ -35,27 +33,16 @@ const Menu = ({ buttonGroups }: { buttonGroups: IPill[][] }) => {
 
 export default function Table({
   raceResult,
-  qualifyingResult,
-  sprintResult
+  qualifyingResult
 }: {
   raceResult: Awaited<ReturnType<typeof getRaceResults>>;
   qualifyingResult: Awaited<ReturnType<typeof getQualifyingResults>>;
-  sprintResult: SprintResult | null;
 }) {
-  const [mode, setMode] = useState<"race" | "qualifying" | "sprint">("race");
-  // const [view, setView] = useState<"table" | "chart">("table");
+  const [mode, setMode] = useState<"race" | "qualifying">("race");
 
-  const { Circuit, date, Results: RaceResults } = raceResult;
-  const { QualifyingResults } = qualifyingResult;
-
-  const clean = {
-    circuitId: Circuit.circuitId.replace(/_/g, " ")
-  };
-
-  const table = {
-    race: <RaceResultsTable data={RaceResults} />,
-    qualifying: <QualifyingResultsTable data={QualifyingResults} />,
-    sprint: <SprintResultsTable data={sprintResult?.SprintResults} />
+  const table: Record<"race" | "qualifying", React.ReactNode> = {
+    race: <RaceResultsTable results={raceResult} />,
+    qualifying: <QualifyingResultsTable results={qualifyingResult} />
   };
 
   return (
@@ -69,29 +56,11 @@ export default function Table({
               onClick: () => setMode("qualifying")
             },
             {
-              text: "sprint",
-              selected: mode === "sprint",
-              onClick: () => setMode("sprint"),
-              hidden: sprintResult === null
-            },
-            {
               text: "race",
               selected: mode === "race",
               onClick: () => setMode("race")
             }
           ]
-          // [
-          //   {
-          //     text: "table",
-          //     selected: view === "table",
-          //     onClick: () => setView("table")
-          //   },
-          //   {
-          //     text: "chart",
-          //     selected: view === "chart",
-          //     onClick: () => setView("chart")
-          //   }
-          // ]
         ]}
       />
       {table[mode]}
