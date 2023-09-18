@@ -7,6 +7,8 @@ import { type IPill, Pill } from "@/components/Pill";
 import { DriverStandingsTable } from "@/components/DriverStandingsTable";
 
 import { getDriverStandings } from "@/db/driver-standings/queries";
+import { getConstructorStandings } from "@/db/constructor-standings/queries";
+import { ConstructorStandingsTable } from "../ConstructorStandingsTable";
 
 const Divider = ({ className = "" }: { className?: string }) => (
   <div className={`${className} h-3 w-px bg-brand-blue-200`.trim()} />
@@ -34,13 +36,13 @@ export default function StandingsTable({
   constructorStandings
 }: {
   driverStandings: Awaited<ReturnType<typeof getDriverStandings>>;
-  constructorStandings: Awaited<ReturnType<typeof getDriverStandings>>; // TODO
+  constructorStandings: Awaited<ReturnType<typeof getConstructorStandings>>;
 }) {
   const [mode, setMode] = useState<"drivers" | "constructors">("drivers");
 
   const table: Record<"drivers" | "constructors", React.ReactNode> = {
     drivers: <DriverStandingsTable standings={driverStandings} />,
-    constructors: <DriverStandingsTable standings={driverStandings} />
+    constructors: <ConstructorStandingsTable standings={constructorStandings} />
   };
 
   return (

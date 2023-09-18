@@ -4,7 +4,7 @@ import { float, int, mysqlTable, varchar } from "drizzle-orm/mysql-core";
 import { constructors } from "@/db/constructors/schema";
 import { races } from "@/db/races/schema";
 
-export const constructorStandings = mysqlTable("constructor_standings", {
+export const constructorStandings = mysqlTable("constructorStandings", {
   /**
    * Primary key
    */

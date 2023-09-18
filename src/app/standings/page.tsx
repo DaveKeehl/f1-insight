@@ -4,6 +4,7 @@ import Image from "next/image";
 import StandingsTable from "@/components/StandingsTable";
 
 import { getDriverStandings } from "@/db/driver-standings/queries";
+import { getConstructorStandings } from "@/db/constructor-standings/queries";
 
 export const metadata: Metadata = {
   title: "Standings"
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
 
 export default async function StandingsPage() {
   const driverStandings = await getDriverStandings();
+  const constructorStandings = await getConstructorStandings();
 
   console.log({ driverStandings });
 
@@ -20,7 +22,10 @@ export default async function StandingsPage() {
       <div className="flex flex-col items-center gap-2">
         <h1 className="text-center text-[40px] font-medium text-brand-white-100">Standings</h1>
       </div>
-      <StandingsTable driverStandings={driverStandings} constructorStandings={driverStandings} />
+      <StandingsTable
+        driverStandings={driverStandings}
+        constructorStandings={constructorStandings}
+      />
     </div>
   );
 }
