@@ -4,7 +4,7 @@ import { float, int, mysqlTable, varchar } from "drizzle-orm/mysql-core";
 import { races } from "@/db/races/schema";
 import { drivers } from "@/db/drivers/schema";
 
-export const driverStandings = mysqlTable("driver_standings", {
+export const driverStandings = mysqlTable("driverStandings", {
   /**
    * Primary key
    */
