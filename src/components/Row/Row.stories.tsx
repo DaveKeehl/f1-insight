@@ -6,7 +6,7 @@ const meta = {
   title: "Components/Row",
   component: Row,
   parameters: {
-    layout: "centered"
+    layout: "fullscreen"
   },
   tags: ["autodocs"],
   argTypes: {}
