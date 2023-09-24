@@ -31,6 +31,23 @@ const f1 = localFont({
 const preview: Preview = {
   parameters: {
     actions: { argTypesRegex: "^on[A-Z].*" },
+    backgrounds: {
+      default: "black",
+      values: [
+        {
+          name: "light",
+          value: "#ffffff"
+        },
+        {
+          name: "dark",
+          value: "#333333"
+        },
+        {
+          name: "black",
+          value: "#060609"
+        }
+      ]
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,
@@ -40,7 +57,7 @@ const preview: Preview = {
   },
   decorators: [
     (Story) => (
-      <div className={`${inter.variable} ${f1.variable}`}>
+      <div className={`${inter.variable} ${f1.variable} p-4 font-sans text-white`}>
         <Story />
       </div>
     )
