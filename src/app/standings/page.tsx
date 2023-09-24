@@ -2,6 +2,9 @@ import { Metadata } from "next";
 import Image from "next/image";
 
 import StandingsTable from "@/components/StandingsTable";
+import MultiToggleTable from "@/components/Table/TableSwitcher";
+import DriverStandingsTable from "@/components/Table/DriverStandingsTable";
+import ConstructorStandingsTable from "@/components/Table/ConstructorStandingsTable";
 
 import { getDriverStandings } from "@/db/driver-standings/queries";
 import { getConstructorStandings } from "@/db/constructor-standings/queries";
