@@ -13,6 +13,7 @@ export async function getQualifyingResults(round: number) {
       driverForename: drivers.forename,
       driverSurname: drivers.surname,
       constructorName: constructors.name,
+      constructorRef: constructors.constructorRef,
       q1: qualifying.q1,
       q2: qualifying.q2,
       q3: qualifying.q3

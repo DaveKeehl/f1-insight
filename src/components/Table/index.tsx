@@ -4,8 +4,8 @@ import { useState } from "react";
 import { v4 as uuid } from "uuid";
 
 import { type IPill, Pill } from "@/components/Pill";
-import { RaceResultsTable } from "@/components/RaceResultsTable";
-import { QualifyingResultsTable } from "@/components/QualifyingResultsTable";
+import RaceResultsTable from "@/components/Table/RaceResultsTable";
+import QualifyingResultsTable from "@/components/Table/QualifyingResultsTable";
 
 import { getRaceResults } from "@/db/results/queries";
 import { getQualifyingResults } from "@/db/qualifying/queries";
@@ -41,8 +41,8 @@ export default function Table({
   const [mode, setMode] = useState<"race" | "qualifying">("race");
 
   const table: Record<"race" | "qualifying", React.ReactNode> = {
-    race: <RaceResultsTable results={raceResult} />,
-    qualifying: <QualifyingResultsTable results={qualifyingResult} />
+    race: <RaceResultsTable rows={raceResult} />,
+    qualifying: <QualifyingResultsTable rows={qualifyingResult} />
   };
 
   return (

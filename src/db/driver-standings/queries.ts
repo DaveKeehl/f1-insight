@@ -15,6 +15,7 @@ export async function getDriverStandings() {
       surname: drivers.surname,
       driverRef: drivers.driverRef,
       constructorName: constructors.name,
+      constructorRef: constructors.constructorRef,
       points: driverStandings.points,
       wins: driverStandings.wins,
       round: races.round

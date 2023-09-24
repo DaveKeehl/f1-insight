@@ -14,6 +14,7 @@ export async function getRaceResults(round: number) {
       driverForename: drivers.forename,
       driverSurname: drivers.surname,
       constructorName: constructors.name,
+      constructorRef: constructors.constructorRef,
       time: results.time,
       status: status
     })

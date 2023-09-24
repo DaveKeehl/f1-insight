@@ -11,6 +11,7 @@ export async function getConstructorStandings() {
     .select({
       position: constructorStandings.position,
       constructorName: constructors.name,
+      constructorRef: constructors.constructorRef,
       points: constructorStandings.points,
       wins: constructorStandings.wins,
       round: races.round

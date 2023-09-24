@@ -4,17 +4,17 @@ import { useState } from "react";
 import { v4 as uuid } from "uuid";
 
 import { type IPill, Pill } from "@/components/Pill";
-import { DriverStandingsTable } from "@/components/DriverStandingsTable";
+import DriverStandingsTable from "@/components/Table/DriverStandingsTable";
+import ConstructorStandingsTable from "@/components/Table/ConstructorStandingsTable";
 
 import { getDriverStandings } from "@/db/driver-standings/queries";
 import { getConstructorStandings } from "@/db/constructor-standings/queries";
-import { ConstructorStandingsTable } from "../ConstructorStandingsTable";
 
 const Divider = ({ className = "" }: { className?: string }) => (
   <div className={`${className} h-3 w-px bg-brand-blue-200`.trim()} />
 );
 
-const Menu = ({ buttonGroups }: { buttonGroups: IPill[][] }) => {
+const Menu = ({ buttons: buttonGroups }: { buttons: IPill[][] }) => {
   return (
     <div className="flex items-center gap-5">
       {buttonGroups.map((buttonGroup, idx) => (
@@ -41,14 +41,14 @@ export default function StandingsTable({
   const [mode, setMode] = useState<"drivers" | "constructors">("drivers");
 
   const table: Record<"drivers" | "constructors", React.ReactNode> = {
-    drivers: <DriverStandingsTable standings={driverStandings} />,
-    constructors: <ConstructorStandingsTable standings={constructorStandings} />
+    drivers: <DriverStandingsTable rows={driverStandings} />,
+    constructors: <ConstructorStandingsTable rows={constructorStandings} />
   };
 
   return (
     <>
       <Menu
-        buttonGroups={[
+        buttons={[
           [
             {
               text: "drivers",
