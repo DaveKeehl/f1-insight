@@ -1,4 +1,4 @@
-import { Row } from "@/components/Row";
+import Row from "@/components/Row";
 import { Table } from "@/components/GenericTable";
 
 import { getDriverStandings } from "@/db/driver-standings/queries";
