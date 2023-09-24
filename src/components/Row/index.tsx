@@ -13,7 +13,7 @@ const GlowBlock = ({ team }: { team: string }) => {
   return <div className={`bg-te h-4 w-[6px] ${background[team]} ${glow[team]}`} />;
 };
 
-export const Row = ({ position, name, team, detail, value, target }: IRow) => {
+export default function Row({ position, name, team, detail, value, target }: IRow) {
   const clean = {
     team: Object.keys(teamsCorrections).includes(team)
       ? teamsCorrections[team]?.toLowerCase()
@@ -40,4 +40,4 @@ export const Row = ({ position, name, team, detail, value, target }: IRow) => {
       <p className="text-right">{value}</p>
     </div>
   );
-};
+}
