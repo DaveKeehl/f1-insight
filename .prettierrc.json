@@ -1,12 +1,6 @@
 {
+  "useTabs": false,
   "trailingComma": "none",
-  "printWidth": 80,
-  "importOrder": [
-    "^@layouts/(.*)$",
-    "^@components/(.*)$",
-    "^@utils/(.*)$",
-    "^[./]"
-  ],
-  "importOrderSeparation": true,
-  "importOrderSortSpecifiers": true
+  "printWidth": 100,
+  "plugins": ["prettier-plugin-tailwindcss"]
 }

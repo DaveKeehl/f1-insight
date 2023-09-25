@@ -1,0 +1,40 @@
+import { Metadata } from "next";
+import Image from "next/image";
+
+import TableSwitcher from "@/components/Table/TableSwitcher";
+import DriverStandingsTable from "@/components/Table/DriverStandingsTable";
+import ConstructorStandingsTable from "@/components/Table/ConstructorStandingsTable";
+
+import { getDriverStandings } from "@/db/driver-standings/queries";
+import { getConstructorStandings } from "@/db/constructor-standings/queries";
+
+export const metadata: Metadata = {
+  title: "Standings"
+};
+
+export default async function StandingsPage() {
+  const driverStandings = await getDriverStandings();
+  const constructorStandings = await getConstructorStandings();
+
+  return (
+    <div className="relative flex w-full flex-col items-center gap-10 overflow-y-auto px-4 pb-8 pt-12 md:pb-16 lg:px-14">
+      <Image src="/f1-logo.svg" alt="Formula 1 logo" width={120} height={30} />
+      <div className="flex flex-col items-center gap-2">
+        <h1 className="text-center text-[40px] font-medium text-brand-white-100">Standings</h1>
+      </div>
+      <TableSwitcher
+        initialMode="drivers"
+        data={[
+          {
+            mode: "drivers",
+            component: <DriverStandingsTable rows={driverStandings} />
+          },
+          {
+            mode: "constructors",
+            component: <ConstructorStandingsTable rows={constructorStandings} />
+          }
+        ]}
+      />
+    </div>
+  );
+}

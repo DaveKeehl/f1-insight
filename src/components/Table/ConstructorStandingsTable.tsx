@@ -1,30 +1,24 @@
-import { ConstructorStanding } from "@utils/types/standings";
+import ConstructorsTable from "@/components/Table/ConstructorsTable";
 
-import { Row } from "../Row";
-import { Table } from "./Table";
+import { getConstructorStandings } from "@/db/constructor-standings/queries";
 
-interface IConstructorStandingsTable {
-  data: ConstructorStanding[];
+export default function ConstructorStandingsTable({
+  rows
+}: {
+  rows: Awaited<ReturnType<typeof getConstructorStandings>>;
+}) {
+  return (
+    <ConstructorsTable
+      rows={rows.map((row) => {
+        return {
+          position: row.position ?? 0,
+          team: {
+            name: row.constructorName ?? "",
+            ref: row.constructorRef ?? ""
+          },
+          value: row.points.toString()
+        };
+      })}
+    />
+  );
 }
-
-export const ConstructorStandingsTable = ({
-  data
-}: IConstructorStandingsTable) => (
-  <Table
-    data={data}
-    breakpoint="lg"
-    renderItem={(result) => {
-      const { position, Constructor, points } = result;
-
-      return (
-        <Row
-          target="team"
-          position={position}
-          name={Constructor.name}
-          team={Constructor.name}
-          value={points}
-        />
-      );
-    }}
-  />
-);

@@ -1,6 +1,8 @@
+"use client";
+
 import Link from "next/link";
-import { useRouter } from "next/router";
-import { ChartLine, FlagCheckered, Trophy, User, Users } from "phosphor-react";
+import { usePathname } from "next/navigation";
+import { ChartLine, FlagCheckered, Trophy, User, Users } from "@phosphor-icons/react";
 
 type ButtonIcon = "ChartLine" | "FlagCheckered" | "Trophy" | "User" | "Users";
 
@@ -31,11 +33,10 @@ const Icon = ({ name }: IIcon) => {
   return icons[name];
 };
 
-export const Button = ({ icon, href }: IButton) => {
-  const router = useRouter();
-  const { asPath } = router;
+export default function Button({ icon, href }: IButton) {
+  const pathname = usePathname();
 
-  const selected = asPath.includes(href);
+  const selected = pathname.includes(href);
   const background = selected ? "bg-brand-red-100" : "bg-brand-red-200";
 
   return (
@@ -47,4 +48,4 @@ export const Button = ({ icon, href }: IButton) => {
       </button>
     </Link>
   );
-};
+}

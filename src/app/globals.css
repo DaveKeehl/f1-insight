@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.row {
+  container-type: inline-size;
+  container-name: row;
+}
+
+@container row (max-width: 400px) {
+  .row-name {
+    flex-direction: column;
+    align-items: baseline;
+    gap: 0.25rem;
+  }
+}

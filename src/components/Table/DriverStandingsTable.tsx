@@ -1,32 +1,26 @@
-import { teamsCorrections } from "@utils/mappings";
-import { Constructor } from "@utils/types/constructor";
-import { DriverStanding } from "@utils/types/standings";
+import DriversTable from "@/components/Table/DriversTable";
 
-import { Row } from "../Row";
-import { Table } from "./Table";
+import { getDriverStandings } from "@/db/driver-standings/queries";
 
-interface IDriverStandingsTable {
-  data: DriverStanding[];
+export default function DriverStandingsTable({
+  rows
+}: {
+  rows: Awaited<ReturnType<typeof getDriverStandings>>;
+}) {
+  return (
+    <DriversTable
+      rows={rows.map((row) => {
+        return {
+          name: row.forename ?? "",
+          lastname: row.surname ?? "",
+          position: row.position ?? 0,
+          team: {
+            name: row.constructorName ?? "",
+            ref: row.constructorRef ?? ""
+          },
+          value: row.points.toString()
+        };
+      })}
+    />
+  );
 }
-
-export const DriverStandingsTable = ({ data }: IDriverStandingsTable) => (
-  <Table
-    data={data}
-    breakpoint="lg"
-    renderItem={(result) => {
-      const { position, Driver, Constructors, points } = result;
-      const team = (Constructors[0] as Constructor).name;
-
-      return (
-        <Row
-          target="driver"
-          position={position}
-          name={`${Driver.givenName} ${Driver.familyName}`}
-          team={teamsCorrections[team] || team}
-          detail={teamsCorrections[team] || team}
-          value={points}
-        />
-      );
-    }}
-  />
-);

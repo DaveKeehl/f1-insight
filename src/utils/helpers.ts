@@ -39,7 +39,7 @@ export const getPrettyDate = (date: string) => {
     month: "short"
   });
 
-  const startDate = sub(endDate, { days: 3 });
+  const startDate = sub(endDate, { days: 2 });
   const startMonth = startDate.toLocaleDateString("default", {
     month: "short"
   });

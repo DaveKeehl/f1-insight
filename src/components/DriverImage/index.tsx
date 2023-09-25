@@ -5,7 +5,7 @@ interface IDriverImage {
   familyName: string;
 }
 
-export const DriverImage = ({ givenName, familyName }: IDriverImage) => {
+export default function DriverImage({ givenName, familyName }: IDriverImage) {
   const clean = {
     familyName: familyName.split(" ").join("-")
   };
@@ -23,4 +23,4 @@ export const DriverImage = ({ givenName, familyName }: IDriverImage) => {
       />
     </>
   );
-};
+}

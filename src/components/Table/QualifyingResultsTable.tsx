@@ -1,33 +1,29 @@
-import { teamsCorrections } from "@utils/mappings";
-import { DriverQualifyingResult } from "@utils/types/race";
+import DriversTable from "@/components/Table/DriversTable";
 
-import { Row } from "../Row";
-import { Table } from "./Table";
+import { getQualifyingResults } from "@/db/qualifying/queries";
 
-interface IQualifyingResultsTable {
-  data: DriverQualifyingResult[];
+export default function QualifyingResultsTable({
+  rows
+}: {
+  rows: Awaited<ReturnType<typeof getQualifyingResults>>;
+}) {
+  return (
+    <DriversTable
+      rows={rows.map((row) => {
+        const lowQualifying = row.q2 !== undefined ? "Q2" : "Q1";
+        const finalSession = row.q3 !== undefined ? "Q3" : lowQualifying;
+
+        return {
+          name: row.driverForename ?? "",
+          lastname: row.driverSurname ?? "",
+          position: row.position ?? 0,
+          team: {
+            name: row.constructorName ?? "",
+            ref: row.constructorRef ?? ""
+          },
+          value: `${row.q3 ?? row.q2 ?? row.q1} (${finalSession})`
+        };
+      })}
+    />
+  );
 }
-
-export const QualifyingResultsTable = ({ data }: IQualifyingResultsTable) => (
-  <Table
-    data={data}
-    breakpoint="2xl"
-    renderItem={(result) => {
-      const { position, Driver, Constructor, Q1, Q2, Q3 } = result;
-
-      const lowQualifying = Q2 !== undefined ? "Q2" : "Q1";
-      const finalSession = Q3 !== undefined ? "Q3" : lowQualifying;
-
-      return (
-        <Row
-          target="driver"
-          position={position}
-          name={`${Driver.givenName} ${Driver.familyName}`}
-          team={Constructor.name}
-          value={`${Q3 || Q2 || Q1} (${finalSession})`}
-          detail={teamsCorrections[Constructor.name] || Constructor.name}
-        />
-      );
-    }}
-  />
-);
