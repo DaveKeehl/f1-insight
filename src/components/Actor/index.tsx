@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { gradient, shadow } from "@/utils/mappings";
 
 interface IActor {
@@ -43,9 +44,11 @@ export default function Actor({ actor, team, infoDialog, drivers, chart }: IActo
 
   return (
     <div
-      className={`relative w-full ${maxWidth[actor]} flex-none overflow-hidden rounded-[40px] ${
+      className={clsx(
+        "relative w-full flex-none overflow-hidden rounded-[40px] ",
+        maxWidth[actor],
         shadow[clean.team]
-      }`}
+      )}
     >
       <div className="relative z-10 p-[5px]">
         <div className="relative z-30">{infoDialog}</div>
