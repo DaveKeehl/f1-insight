@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 
-import Table from "@/components/Table";
+import QualifyingResultsTable from "@/components/Table/QualifyingResultsTable";
+import RaceResultsTable from "@/components/Table/RaceResultsTable";
+import TableSwitcher from "@/components/Table/TableSwitcher";
 
-import { getRaceResults } from "@/db/results/queries";
-import { getQualifyingResults } from "@/db/qualifying/queries";
-import { getRaceByRound } from "@/db/races/queries";
 import { getPrettyDate } from "@/utils/helpers";
+import { getRaceResults } from "@/db/results/queries";
+import { getRaceByRound } from "@/db/races/queries";
+import { getQualifyingResults } from "@/db/qualifying/queries";
 import { countriesCorrections } from "@/utils/mappings";
 
 type Props = {
@@ -14,7 +16,7 @@ type Props = {
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const circuit = "CIRCUIT";
+  const circuit = "CIRCUIT"; // TODO
 
   return {
     title: `${circuit} (Round ${params.round})`
@@ -23,8 +25,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function RacePage({ params }: Props) {
   const race = (await getRaceByRound(+params.round))[0];
-  const raceResults = await getRaceResults(+params.round);
   const qualifyingResults = await getQualifyingResults(+params.round);
+  const raceResults = await getRaceResults(+params.round);
 
   return (
     <div className="relative flex w-full flex-col items-center gap-10 overflow-y-auto px-4 pb-8 pt-12 md:pb-16 lg:px-14">
@@ -39,7 +41,19 @@ export default async function RacePage({ params }: Props) {
           )}`}
         </p>
       </div>
-      <Table raceResult={raceResults} qualifyingResult={qualifyingResults} />
+      <TableSwitcher
+        initialMode="drivers"
+        data={[
+          {
+            mode: "qualifying",
+            component: <QualifyingResultsTable rows={qualifyingResults} />
+          },
+          {
+            mode: "race",
+            component: <RaceResultsTable rows={raceResults} />
+          }
+        ]}
+      />
     </div>
   );
 }

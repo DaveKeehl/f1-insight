@@ -1,4 +1,4 @@
-import Table from "@/components/Table/Table";
+import Table from "@/components/Table";
 import DriverRow from "@/components/Row/DriverRow";
 
 export default function DriversTable({

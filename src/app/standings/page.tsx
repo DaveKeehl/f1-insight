@@ -1,8 +1,7 @@
 import { Metadata } from "next";
 import Image from "next/image";
 
-import StandingsTable from "@/components/StandingsTable";
-import MultiToggleTable from "@/components/Table/TableSwitcher";
+import TableSwitcher from "@/components/Table/TableSwitcher";
 import DriverStandingsTable from "@/components/Table/DriverStandingsTable";
 import ConstructorStandingsTable from "@/components/Table/ConstructorStandingsTable";
 
@@ -25,9 +24,18 @@ export default async function StandingsPage() {
       <div className="flex flex-col items-center gap-2">
         <h1 className="text-center text-[40px] font-medium text-brand-white-100">Standings</h1>
       </div>
-      <StandingsTable
-        driverStandings={driverStandings}
-        constructorStandings={constructorStandings}
+      <TableSwitcher
+        initialMode="drivers"
+        data={[
+          {
+            mode: "drivers",
+            component: <DriverStandingsTable rows={driverStandings} />
+          },
+          {
+            mode: "constructors",
+            component: <ConstructorStandingsTable rows={constructorStandings} />
+          }
+        ]}
       />
     </div>
   );

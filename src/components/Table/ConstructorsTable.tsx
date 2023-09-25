@@ -1,4 +1,4 @@
-import Table from "@/components/Table/Table";
+import Table from "@/components/Table";
 import ConstructorRow from "@/components/Row/ConstructorRow";
 
 export default function ConstructorsTable({

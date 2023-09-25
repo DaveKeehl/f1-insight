@@ -1,52 +1,48 @@
 "use client";
 
-import { useState, ReactNode, ComponentType } from "react";
 import { v4 as uuid } from "uuid";
 
 import { type IPill, Pill } from "@/components/Pill";
+import { useState } from "react";
 
-const Divider = ({ className = "" }: { className?: string }) => (
-  <div className={`${className} h-3 w-px bg-brand-blue-200`.trim()} />
-);
-
-type TableConfig<Data> = {
-  data: Data;
-  Component: ComponentType<{ rows: Data }>;
-  label: string;
+const Menu = ({ buttons }: { buttons: IPill[] }) => {
+  return (
+    <div className="flex items-center gap-2">
+      {buttons
+        .filter((button) => !button.hidden)
+        .map((button) => (
+          <Pill key={uuid()} {...button} />
+        ))}
+    </div>
+  );
 };
 
-type MultiToggleTableProps = {
-  configs: TableConfig<any>[];
-};
+export default function TableSwitcher<T extends string>({
+  initialMode,
+  data
+}: {
+  initialMode: T;
+  data: {
+    mode: T;
+    component: React.ReactNode;
+  }[];
+}) {
+  const [mode, setMode] = useState(initialMode);
 
-export default function MultiToggleTable({ configs }: MultiToggleTableProps) {
-  type Mode = (typeof configs)[number]["label"];
+  const activeComponent = data.find((item) => item.mode === mode);
 
-  const [mode, setMode] = useState<Mode>(configs[0].label);
-
-  const renderTableForMode = (mode: Mode): ReactNode => {
-    const config = configs.find((c) => c.label === mode);
-    if (!config) return null;
-    const TableComponent = config.Component;
-    return <TableComponent rows={config.data} />;
-  };
+  if (!activeComponent) return <></>;
 
   return (
     <>
-      <div className="flex items-center gap-5">
-        {configs.map((config, idx) => (
-          <>
-            <Pill
-              key={uuid()}
-              text={config.label}
-              selected={mode === config.label}
-              onClick={() => setMode(config.label)}
-            />
-            {idx < configs.length - 1 && <Divider className="ml-[10px]" />}
-          </>
-        ))}
-      </div>
-      {renderTableForMode(mode)}
+      <Menu
+        buttons={data.map((item) => ({
+          text: item.mode.toUpperCase(),
+          selected: mode === item.mode,
+          onClick: () => setMode(item.mode)
+        }))}
+      />
+      {activeComponent.component}
     </>
   );
 }
