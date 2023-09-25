@@ -16,10 +16,10 @@ type Props = {
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const circuit = "CIRCUIT"; // TODO
+  const race = (await getRaceByRound(+params.round))[0];
 
   return {
-    title: `${circuit} (Round ${params.round})`
+    title: `${race.country} (Round ${params.round})`
   };
 }
 
@@ -42,7 +42,7 @@ export default async function RacePage({ params }: Props) {
         </p>
       </div>
       <TableSwitcher
-        initialMode="drivers"
+        initialMode="qualifying"
         data={[
           {
             mode: "qualifying",
